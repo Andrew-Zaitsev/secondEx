@@ -1,0 +1,14 @@
+$wrap-size: 48px;                             /*logo image size*/
+$logo-maincolor: rgba(31, 32, 65, 0.25);      /*logo image main color*/
+$logo-smallarccolor: $logo-maincolor;             /*logo image small arc color*/
+.wrap {                          
+    height: $wrap-size;
+    width: $wrap-size;
+    /*border: 1px solid black;*/
+}
+.logo-maincolor {                 
+    fill: $logo-maincolor;
+}
+.logo-smallarccolor {
+    fill: $logo-smallarccolor;
+}
