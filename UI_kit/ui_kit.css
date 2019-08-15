@@ -1,0 +1,88 @@
+/*$colors_definition: (
+    'Dark Shade 100%',
+    'Dark Shade 75%',
+    'Dark Shade 50%',
+    'Dark Shade 25%',
+    'Dark Shade 5%',
+    'Purple',
+    'Green'
+);*/
+.ui_kit {
+  background-color: #E5E5E5;
+  width: 4420px;
+  height: 2803px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.ui_kit::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.ui_kit-box {
+  float: left;
+  width: 1440px;
+  background-color: #FFFFFF;
+  border: 1px solid lightseagreen;
+}
+
+.ui_kit-box:nth-child(2) {
+  margin: 0 50px;
+}
+
+.colors_list {
+  max-width: 18.68%;
+  border: 1px solid lightseagreen;
+}
+
+.colors_list_box {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  margin-right: 14.87%;
+  border-radius: 6px;
+}
+
+.colors_list_box-color_1 {
+  background-color: #1F2041;
+}
+
+.colors_list_box-color_2 {
+  background-color: rgba(31, 32, 65, 0.75);
+}
+
+.colors_list_box-color_3 {
+  background-color: rgba(31, 32, 65, 0.5);
+}
+
+.colors_list_box-color_4 {
+  background-color: rgba(31, 32, 65, 0.25);
+}
+
+.colors_list_box-color_5 {
+  background-color: rgba(31, 32, 65, 0.05);
+}
+
+.colors_list_box-color_6 {
+  background-color: #BC9CFF;
+}
+
+.colors_list_box-color_7 {
+  background-color: #6FCF97;
+}
+
+.colors_list_color_description {
+  vertical-align: middle;
+  display: inline-block;
+  border: 1px solid seagreen;
+}
+
+p {
+  border: 1px solid seagreen;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+/*# sourceMappingURL=ui_kit.css.map */

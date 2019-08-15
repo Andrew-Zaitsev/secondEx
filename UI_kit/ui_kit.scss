@@ -1,0 +1,71 @@
+//$body_width: 4420px;
+$colors: (                                         /*colors array*/
+    1: #1F2041,                                  /*Dark Shade 100%*/
+    2: change-color(#1F2041, $alpha: 0.75),      /*Dark Shade 75%*/
+    3: change-color(#1F2041, $alpha: 0.50),      /*Dark Shade 50%*/
+    4: change-color(#1F2041, $alpha: 0.25),      /*Dark Shade 25%*/
+    5: change-color(#1F2041, $alpha: 0.05),      /*Dark Shade 5%*/
+    6: #BC9CFF,                                  /*Purple*/
+    7: #6FCF97                                   /*Green*/
+);
+/*$colors_definition: (
+    'Dark Shade 100%',
+    'Dark Shade 75%',
+    'Dark Shade 50%',
+    'Dark Shade 25%',
+    'Dark Shade 5%',
+    'Purple',
+    'Green'
+);*/
+.ui_kit {
+    background-color: #E5E5E5;
+    //background-image: url(FSD_2nd_task.png);            pixel perfect
+    width: 4420px;
+    height: 2803px;
+    margin: 0px;
+    padding: 0px;
+        &::after {                //распорка
+            content:'';
+            display: table;
+            clear: both;
+        }
+}
+.ui_kit-box {
+    float: left;
+    width: 1440px;                 //32.58%
+    background-color: #FFFFFF;
+    border: 1px solid lightseagreen;   // to delete
+            &:nth-child(2) {
+                margin: 0 50px;                //1.131%
+            }    
+}
+
+.colors_list {
+    max-width: 18.68%;
+    border: 1px solid lightseagreen;   // to delete
+
+            &_box {
+                display: inline-block;
+                vertical-align: middle;
+                width: 70px;                   //1.584%  
+                height: 70px;
+                margin-right: 14.87%;
+                border-radius: 6px;            //0.1357%
+    // border: 1px solid seagreen;                     to delete
+                @each $number, $color in $colors { // making 7-color list
+                    &-color_#{$number} {
+                        background-color: $color;   
+                    }
+                }
+            }
+            &_color_description {
+                vertical-align: middle;
+                display: inline-block;
+                border: 1px solid seagreen;
+            }
+}
+p { // to delete
+    border: 1px solid seagreen;
+    margin-top: 0px;
+    margin-bottom: 0px; 
+}

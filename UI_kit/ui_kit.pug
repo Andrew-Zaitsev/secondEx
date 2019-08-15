@@ -3,12 +3,36 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         title UI Kit
-        link(href="./css/ui_kit.css" rel="stylesheet")
-    body
-        div(class="")
-            div lvsefsifsun
-            div
-            div
-            div
-            
-            
+        link(href='C:/Users/Andrew/Desktop/normalize.css')
+        link(href="./ui_kit.css" rel="stylesheet")
+        link(href='../components/logo/img-logo/_logo-img.css' rel='stylesheet')
+    body.ui_kit
+        //- pixel-perfect background-helper
+        //- img(src='FSD_2nd_task.png' style='opacity: 0.2; position: absolute; z-index: 1')
+        // making 4 boxes
+        // colors & type box
+        .ui_kit-box
+            //- including logo
+            include ../components/logo/img-logo/_logo-img.pug
+            //- using descriptions and values of colors from map to make colors' list via mixin
+            .colors_list
+                - 
+                    var colors_array = [
+                        {index: 1, descr: 'Dark Shade 100%', val: '#1F2041'},
+                        {index: 2, descr: 'Dark Shade 75%', val: '#1F2041'},
+                        {index: 3, descr: 'Dark Shade 50%', val: '#1F2041'},
+                        {index: 4, descr: 'Dark Shade 25%', val: '#1F2041'},
+                        {index: 5, descr: 'Dark Shade 5%', val: '#1F2041'},
+                        {index: 6, descr: 'Purple', val: '#1F2041'},
+                        {index: 7, descr: 'Green', val: '#1F2041'}
+                        ];
+                mixin color_item(color)
+                    div
+                        div(class="colors_list_box" class="colors_list_box-color_"+color.index)
+                        div.colors_list_color_description
+                            //- read about different locals interpolation methods
+                            span #{color.descr} 
+                                br 
+                            span= color.val
+                for color in colors_array
+                    +color_item(color)
