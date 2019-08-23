@@ -1,4 +1,13 @@
 //$body_width: 4420px;
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../components/fonts/montserrat_regular/Montserrat-Regular.woff') format('woff');
+    src: url('../components/fonts/montserrat_regular/Montserrat-Regular.svg') format('svg');
+    src: url('../components/fonts/montserrat_regular/Montserrat-Regular.ttf') format('truetype');
+}
+html {
+    font-size: 16px;
+}
 $colors: (                                         /*colors array*/
     1: #1F2041,                                  /*Dark Shade 100%*/
     2: change-color(#1F2041, $alpha: 0.75),      /*Dark Shade 75%*/
@@ -8,18 +17,21 @@ $colors: (                                         /*colors array*/
     6: #BC9CFF,                                  /*Purple*/
     7: #6FCF97                                   /*Green*/
 );
-/*$colors_definition: (
-    'Dark Shade 100%',
-    'Dark Shade 75%',
-    'Dark Shade 50%',
-    'Dark Shade 25%',
-    'Dark Shade 5%',
-    'Purple',
-    'Green'
-);*/
+$tags_font_parameters: (
+    ('H1', 1.5rem, 1.8125rem),                     /*24 29px*/  
+    ('H2', 1.1875rem, 1.4375rem),                  /*19 23px*/ 
+    ('H3', 0.75rem, 0.9375rem),                    /*12 15px*/
+    ('Body', 0.875rem, 1.5rem)                     /*14 24px*/
+);
+$descr_font_parameters: (
+    ('H1', 1.5rem, 1.875rem),                      /*24 30px*/  
+    ('H2', 1.1875rem, 1.5rem),                     /*19 24px*/ 
+    ('H3', 0.75rem, 0.9375rem),                    /*12 15px*/
+    ('Body', 0.875rem, 1.5rem)                     /*14 24px*/
+);
 .ui_kit {
     background-color: #E5E5E5;
-    //background-image: url(FSD_2nd_task.png);            pixel perfect
+    // background-image: url(FSD_2nd_task.png);      //      pixel perfect
     width: 4420px;
     height: 2803px;
     margin: 0px;
@@ -34,14 +46,23 @@ $colors: (                                         /*colors array*/
     float: left;
     width: 1440px;                 //32.58%
     background-color: #FFFFFF;
-    border: 1px solid lightseagreen;   // to delete
+    // border: 1px solid lightseagreen;   // to delete
             &:nth-child(2) {
                 margin: 0 50px;                //1.131%
             }    
 }
-
+.logo_position {
+    margin-top: 2.083%;                  // Процентные отступы рассчитываются от ширины родителя
+    margin-left: 2.083%;
+    margin-bottom: 4.5%;
+    // border: 1px solid lightseagreen; to delete
+    }
 .colors_list {
-    max-width: 18.68%;
+    width: 18.68%;
+    margin-left: 10.42%;
+    margin-right: 29.6%;
+    display: inline-block;
+    //vertical-align: top;
     border: 1px solid lightseagreen;   // to delete
 
             &_box {
@@ -50,6 +71,7 @@ $colors: (                                         /*colors array*/
                 width: 70px;                   //1.584%  
                 height: 70px;
                 margin-right: 14.87%;
+                margin-bottom: 7.43%;   //  Процентные отступы по высоте рассчитываются как и по ширине от ширине родителя
                 border-radius: 6px;            //0.1357%
     // border: 1px solid seagreen;                     to delete
                 @each $number, $color in $colors { // making 7-color list
@@ -64,8 +86,49 @@ $colors: (                                         /*colors array*/
                 border: 1px solid seagreen;
             }
 }
-p { // to delete
+/*p { // to delete
     border: 1px solid seagreen;
     margin-top: 0px;
     margin-bottom: 0px; 
+} */
+.types_list {  
+    border: 1px solid seagreen;  // to delete
+    display: inline-block;
+    width: 27.99%;
+    vertical-align: top;
+            &-item {
+                margin-bottom: 50px;
+                border: 1px solid seagreen;
+                }
+            &-tags_column {
+                text-align: right;//59
+                vertical-align: top;
+                width: 59px;
+                display: inline-block;
+                margin-right: 30px; // 27.99
+                border: 1px solid seagreen;
+                @each $tag, $size, $height in $tags_font_parameters { //setting font parameters of the tags column
+                    &-font_style_#{$tag} {
+                        font-family: 'Montserrat-Regular';
+                        font-size: $size;
+                        line-height: $height;
+                        color: map-get($colors, 4);                   /*Dark Shade 25%*/ 
+                    }
+                }
+            }
+            &-descr_column {
+                text-align: left;
+                display: inline-block;
+                width: 76%;
+                border: 1px solid blue;
+                @each $tag, $size, $height in $descr_font_parameters { //setting font parameters of the description column
+                    &-font_style_#{$tag} {
+                        font-size: $size;
+                        line-height: $height;
+                        //color: map-get($colors, 4);                    /*Dark Shade 25%*/ 
+                        @if $tag=='H3' {text-transform: uppercase;}
+                            @else if $tag=='Body' {color: map-get($colors, 2);}
+                    }
+                }
+            }
 }
