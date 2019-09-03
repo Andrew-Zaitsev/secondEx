@@ -1,180 +1,207 @@
 @font-face {
-  font-family: 'Montserrat-Regular';
-  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.woff") format("woff");
-  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.svg") format("svg");
-  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.ttf") format("truetype");
+  font-family: "Montserrat";
+  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.woff")
+    format("woff");
+  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.svg")
+    format("svg");
+  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-
+@font-face {
+  font-family: "Montserrat";
+  src: url("../components/fonts/montserrat_bold/Montserrat-Bold.woff")
+    format("woff");
+  src: url("../components/fonts/montserrat_bold/Montserrat-Bold.svg")
+    format("svg");
+  src: url("../components/fonts/montserrat_bold/Montserrat-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../components/fonts/quicksand_regular/Quicksand-Regular.woff")
+    format("woff");
+  src: url("../components/fonts/quicksand_regular/Quicksand-Regular.svg")
+    format("svg");
+  src: url("../components/fonts/quicksand_regular/Quicksand-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url("../components/fonts/quicksand_bold/Quicksand-Bold.woff")
+    format("woff");
+  src: url("../components/fonts/quicksand_bold/Quicksand-Bold.svg")
+    format("svg");
+  src: url("../components/fonts/quicksand_bold/Quicksand-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
 html {
   font-size: 16px;
-}
-
-.ui_kit {
-  background-color: #E5E5E5;
-  width: 4420px;
-  height: 2803px;
   margin: 0px;
   padding: 0px;
 }
-
+div,
+span {
+  margin: 0px;
+  padding: 0px;
+}
+.ui_kit {
+  background-color: #e5e5e5;
+  width: 4420px;
+  height: 2802.9872px;
+  margin: 0px;
+  padding: 0px;
+}
 .ui_kit::after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
-
 .ui_kit-box {
   float: left;
-  width: 1440px;
-  background-color: #FFFFFF;
+  width: 32.579%;
+  height: 32.03%;
+  background-color: #ffffff;
 }
-
 .ui_kit-box:nth-child(2) {
-  margin: 0 50px;
+  margin: 0 1.13122%;
 }
-
 .logo_position {
   margin-top: 2.083%;
   margin-left: 2.083%;
-  margin-bottom: 4.5%;
+  margin-bottom: 4.55%;
 }
-
 .colors_list {
-  width: 18.68%;
-  margin-left: 10.42%;
-  margin-right: 29.6%;
+  width: 20%;
+  margin-left: 10.45%;
+  margin-right: 28%;
   display: inline-block;
-  border: 1px solid lightseagreen;
+  font-size: 1.18rem;
+  line-height: 1.8125rem;
 }
-
+.colors_list_box_n_descr_wrap {
+  margin-bottom: 6.95%;
+}
 .colors_list_box {
   display: inline-block;
   vertical-align: middle;
   width: 70px;
   height: 70px;
-  margin-right: 14.87%;
-  margin-bottom: 7.43%;
+  margin-right: 12.4%;
   border-radius: 6px;
 }
-
 .colors_list_box-color_1 {
-  background-color: #1F2041;
+  background-color: #1f2041;
 }
-
 .colors_list_box-color_2 {
   background-color: rgba(31, 32, 65, 0.75);
 }
-
 .colors_list_box-color_3 {
   background-color: rgba(31, 32, 65, 0.5);
 }
-
 .colors_list_box-color_4 {
   background-color: rgba(31, 32, 65, 0.25);
 }
-
 .colors_list_box-color_5 {
   background-color: rgba(31, 32, 65, 0.05);
 }
-
 .colors_list_box-color_6 {
-  background-color: #BC9CFF;
+  background-color: #bc9cff;
 }
-
 .colors_list_box-color_7 {
-  background-color: #6FCF97;
+  background-color: #6fcf97;
 }
-
 .colors_list_color_description {
+  margin-top: 1%;
   vertical-align: middle;
   display: inline-block;
-  border: 1px solid seagreen;
 }
-
-/*p { // to delete
-    border: 1px solid seagreen;
-    margin-top: 0px;
-    margin-bottom: 0px; 
-} */
+.colors_list_color_description span:first-child {
+  font-family: "Quicksand";
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.colors_list_color_description span:last-child {
+  font-family: "Quicksand";
+  letter-spacing: 0px;
+  font-weight: normal;
+}
 .types_list {
-  border: 1px solid seagreen;
   display: inline-block;
-  width: 27.99%;
+  width: 30%;
   vertical-align: top;
 }
-
 .types_list-item {
-  margin-bottom: 50px;
-  border: 1px solid seagreen;
+  margin-bottom: 11.53%;
 }
-
 .types_list-tags_column {
+  font-family: "Montserrat";
+  font-weight: normal;
   text-align: right;
   vertical-align: top;
-  width: 59px;
+  width: 8.8%;
   display: inline-block;
-  margin-right: 30px;
-  border: 1px solid seagreen;
+  margin-right: 7%;
 }
-
 .types_list-tags_column-font_style_H1 {
-  font-family: 'Montserrat-Regular';
   font-size: 1.5rem;
   line-height: 1.8125rem;
   color: rgba(31, 32, 65, 0.25);
-  /*Dark Shade 25%*/
 }
-
 .types_list-tags_column-font_style_H2 {
-  font-family: 'Montserrat-Regular';
   font-size: 1.1875rem;
   line-height: 1.4375rem;
   color: rgba(31, 32, 65, 0.25);
-  /*Dark Shade 25%*/
 }
-
 .types_list-tags_column-font_style_H3 {
-  font-family: 'Montserrat-Regular';
   font-size: 0.75rem;
   line-height: 0.9375rem;
   color: rgba(31, 32, 65, 0.25);
-  /*Dark Shade 25%*/
 }
-
 .types_list-tags_column-font_style_Body {
-  font-family: 'Montserrat-Regular';
   font-size: 0.875rem;
   line-height: 1.5rem;
   color: rgba(31, 32, 65, 0.25);
-  /*Dark Shade 25%*/
+  margin-top: -0.9%;
 }
-
 .types_list-descr_column {
+  font-family: "Quicksand";
+  letter-spacing: 0px;
+  font-weight: bold;
   text-align: left;
   display: inline-block;
-  width: 76%;
-  border: 1px solid blue;
+  width: 82.3%;
 }
-
 .types_list-descr_column-font_style_H1 {
   font-size: 1.5rem;
   line-height: 1.875rem;
 }
-
 .types_list-descr_column-font_style_H2 {
   font-size: 1.1875rem;
   line-height: 1.5rem;
 }
-
 .types_list-descr_column-font_style_H3 {
   font-size: 0.75rem;
   line-height: 0.9375rem;
   text-transform: uppercase;
+  font-family: "Montserrat";
+  letter-spacing: 0px;
+  font-weight: bold;
 }
-
 .types_list-descr_column-font_style_Body {
   font-size: 0.875rem;
   line-height: 1.5rem;
+  margin-top: -1%;
   color: rgba(31, 32, 65, 0.75);
+  font-family: "Montserrat";
+  letter-spacing: 0px;
+  font-weight: normal;
+  width: 73%;
 }
-/*# sourceMappingURL=ui_kit.css.map */

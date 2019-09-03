@@ -7,8 +7,8 @@ html(lang="en")
         link(href="./ui_kit.css" rel="stylesheet")
         link(href='../components/logo/img-logo/_logo-img.css' rel='stylesheet')
     body.ui_kit
-        //- pixel-perfect background-helper
-        //- img(src='FSD_2nd_task.png' style='opacity: 0.2; position: absolute; z-index: 1')
+        //- pixel-perfect helper
+        //-img(src='FSD_2nd_task.png' style='opacity: 0.4; position: absolute; z-index: 1')
         // making 4 boxes
         // colors & type box
         .ui_kit-box
@@ -24,14 +24,14 @@ html(lang="en")
                         {index: 3, descr: 'Dark Shade 50%', val: '#1F2041'},
                         {index: 4, descr: 'Dark Shade 25%', val: '#1F2041'},
                         {index: 5, descr: 'Dark Shade 5%', val: '#1F2041'},
-                        {index: 6, descr: 'Purple', val: '#1F2041'},
-                        {index: 7, descr: 'Green', val: '#1F2041'}
+                        {index: 6, descr: 'Purple', val: '#BC9CFF'},
+                        {index: 7, descr: 'Green', val: '#6FCF97'}
                     ];
                 mixin color_item(color)
-                    div
+                    div.colors_list_box_n_descr_wrap
                         div(class="colors_list_box" class="colors_list_box-color_"+color.index)
                         div.colors_list_color_description
-                            //- read about different locals interpolation methods
+                            //- read about different local interpolation methods
                             span #{color.descr} 
                                 br 
                             span= color.val
