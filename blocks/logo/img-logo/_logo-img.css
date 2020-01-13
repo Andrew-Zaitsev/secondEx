@@ -1,0 +1,10 @@
+.logo {
+  height: 48px;
+  width: 48px;
+}
+.logo-maincolor {
+  fill: rgba(31, 32, 65, 0.25);
+}
+.logo-smallarccolor {
+  fill: rgba(31, 32, 65, 0.25);
+}

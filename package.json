@@ -4,17 +4,24 @@
   "description": "making a search hotel numbers site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel test.pug -p 1234 --open",
+    "clean": "rm -rf dist/*",
+    "clst": "npm run clean && npm run start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Andrew-Zaitsev/secondEx.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Andrey Zaitsev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Andrew-Zaitsev/secondEx/issues"
   },
-  "homepage": "https://github.com/Andrew-Zaitsev/secondEx#readme"
+  "homepage": "https://github.com/Andrew-Zaitsev/secondEx#readme",
+  "devDependencies": {
+    "pug": "^2.0.4",
+    "sass": "^1.24.3"
+  }
 }

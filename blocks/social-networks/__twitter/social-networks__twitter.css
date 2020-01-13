@@ -1,0 +1,9 @@
+.social-networks__twitter {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: solid blueviolet 1px;
+  background-image: url(./blocks/images/social-networks__twitter.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}

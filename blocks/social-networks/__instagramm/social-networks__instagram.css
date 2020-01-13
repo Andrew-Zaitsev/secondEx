@@ -1,0 +1,9 @@
+.social-networks__instagram {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: solid green 1px;
+  background-image: url(./blocks/images/social-networks__instagram.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}

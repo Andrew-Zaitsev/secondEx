@@ -1,43 +1,40 @@
 @font-face {
   font-family: "Montserrat";
-  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.woff")
+  src: url("../blocks/fonts/montserrat_regular/Montserrat-Regular.woff")
     format("woff");
-  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.svg")
+  src: url("../blocks/fonts/montserrat_regular/Montserrat-Regular.svg")
     format("svg");
-  src: url("../components/fonts/montserrat_regular/Montserrat-Regular.ttf")
+  src: url("../blocks/fonts/montserrat_regular/Montserrat-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../components/fonts/montserrat_bold/Montserrat-Bold.woff")
+  src: url("../blocks/fonts/montserrat_bold/Montserrat-Bold.woff")
     format("woff");
-  src: url("../components/fonts/montserrat_bold/Montserrat-Bold.svg")
-    format("svg");
-  src: url("../components/fonts/montserrat_bold/Montserrat-Bold.ttf")
+  src: url("../blocks/fonts/montserrat_bold/Montserrat-Bold.svg") format("svg");
+  src: url("../blocks/fonts/montserrat_bold/Montserrat-Bold.ttf")
     format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Quicksand";
-  src: url("../components/fonts/quicksand_regular/Quicksand-Regular.woff")
+  src: url("../blocks/fonts/quicksand_regular/Quicksand-Regular.woff")
     format("woff");
-  src: url("../components/fonts/quicksand_regular/Quicksand-Regular.svg")
+  src: url("../blocks/fonts/quicksand_regular/Quicksand-Regular.svg")
     format("svg");
-  src: url("../components/fonts/quicksand_regular/Quicksand-Regular.ttf")
+  src: url("../blocks/fonts/quicksand_regular/Quicksand-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Quicksand";
-  src: url("../components/fonts/quicksand_bold/Quicksand-Bold.woff")
-    format("woff");
-  src: url("../components/fonts/quicksand_bold/Quicksand-Bold.svg")
-    format("svg");
-  src: url("../components/fonts/quicksand_bold/Quicksand-Bold.ttf")
+  src: url("../blocks/fonts/quicksand_bold/Quicksand-Bold.woff") format("woff");
+  src: url("../blocks/fonts/quicksand_bold/Quicksand-Bold.svg") format("svg");
+  src: url("../blocks/fonts/quicksand_bold/Quicksand-Bold.ttf")
     format("truetype");
   font-weight: bold;
   font-style: normal;

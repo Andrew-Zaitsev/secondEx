@@ -1,0 +1,6 @@
+#ignoring cache files
+/.cache/*
+#igmoring local dev files
+/dist/*
+#ignoring node modules files (created for parcel)
+/node_modules/*

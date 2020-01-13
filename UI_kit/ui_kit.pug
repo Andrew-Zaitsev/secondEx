@@ -3,9 +3,9 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         title UI Kit
-        link(href='C:/Users/Andrew/Desktop/normalize.css')
+        // link(href='C:/Users/Andrew/Desktop/normalize.css')
         link(href="./ui_kit.css" rel="stylesheet")
-        link(href='../components/logo/img-logo/_logo-img.css' rel='stylesheet')
+        link(href='../blocks/logo/img-logo/_logo-img.css' rel='stylesheet')
     body.ui_kit
         //- pixel-perfect helper
         //-img(src='FSD_2nd_task.png' style='opacity: 0.4; position: absolute; z-index: 1')
@@ -14,7 +14,7 @@ html(lang="en")
         .ui_kit-box
             //- including logo
             .logo_position
-                include ../components/logo/img-logo/_logo-img.pug
+                include ../blocks/logo/img-logo/_logo-img.pug
             //- using descriptions and values of colors from map to make colors' list via mixin
             .colors_list
                 - 
