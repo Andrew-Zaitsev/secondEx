@@ -2,12 +2,13 @@
   "name": "secondEx",
   "version": "1.0.0",
   "description": "making a search hotel numbers site",
-  "main": "index.js",
+  "main": "test.pug",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel test.pug -p 1234 --open",
+    "hnf": "parcel test.pug -p 3004 --open --out-dir dist/headers-n-footers --cache-dir dist/cache",
+    "fe": "parcel form-elements.pug -p 3002 --open --out-dir dist/form-elements --cache-dir dist/cache",
     "clean": "rm -rf dist/*",
-    "clst": "npm run clean && npm run start"
+    "cleanhnf": "npm run clean && npm run hnf"
   },
   "repository": {
     "type": "git",

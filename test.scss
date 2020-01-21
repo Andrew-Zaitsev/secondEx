@@ -1,3 +1,14 @@
+html {
+    font-size: 16px;
+}
+.page {
+    width: 1440px;
+    padding: 0px;
+    margin: 0px;
+    border: solid black 1px; //to del to del
+    border-left: none; //to del
+    border-top: none; //to del
+}
 @import '../../../Web_development/projects/secondEx/blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/copyright-bar/__text/copyright-bar__text.scss';
 @import 'blocks/social-networks/__twitter/social-networks__twitter.scss';
@@ -6,14 +17,3 @@
 @import 'blocks/social-networks/social-networks.scss';
 @import 'blocks/copyright-bar/copyright-bar.scss';
 @import 'blocks/positioner/positioner.scss';
-html {
-    font-size: 16px;
-}
-.page {
-    width: 1440px;
-    padding: 0px;
-    margin: 0px;
-    border: solid black 1px; //to del
-    border-left: none; //to del
-    border-top: none;
-}

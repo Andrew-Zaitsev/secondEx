@@ -1,0 +1,31 @@
+$page-width: 1440px; 
+html {
+    font-size: 16px;
+}
+// почитать по блокам пага (.page и page__logo)  
+.page {
+    //box-sizing: border-box; //width calculation algoritm changed
+    width: $page-width;
+    height: $page-width * 1.2868; //1,2868
+    padding: 0 0;
+    margin: 0px;
+    background-color: #ffffff;
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+}
+.page__logo {
+    position: absolute;
+    left: $page-width * 0.02083;
+    top: $page-width * 0.02083;
+    //float: left;
+    //margin-left: 2.083%;
+    //margin-top: 2.083%;   
+}
+
+@import 'blocks/positioner/positioner.scss';
+@import 'blocks/logo/logo.scss';
+@import 'blocks/logo/_size/logo_size_big.scss';
+@import 'blocks/logo/_size/logo_size_small.scss';
+@import 'blocks/logo/logo__grey-icon.scss';
+@import 'blocks/logo/logo__colored-icon.scss';
+@import 'blocks/logo/logo__text.scss';
