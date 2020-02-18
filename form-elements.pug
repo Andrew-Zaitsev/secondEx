@@ -1,11 +1,22 @@
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        title form elements
-        link(href='./form-elements.scss' rel='stylesheet')
-    body.page
+  head
+    meta(charset="UTF-8")
+    meta(name='viewport' content='width=device-width')
+    meta(name='keywords' value='uikit, fonts, colors, blocks')
+    meta(name='description' value='this page contains form elements in all possible conditions')
+    title form elements
+    link(href='./form-elements.scss' rel='stylesheet')
+  body
+    .form-elements
+      .form-elements__logo
         include blocks/logo/logo.pug
-        +logo('grey')
-        .positioner
-            +logo('colored')
+        +logo({color: "grey"})
+      .form-elements__wrap
+        .form-elements__left-section
+          .form-elements__text-field
+            include blocks/text-field/text-field.pug
+            +text-field({title: "text-field", state: "true"})
+        .form-elements__middle-section right
+        .form-elements__right-section middle
+        .form-elements__bottom-section bottom

@@ -1,31 +1,77 @@
-$page-width: 1440px; 
-html {
-    font-size: 16px;
-}
-// почитать по блокам пага (.page и page__logo)  
-.page {
-    //box-sizing: border-box; //width calculation algoritm changed
-    width: $page-width;
-    height: $page-width * 1.2868; //1,2868
-    padding: 0 0;
-    margin: 0px;
-    background-color: #ffffff;
-    border-right: solid black 1px;
-    border-bottom: solid black 1px;
-}
-.page__logo {
-    position: absolute;
-    left: $page-width * 0.02083;
-    top: $page-width * 0.02083;
-    //float: left;
-    //margin-left: 2.083%;
-    //margin-top: 2.083%;   
+* {
+  box-sizing: border-box;//width calculation algoritm changed
 }
 
-@import 'blocks/positioner/positioner.scss';
+html {
+// default font-color, font-family for html tag style is needed
+  font-size: 16px;
+  background-color: #e5e5e5;
+}
+
+html,
+body,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+.form-elements {
+  max-width: 1440px;
+ // margin: 0 auto; // comment fo perfect pixel dev
+  background-color: #ffffff;
+  &::before {
+  // empty element to avoid dropping up the page__logo margin (follows below)
+    content: "";
+    overflow: hidden; // обязательно!
+    display: block;
+  }
+  &__logo {
+  //max-width: 48px;
+  //max-height: 48px;
+    width: 48px; //3.3333vw;
+    height: 48px; //3.3333vw;
+    margin-left: 30px; //2.083%;
+    margin-top: 30px; //2.083%;
+    @media (max-width: 1376px) {
+    //was 1440px
+      display: none;
+    }
+  }
+  &__wrap {
+    max-width: 1160px;
+    width: 100%;
+    margin: 62px auto 0px;
+    //border: solid black 1px;
+    @media (max-width: 1376px) {
+      margin-top: 140px;
+    }
+  }
+  //sections for blocks placement
+  &__left-section {
+    display: inline-block;
+    //background-color: cadetblue;
+  }
+  &__text-field {
+    //для работы над блоком text-field временно задал ширину и высоту
+    //width: 20rem;
+    //height: 15rem;
+  }
+
+  &__middle-section {
+    display: inline-block;
+    background-color: cadetblue;
+  }
+  &__right-section {
+    display: inline-block;
+    background-color: cadetblue;
+  }
+
+  &__bottom-section {
+    display: inline-block;
+    background-color: cadetblue;
+  }
+}
+
 @import 'blocks/logo/logo.scss';
-@import 'blocks/logo/_size/logo_size_big.scss';
-@import 'blocks/logo/_size/logo_size_small.scss';
-@import 'blocks/logo/logo__grey-icon.scss';
-@import 'blocks/logo/logo__colored-icon.scss';
-@import 'blocks/logo/logo__text.scss';
+@import 'blocks/logo/_color/logo_color_grey.scss';
+@import 'blocks/text-field/text-field.scss';

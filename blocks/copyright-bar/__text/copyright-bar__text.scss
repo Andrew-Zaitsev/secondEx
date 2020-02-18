@@ -1,9 +1,9 @@
 .copyright-bar__text {
-    display: inline-block;
-    //width: 380px;
-    //border: solid grey 2px;
-    //background-color: coral;
-    @include montserrat_normal; //font-family and letter-spacing interpolation
-    font-size: 0.860rem;//0.875rem (16px);
-    //line-height: 17px;
+  display: inline-block;
+  @include montserrat_normal; //font-family and letter-spacing interpolation
+  font-size: 0.860rem;//0.875rem (16px);
+  //width: 380px;
+  //border: solid grey 2px;
+  //background-color: coral;
+  //line-height: 17px;
 }

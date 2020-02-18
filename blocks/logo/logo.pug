@@ -1,10 +1,5 @@
-//- choose 'gray' for big grey icon
-//- or choose 'colored' for small gradiently colored icon with toxin text
-mixin logo(color)
-    if color == 'grey'
-        .logo.page__logo.logo_size_big
-            .logo__grey-icon
-    else if color == 'colored'
-        .logo.logo_size_small
-            .logo__colored-icon
-            .logo__text-icon
+//- choose {color: "grey"} for a grey icon
+//- or choose {color: "gradient"} for a gradiently colored icon with toxin text
+mixin logo(option)
+  -var colorClassName = "logo_color_" + option.color
+  .logo(class = colorClassName)

@@ -5,10 +5,11 @@
   "main": "test.pug",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hnf": "parcel test.pug -p 3004 --open --out-dir dist/headers-n-footers --cache-dir dist/cache",
+    "hnf": "parcel headers-n-footers.pug -p 3004 --open --out-dir dist/headers-n-footers --cache-dir dist/cache",
     "fe": "parcel form-elements.pug -p 3002 --open --out-dir dist/form-elements --cache-dir dist/cache",
     "clean": "rm -rf dist/*",
-    "cleanhnf": "npm run clean && npm run hnf"
+    "cleanfe": "rm -rf dist/form-elements/* && npm run fe",
+    "cleanhnf": "rm -rf dist/headers-n-footers/* && npm run hnf"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,6 @@
   "devDependencies": {
     "pug": "^2.0.4",
     "sass": "^1.24.3"
-  }
+  },
+  "dependencies": {}
 }
