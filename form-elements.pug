@@ -16,7 +16,9 @@ html(lang="en")
         .form-elements__left-section
           .form-elements__text-field
             include blocks/text-field/text-field.pug
-            +text-field({title: "text-field", state: "true"})
+            +text-field({title: "text field", state: "true"})
+          .form-elements__text-field.form-elements__text-field_hovered-focused
+            +text-field({title: "text field", state: "true"})
         .form-elements__middle-section right
         .form-elements__right-section middle
         .form-elements__bottom-section bottom

@@ -1,3 +1,6 @@
+//@import '../../../Web_development/projects/secondEx/blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
+@import 'blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
+@import 'blocks/fonts/montserrat_bold/Montserrat-Bold.scss';
 * {
   box-sizing: border-box;//width calculation algoritm changed
 }
@@ -19,6 +22,10 @@ input {
   max-width: 1440px;
  // margin: 0 auto; // comment fo perfect pixel dev
   background-color: #ffffff;
+  //@include montserrat_normal;
+  font-family: Montserrat;
+  font-weight: normal;
+
   &::before {
   // empty element to avoid dropping up the page__logo margin (follows below)
     content: "";
@@ -37,6 +44,7 @@ input {
       display: none;
     }
   }
+
   &__wrap {
     max-width: 1160px;
     width: 100%;
@@ -46,21 +54,27 @@ input {
       margin-top: 140px;
     }
   }
+
   //sections for blocks placement
   &__left-section {
     display: inline-block;
     //background-color: cadetblue;
   }
+
   &__text-field {
     //для работы над блоком text-field временно задал ширину и высоту
     //width: 20rem;
     //height: 15rem;
+    &_hovered-focused {
+      margin-top: 1.24rem;
+    }
   }
 
   &__middle-section {
     display: inline-block;
     background-color: cadetblue;
   }
+
   &__right-section {
     display: inline-block;
     background-color: cadetblue;
@@ -72,6 +86,8 @@ input {
   }
 }
 
+//@import '../../../Web_development/projects/secondEx/blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
+//@import 'blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/logo/logo.scss';
 @import 'blocks/logo/_color/logo_color_grey.scss';
 @import 'blocks/text-field/text-field.scss';
