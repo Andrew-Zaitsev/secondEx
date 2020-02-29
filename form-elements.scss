@@ -1,6 +1,6 @@
-//@import '../../../Web_development/projects/secondEx/blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/fonts/montserrat_bold/Montserrat-Bold.scss';
+
 * {
   box-sizing: border-box;//width calculation algoritm changed
 }
@@ -27,7 +27,7 @@ input {
   font-weight: normal;
 
   &::before {
-  // empty element to avoid dropping up the page__logo margin (follows below)
+  // empty element to avoid dropping up the form-elements__logo margin (follows below)
     content: "";
     overflow: hidden; // обязательно!
     display: block;
@@ -49,7 +49,6 @@ input {
     max-width: 1160px;
     width: 100%;
     margin: 62px auto 0px;
-    //border: solid black 1px;
     @media (max-width: 1376px) {
       margin-top: 140px;
     }
@@ -58,7 +57,6 @@ input {
   //sections for blocks placement
   &__left-section {
     display: inline-block;
-    //background-color: cadetblue;
   }
 
   &__text-field {
@@ -68,6 +66,15 @@ input {
     &_hovered-focused {
       margin-top: 1.24rem;
     }
+  }
+
+  &__state-field {
+    float: right;
+    font-size: 0.73rem;
+    //line-height: 0.9rem;//0.9375rem; // 15px
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+    margin-top: 0.09rem;
   }
 
   &__middle-section {
@@ -86,8 +93,6 @@ input {
   }
 }
 
-//@import '../../../Web_development/projects/secondEx/blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
-//@import 'blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/logo/logo.scss';
 @import 'blocks/logo/_color/logo_color_grey.scss';
 @import 'blocks/text-field/text-field.scss';
