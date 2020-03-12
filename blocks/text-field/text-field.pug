@@ -3,4 +3,6 @@ mixin text-field(option)
     if option.title
       .text-field__title-wrap
         .text-field__title= option.title
+        if option.state
+          .text-field__state= option.state
     input.text-field__input(placeholder= option.placeholder)

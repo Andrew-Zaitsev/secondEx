@@ -1,0 +1,114 @@
+.dropdown {
+  max-width: 266px;
+  width: 16.6rem; //266px
+  &_width_large {
+    max-width: 320px;
+    width: 20rem;
+  }
+  &_width_normal {
+
+  }
+
+  &__title-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1875rem 0 0.300rem; //0.375rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 0.75rem; // 12px
+    font-weight: bold;
+    color: #1F2041;
+    line-height: 0.9375rem; // 15px
+    //padding: 0.1875rem 0 0.300rem; //0.375rem;
+  }
+
+  &__state-field {
+    text-transform: uppercase;
+    font-size: 0.75rem; //0.75
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative; // for dropdown__list
+    font-family: Montserrat;
+    font-size: 0.875rem; //0.875rem; //14px
+    line-height: 2.6rem; //2.75rem as input height; // 1.125rem; 18px
+    //padding-left: 0.9375rem;
+    border: solid rgba(31, 32, 65, 0.25) 1px;
+    border-radius: 0.25rem;
+    color: rgba(31, 32, 65, 0.75);
+    /*
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.75);
+      font-family: Montserrat;
+      font-weight: normal;
+    }
+    */
+    &:hover,
+    &:focus {
+      border-color: rgba(31, 32, 65, 0.5);
+      /*
+      &::placeholder {
+        color: rgba(31, 32, 65, 0.75);
+      }
+      */
+    }
+    /*
+    // переделать на реагирование при нажатии и отжатии кнопки
+    &:hover {
+      border-radius: 0.25rem 0.25rem 0 0;
+      border-bottom: none;
+      .dropdown__list {
+        display: block;
+        
+      }
+    }
+    */
+  }
+
+  &__button-text {
+    padding-left: 0.9375rem;
+  }
+  
+  &__button-arrow {
+    width: 2.6rem;
+    text-align: center;
+    //border: solid blueviolet 1px;
+  }
+
+  &__list {
+    display: none;
+    width: 100.6%;
+    position: absolute;
+    left: -0.3%;
+    top: 2.57rem; //2.63
+    border:  solid rgba(31, 32, 65, 0.5) 1px; // 2.6
+    border-radius: 0 0 0.25rem 0.25rem;
+    //border-top: none;
+    background-color: #FFFFFF;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.9375rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #1F2041;
+  }
+}
+// isolated styles for dropdown expantion 
+.dropdown__button {
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom: none;
+  .dropdown__list {
+    display: block;
+
+  }
+}

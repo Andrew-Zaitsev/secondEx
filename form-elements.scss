@@ -1,5 +1,6 @@
 @import 'blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/fonts/montserrat_bold/Montserrat-Bold.scss';
+@import 'blocks/fonts/material-icons_regular/MaterialIcons_Regular.scss';
 
 * {
   box-sizing: border-box;//width calculation algoritm changed
@@ -11,18 +12,19 @@ html {
   background-color: #e5e5e5;
 }
 
-html,
-body,
-input {
+html, body, input, ul {
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style: none;
 }
 
 .form-elements {
   max-width: 1440px;
  // margin: 0 auto; // comment fo perfect pixel dev
   background-color: #ffffff;
-  //@include montserrat_normal;
   font-family: Montserrat;
   font-weight: normal;
 
@@ -68,13 +70,48 @@ input {
     }
   }
 
-  &__state-field {
-    float: right;
-    font-size: 0.73rem;
-    //line-height: 0.9rem;//0.9375rem; // 15px
-    text-transform: uppercase;
-    color: rgba(31, 32, 65, 0.5);
-    margin-top: 0.09rem;
+  &__dropdown {
+    
+    &_default-normal {
+      margin-top: 1.1rem;//1.24
+      //width: 16.6rem;
+    }
+  }
+
+  &__masked-text-field {
+    margin-top: 1.25rem;
+    width: 20rem;
+    height: 4.1875rem;
+    border: solid orange 1px;
+  }
+  
+  &__date-dropdown {
+    margin-top: 2.5rem;
+    width: 20rem;// 320px
+    height: 4.0625rem;// 65px
+    border: solid orange 1px;
+  }
+
+  &__filter-date-dropdown {
+    margin-top: 2.5rem;// 40px
+    width: 16.625rem;// 266px
+    height: 4.0625rem;// 65px
+    border: solid orange 1px;
+  }
+
+  &__subscription-text-field {
+    margin-top: 2.5625rem;// 41px
+    width: 16.625rem;
+    height: 4.0625rem;
+    border: solid orange 1px;
+  }
+
+  &__dropdown-default-normal {
+    margin-top: 6.0rem//6.25rem;// 100px
+  }
+
+  &__dropdown-expanded-normal {
+    margin-top: 1.25rem;
   }
 
   &__middle-section {
@@ -96,3 +133,4 @@ input {
 @import 'blocks/logo/logo.scss';
 @import 'blocks/logo/_color/logo_color_grey.scss';
 @import 'blocks/text-field/text-field.scss';
+@import 'blocks/dropdown/dropdown.scss';
