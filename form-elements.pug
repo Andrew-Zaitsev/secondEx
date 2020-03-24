@@ -7,6 +7,8 @@ html(lang="en")
     meta(name="description' value='this page contains form elements in all possible conditions")
     title form elements
     link(href="./form-elements.scss" rel="stylesheet")
+    script(src="./blocks/dropdown/dropdown.js" type="text/javascript" defer)
+    
   body
     .form-elements
       .form-elements__logo
@@ -25,7 +27,7 @@ html(lang="en")
           //- inserting dropdown block default-large length
           .form-elements__dropdown.form-elements__dropdown_default-normal
             include blocks/dropdown/dropdown.pug
-            +dropdown({title: "dropdown", state: "expanded", content: guests, buttonText: "Сколько гостей"})
+            +dropdown({title: "dropdown", state: "expanded", isWide: true, content: guests, buttonText: "Сколько гостей"})
           
           //- inserting masked text field block
           .form-elements__masked-text-field masked text field

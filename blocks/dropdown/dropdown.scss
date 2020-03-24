@@ -42,33 +42,11 @@
     border: solid rgba(31, 32, 65, 0.25) 1px;
     border-radius: 0.25rem;
     color: rgba(31, 32, 65, 0.75);
-    /*
-    &::placeholder {
-      color: rgba(31, 32, 65, 0.75);
-      font-family: Montserrat;
-      font-weight: normal;
-    }
-    */
+    
     &:hover,
     &:focus {
       border-color: rgba(31, 32, 65, 0.5);
-      /*
-      &::placeholder {
-        color: rgba(31, 32, 65, 0.75);
-      }
-      */
     }
-    /*
-    // переделать на реагирование при нажатии и отжатии кнопки
-    &:hover {
-      border-radius: 0.25rem 0.25rem 0 0;
-      border-bottom: none;
-      .dropdown__list {
-        display: block;
-        
-      }
-    }
-    */
   }
 
   &__button-text {
@@ -78,12 +56,11 @@
   &__button-arrow {
     width: 2.6rem;
     text-align: center;
-    //border: solid blueviolet 1px;
   }
 
   &__list {
     display: none;
-    width: 100.6%;
+    width: 100.68%;
     position: absolute;
     left: -0.3%;
     top: 2.57rem; //2.63
@@ -104,11 +81,11 @@
   }
 }
 // isolated styles for dropdown expantion 
-.dropdown__button {
+.dropdown__button_expanded {
   border-radius: 0.25rem 0.25rem 0 0;
   border-bottom: none;
   .dropdown__list {
     display: block;
-
+    z-index: 1;
   }
 }

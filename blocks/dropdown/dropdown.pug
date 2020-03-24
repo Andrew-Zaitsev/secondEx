@@ -20,15 +20,21 @@ mixin dropdown(drop)
     };
   - 
     let dropdownClassName = "dropdown";
+    //-пока не нужна переменная, делаю по клику а не статично. После убрать переменную и ее использование
+    let dropdownButtonClassName = "dropdown__button";
+
     dropdownClassName += drop.isWide ? " dropdown_width_large" : "";
+    //-dropdownButtonClassName += drop.isExpanded ? " dropdown__button_expanded" : "";
+
   div(class = dropdownClassName)
     if drop.title
       .dropdown__title-wrap
         .dropdown__title= drop.title
         if drop.state
          .dropdown__state-field= drop.state
-
-    .dropdown__button
+    //- добавление классов кнопке дропдауна     
+    
+    div(class = dropdownButtonClassName, tabindex = 0)
       .dropdown__button-text= drop.buttonText
       .dropdown__button-arrow
         i.material-icons expand_more
