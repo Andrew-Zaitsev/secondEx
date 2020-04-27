@@ -12,13 +12,19 @@ html {
   background-color: #e5e5e5;
 }
 
-html, body, input, ul {
+html, body, input, ul, button {
   margin: 0;
   padding: 0;
 }
 
 ul {
   list-style: none;
+}
+
+button {
+  border-style: none;
+  font-family: inherit;
+  text-transform: none;
 }
 
 .form-elements {
@@ -107,7 +113,7 @@ ul {
   }
 
   &__dropdown-default-normal {
-    margin-top: 6.0rem//6.25rem;// 100px
+    margin-top: 5.90rem//6.25rem;// 100px
   }
 
   &__dropdown-expanded-normal {

@@ -1,56 +1,39 @@
-- 
-  let facilities = [
-    {itemText: "спальни", itemValue: 0},
-    {itemText: "кровати", itemValue: 0},
-    {itemText: "ванные комнаты", itemValue: 0}
-  ];
-- 
-  let guests = [
-    {itemText: "взрослые", itemValue: 0},
-    {itemText: "дети", itemValue: 0},
-    {itemText: "младенцы", itemValue: 0}
-  ];
+- let facilities = ["спальни", "кровати", "ванные комнаты"];
+- let guests = ["взрослые", "дети", "младенцы"];
 
 mixin dropdown(drop)
-  //-possible arguments of mixin calling
-    drop = {
-      dropdownContent: guests,
-      haveClearButton: true;
-      haveApplyButton: true; 
-    };
   - 
     let dropdownClassName = "dropdown";
-    //-пока не нужна переменная, делаю по клику а не статично. После убрать переменную и ее использование
-    let dropdownButtonClassName = "dropdown__button";
-
     dropdownClassName += drop.isWide ? " dropdown_width_large" : "";
-    //-dropdownButtonClassName += drop.isExpanded ? " dropdown__button_expanded" : "";
-
-  div(class = dropdownClassName)
-    if drop.title
-      .dropdown__title-wrap
-        .dropdown__title= drop.title
-        if drop.state
-         .dropdown__state-field= drop.state
-    //- добавление классов кнопке дропдауна     
     
-    div(class = dropdownButtonClassName, tabindex = 0)
+  //id доделать и  объединить атрибуты в ну запись
+  div(id = drop.content, class = dropdownClassName)
+    .dropdown__title-wrap
+      .dropdown__title= drop.title
+      if drop.state
+        .dropdown__state-field= drop.state
+    //-button
+    div.dropdown__button(tabindex = 0)
       .dropdown__button-text= drop.buttonText
       .dropdown__button-arrow
         i.material-icons expand_more
-    
-      //- снизу все не стилизовано
-      ul.dropdown__list
-        
-        //-определение миксина элемента дропдауна
-        mixin dropdown__item(prop)
-
-          //-array iteration using (for .. of)
-          - for (let item of prop) {
-            li.dropdown__item
-              .dropdown__item-text= item.itemText
-              .dropdown__item-value= item.itemValue
-          - }
-
-        //-вызов миксина элемента дропдауна
-        +dropdown__item(drop.content)     
+      //-list
+      ul.dropdown__list 
+        - let dropdownItems;
+        case drop.content
+          when "guests"
+            - dropdownItems = guests;
+          when "facilities"
+            - dropdownItems = facilities;
+        - for (let item of dropdownItems) {
+          li.dropdown__item= item
+            .dropdown__item-counter
+              .dropdown__item-minus-button
+              .dropdown__item-value= 0
+              .dropdown__item-plus-button +
+        - }
+        //- apply section
+        if drop.hasApplyButton
+          .dropdown__apply-section
+            button.dropdown__apply-button применить
+            button.dropdown__clean-button очистить

@@ -1,6 +1,21 @@
+let choice = {
+  facilities: {
+    bedroom: 0,
+    bed: 0,
+    bathroom: 0
+  },
+  guests: {
+    adult: 5,
+    child: 0,
+    baby: 0
+  }
+};
+
 let dropdownButtons = document.querySelectorAll('.dropdown__button'); //коллекция кнопок дропдаунов
 let clickedDropdown = null;
-let expandedDropdown = null;
+let expandedDropdown = null; // индекс расширенного дропдауна
+let expandedDropdownButton = null; // кнопка расширенного дропдауна
+let expandedDropdownPlusButtons = null; // коллекция кнопок плюс расширенного дропдауна
 
 document.onclick = function (event) {
 
@@ -11,7 +26,7 @@ document.onclick = function (event) {
 
       if (isCurrentExpanded()) {
         
-        isClickInsideList(event) ? console.log('клик по списку') : closeDropdown();
+        isClickInsideList(event) ? listClickHandler(event) : closeDropdown(); // console.log('клик по списку')
       
       } else {
 
@@ -29,8 +44,8 @@ document.onclick = function (event) {
   }
  
 }
- 
-let isClickInsideDropdown = (event) => { 
+
+const isClickInsideDropdown = (event) => { 
   
   for (let i = 0; i < dropdownButtons.length; i++) {
     
@@ -43,28 +58,78 @@ let isClickInsideDropdown = (event) => {
   return false;
 };
 
-let isClickInsideList = () => {
+const isClickInsideList = () => {
   let listElement = dropdownButtons[expandedDropdown].lastChild;
   return (listElement === event.target) || (listElement.contains(event.target));
 };
 
-let isDropdownExpanded = () => {
+const isDropdownExpanded = () => {
   return (expandedDropdown !== null);
 };
 
-let isCurrentExpanded = () => {
+const isCurrentExpanded = () => {
   return (clickedDropdown === expandedDropdown);
 };
 
-let expandDropdown = () => {
+//=================== > checking for apply-section existing
+const hasDropdownApplySection = () => {
+  //console.log(!!(dropdownButtons[expandedDropdown].querySelector('.dropdown__apply-section')));
+  return dropdownButtons[expandedDropdown].querySelector('.dropdown__apply-section');
+};
+//===================
+
+const expandDropdown = () => {
   dropdownButtons[clickedDropdown].classList.add('dropdown__button_expanded');
   expandedDropdown = clickedDropdown;
+  expandedDropdownButton = dropdownButtons[expandedDropdown]; //кнопка расширенного дропдауна
+  expandedDropdownPlusButtons = expandedDropdownButton.querySelectorAll('.dropdown__item-plus-button'); //коллекция кнопок + расширенного дропдауна
+  expandedDropdownMinusButtons = expandedDropdownButton.querySelectorAll('.dropdown__item-minus-button'); //коллекция кнопок - расширенного дропдауна
   clickedDropdown = null;
+ 
 };
 
-let closeDropdown = () => {
-  dropdownButtons[expandedDropdown].classList.remove('dropdown__button_expanded');
+const closeDropdown = () => {
+  //============= > cleaning people count
+  if (hasDropdownApplySection()) {
+    choice.adult = 0;
+    choice.child = 0;
+    choice.baby = 0;
+  }
+  //=============
+  expandedDropdownButton.classList.remove('dropdown__button_expanded');
   expandedDropdown = null;
+  expandedDropdownButton = null;
+  expandedDropdownPlusButtons = null;
+  expandedDropdownMinusButtons = null;
+  //обнулить все переменные кнопок расширенного дропдауна
+};
+
+const listClickHandler = (event) => {
+  switch (true) {
+    case hasTargetClass('dropdown__apply-button'): // случай нажатия кнопки "применить"
+      //куда-то передать объект с данными этого дропдауна?
+      //закрыть дропдаун
+      console.log('apply button');
+      break;
+    case hasTargetClass('dropdown__clean-button'): // случай нажатия кнопки "очистить"
+      //уменьшить все значения до 0
+      //сделать рамки и значки укнопок "-" светлыми
+      //убрать кнопку "очистить"
+      console.log('clean button');
+      break;
+    case hasTargetClass('dropdown__item-plus-button'): // случай нажатия кнопки "+"
+      
+      console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого +
+      let a = expandedDropdownButton.previousElementSibling.querySelector('.dropdown__title');
+      console.log(a);
+      break;
+    case hasTargetClass('dropdown__item-minus-button'): // случай нажатия кнопки "-"
+      console.log('- button: ' + Array.from(expandedDropdownMinusButtons).indexOf(event.target)); // отображает индекс нажатого -
+  }
+};
+
+const hasTargetClass = (name) => {
+  return event.target.classList.contains(name);  //есть ли у таргетного элемента переданный в параметре класс
 };
 
 //====================================================================== проверочная функция
