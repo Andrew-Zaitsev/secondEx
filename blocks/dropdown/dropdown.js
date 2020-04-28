@@ -25,9 +25,9 @@ document.onclick = function (event) {
     if (isDropdownExpanded()) {
 
       if (isCurrentExpanded()) {
-        
+
         isClickInsideList(event) ? listClickHandler(event) : closeDropdown(); // console.log('клик по списку')
-      
+
       } else {
 
         closeDropdown();
@@ -42,13 +42,13 @@ document.onclick = function (event) {
     //если клик снаружи
     isDropdownExpanded() ? closeDropdown() : '';
   }
- 
+
 }
 
-const isClickInsideDropdown = (event) => { 
-  
+const isClickInsideDropdown = (event) => {
+
   for (let i = 0; i < dropdownButtons.length; i++) {
-    
+
     if ((dropdownButtons[i] === event.target) || (dropdownButtons[i].contains(event.target))) {
       clickedDropdown = i;
       return true;
@@ -85,7 +85,7 @@ const expandDropdown = () => {
   expandedDropdownPlusButtons = expandedDropdownButton.querySelectorAll('.dropdown__item-plus-button'); //коллекция кнопок + расширенного дропдауна
   expandedDropdownMinusButtons = expandedDropdownButton.querySelectorAll('.dropdown__item-minus-button'); //коллекция кнопок - расширенного дропдауна
   clickedDropdown = null;
- 
+
 };
 
 const closeDropdown = () => {
@@ -118,10 +118,11 @@ const listClickHandler = (event) => {
       console.log('clean button');
       break;
     case hasTargetClass('dropdown__item-plus-button'): // случай нажатия кнопки "+"
-      
-      console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого +
-      let a = expandedDropdownButton.previousElementSibling.querySelector('.dropdown__title');
-      console.log(a);
+
+      //console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого +
+      //let a = expandedDropdownButton.previousElementSibling.querySelector('.dropdown__title');
+      let valueElem = event.target.previousElementSibling;
+      valueElem.textContent = +valueElem.textContent + 1;
       break;
     case hasTargetClass('dropdown__item-minus-button'): // случай нажатия кнопки "-"
       console.log('- button: ' + Array.from(expandedDropdownMinusButtons).indexOf(event.target)); // отображает индекс нажатого -
@@ -129,7 +130,7 @@ const listClickHandler = (event) => {
 };
 
 const hasTargetClass = (name) => {
-  return event.target.classList.contains(name);  //есть ли у таргетного элемента переданный в параметре класс
+  return event.target.classList.contains(name); //есть ли у таргетного элемента переданный в параметре класс
 };
 
 //====================================================================== проверочная функция
