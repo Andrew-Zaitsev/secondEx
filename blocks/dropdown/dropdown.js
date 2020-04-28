@@ -105,6 +105,7 @@ const closeDropdown = () => {
 };
 
 const listClickHandler = (event) => {
+  let valueElem;
   switch (true) {
     case hasTargetClass('dropdown__apply-button'): // случай нажатия кнопки "применить"
       //куда-то передать объект с данными этого дропдауна?
@@ -121,11 +122,19 @@ const listClickHandler = (event) => {
 
       //console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого +
       //let a = expandedDropdownButton.previousElementSibling.querySelector('.dropdown__title');
-      let valueElem = event.target.previousElementSibling;
+      valueElem = event.target.previousElementSibling;
       valueElem.textContent = +valueElem.textContent + 1;
+      (valueElem.textContent > 0) ? (valueElem.previousElementSibling.classList.remove('dropdown__item-minus-button_transparent')) : '';
       break;
     case hasTargetClass('dropdown__item-minus-button'): // случай нажатия кнопки "-"
-      console.log('- button: ' + Array.from(expandedDropdownMinusButtons).indexOf(event.target)); // отображает индекс нажатого -
+      valueElem = event.target.nextElementSibling;
+      if (valueElem.textContent > 1) {
+        valueElem.textContent = +valueElem.textContent - 1;
+      } else if (valueElem.textContent == 1) {
+        valueElem.textContent = +valueElem.textContent - 1;
+        event.target.classList.add('dropdown__item-minus-button_transparent');
+      }
+      //console.log('- button: ' + Array.from(expandedDropdownMinusButtons).indexOf(event.target)); // отображает индекс нажатого -
   }
 };
 
