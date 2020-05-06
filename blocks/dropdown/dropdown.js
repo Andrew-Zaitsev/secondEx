@@ -1,21 +1,25 @@
-let choice = {
-  facilities: {
-    bedroom: 0,
-    bed: 0,
-    bathroom: 0
-  },
-  guests: {
-    adult: 5,
-    child: 0,
-    baby: 0
-  }
-};
+let facilities = [
+  ['спальня', 'спальни', 'спален'],
+  ['кровать', 'кровати', 'кроватей'],
+  ['ванная комната', 'ванные комнаты', 'ванных комнат']
+];
+let guests = [
+  ['гость', 'гостя', 'гостей'],
+  ['младенец', 'младенца', 'младенцев']
+];
 
 let dropdownButtons = document.querySelectorAll('.dropdown__button'); //коллекция кнопок дропдаунов
 let clickedDropdown = null;
 let expandedDropdown = null; // индекс расширенного дропдауна
 let expandedDropdownButton = null; // кнопка расширенного дропдауна
 let expandedDropdownPlusButtons = null; // коллекция кнопок плюс расширенного дропдауна
+let expandedDropdownMinusButtons = null; // коллекция кнопок минус расширенного дропдауна
+let expandedDropdownId = null;
+let expandedDropdownContent = null; //контент расширенного дропдауна 29/04
+let expandedDropdownItemsNouns = null; //существительные элементов
+let expandedDropdownValueElems = null; //элементы значений счетчика
+let getDropdownResult; //функция
+let dropdownValues = null;
 
 document.onclick = function (event) {
 
@@ -71,12 +75,11 @@ const isCurrentExpanded = () => {
   return (clickedDropdown === expandedDropdown);
 };
 
-//=================== > checking for apply-section existing
+//=================== > checking for apply-section existance ... не используется
 const hasDropdownApplySection = () => {
   //console.log(!!(dropdownButtons[expandedDropdown].querySelector('.dropdown__apply-section')));
   return dropdownButtons[expandedDropdown].querySelector('.dropdown__apply-section');
 };
-//===================
 
 const expandDropdown = () => {
   dropdownButtons[clickedDropdown].classList.add('dropdown__button_expanded');
@@ -84,23 +87,35 @@ const expandDropdown = () => {
   expandedDropdownButton = dropdownButtons[expandedDropdown]; //кнопка расширенного дропдауна
   expandedDropdownPlusButtons = expandedDropdownButton.querySelectorAll('.dropdown__item-plus-button'); //коллекция кнопок + расширенного дропдауна
   expandedDropdownMinusButtons = expandedDropdownButton.querySelectorAll('.dropdown__item-minus-button'); //коллекция кнопок - расширенного дропдауна
+  expandedDropdownId = expandedDropdownButton.parentElement.id; //29.04 получил содержание дропдауна по ид
+  switch (expandedDropdownId) {
+    case 'guests':
+      expandedDropdownItemsNouns = guests;
+      getDropdownResult = getGuests;
+      break;
+    case 'facilities':
+      expandedDropdownItemsNouns = facilities;
+      getDropdownResult = getFacilities;
+      break;
+  };
+  expandedDropdownValueElems = Array.from(expandedDropdownButton.querySelectorAll('.dropdown__item-value'));
+  //console.log(expandedDropdownValueElems);
   clickedDropdown = null;
-
 };
 
 const closeDropdown = () => {
-  //============= > cleaning people count
-  if (hasDropdownApplySection()) {
-    choice.adult = 0;
-    choice.child = 0;
-    choice.baby = 0;
-  }
-  //=============
   expandedDropdownButton.classList.remove('dropdown__button_expanded');
   expandedDropdown = null;
   expandedDropdownButton = null;
   expandedDropdownPlusButtons = null;
   expandedDropdownMinusButtons = null;
+  expandedDropdownId = null;
+  //==================================29.04
+  expandedDropdownContent = null; //контент расширенного дропдауна 29/04
+  expandedDropdownItemsNouns = null; //существительные элементов
+  expandedDropdownValueElems = null;
+  dropdownValues = null;
+  getDropdownResult = null;
   //обнулить все переменные кнопок расширенного дропдауна
 };
 
@@ -119,11 +134,11 @@ const listClickHandler = (event) => {
       console.log('clean button');
       break;
     case hasTargetClass('dropdown__item-plus-button'): // случай нажатия кнопки "+"
-
       //console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого +
       //let a = expandedDropdownButton.previousElementSibling.querySelector('.dropdown__title');
       valueElem = event.target.previousElementSibling;
       valueElem.textContent = +valueElem.textContent + 1;
+      changeButtonText(); //запись в текст кнопки button 29.04.20
       (valueElem.textContent > 0) ? (valueElem.previousElementSibling.classList.remove('dropdown__item-minus-button_transparent')) : '';
       break;
     case hasTargetClass('dropdown__item-minus-button'): // случай нажатия кнопки "-"
@@ -134,7 +149,7 @@ const listClickHandler = (event) => {
         valueElem.textContent = +valueElem.textContent - 1;
         event.target.classList.add('dropdown__item-minus-button_transparent');
       }
-      //console.log('- button: ' + Array.from(expandedDropdownMinusButtons).indexOf(event.target)); // отображает индекс нажатого -
+      //console.log('- button: ' + Array.from(expandedDropdownMinusButtons).indexOf(event.target)); // массив из коллекции
   }
 };
 
@@ -142,7 +157,42 @@ const hasTargetClass = (name) => {
   return event.target.classList.contains(name); //есть ли у таргетного элемента переданный в параметре класс
 };
 
-//====================================================================== проверочная функция
+const changeButtonText = () => {
+  dropdownValues = expandedDropdownValueElems.map(item => +item.textContent);
+  expandedDropdownButton.firstElementChild.textContent = getDropdownResult();
+  //console.log(dropdownValues.forEach((item) => console.log('value: ' + item + ' type: ' + typeof item)));
+  console.log(getDropdownResult());
+  //console.log(getDropdownResult());
+};
+
+const getGuests = () => { //гости
+  dropdownValues = [dropdownValues.slice(0, -1).reduce((accumulator, currentValue) => accumulator + currentValue), dropdownValues[dropdownValues.length - 1]];
+  return getButtonResultString();
+};
+
+const getFacilities = () => { //удобства
+  return getButtonResultString();
+};
+
+const getButtonResultString = () => { //button result string
+  return dropdownValues.map((value, index) => ((value > 0) ? (value + ' ' + getNoun(value, expandedDropdownItemsNouns[index])) + ', ' : null))
+    .join('').slice(0, -2);
+};
+
+const getNoun = (number, nouns) => {
+  switch (true) {
+    case (number === 1):
+      return nouns[0];
+    case ((number > 1) && (number < 5)):
+      return nouns[1];
+    case (number === 0):
+    case ((number > 4) && (number < 21)):
+      return nouns[2];
+    default:
+      return ('слишком много ' + nouns[2]);
+  }
+};
+//================================================ проверочная функция
 function check() {
   console.log('clickedDropdown = ' + clickedDropdown);
   console.log('expandedDropdown = ' + expandedDropdown);
