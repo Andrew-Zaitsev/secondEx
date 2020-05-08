@@ -99,7 +99,6 @@ const expandDropdown = () => {
       break;
   };
   expandedDropdownValueElems = Array.from(expandedDropdownButton.querySelectorAll('.dropdown__item-value'));
-  //console.log(expandedDropdownValueElems);
   clickedDropdown = null;
 };
 
@@ -110,7 +109,6 @@ const closeDropdown = () => {
   expandedDropdownPlusButtons = null;
   expandedDropdownMinusButtons = null;
   expandedDropdownId = null;
-  //==================================29.04
   expandedDropdownContent = null; //контент расширенного дропдауна 29/04
   expandedDropdownItemsNouns = null; //существительные элементов
   expandedDropdownValueElems = null;
@@ -123,7 +121,6 @@ const listClickHandler = (event) => {
   let valueElem;
   switch (true) {
     case hasTargetClass('dropdown__apply-button'): // случай нажатия кнопки "применить"
-      //куда-то передать объект с данными этого дропдауна?
       //закрыть дропдаун
       console.log('apply button');
       break;
@@ -134,22 +131,23 @@ const listClickHandler = (event) => {
       console.log('clean button');
       break;
     case hasTargetClass('dropdown__item-plus-button'): // случай нажатия кнопки "+"
-      //console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого +
-      //let a = expandedDropdownButton.previousElementSibling.querySelector('.dropdown__title');
+      //console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого + ...массив из коллекции
+
       valueElem = event.target.previousElementSibling;
       valueElem.textContent = +valueElem.textContent + 1;
-      changeButtonText(); //запись в текст кнопки button 29.04.20
+      changeButtonText(); //запись в текст кнопки button
       (valueElem.textContent > 0) ? (valueElem.previousElementSibling.classList.remove('dropdown__item-minus-button_transparent')) : '';
       break;
     case hasTargetClass('dropdown__item-minus-button'): // случай нажатия кнопки "-"
       valueElem = event.target.nextElementSibling;
-      if (valueElem.textContent > 1) {
+      if (valueElem.textContent > 0) {
         valueElem.textContent = +valueElem.textContent - 1;
-      } else if (valueElem.textContent == 1) {
-        valueElem.textContent = +valueElem.textContent - 1;
-        event.target.classList.add('dropdown__item-minus-button_transparent');
+        if (valueElem.textContent == 0) {
+          //valueElem.textContent = +valueElem.textContent - 1;
+          event.target.classList.add('dropdown__item-minus-button_transparent');
+        }
       }
-      //console.log('- button: ' + Array.from(expandedDropdownMinusButtons).indexOf(event.target)); // массив из коллекции
+      changeButtonText();
   }
 };
 
@@ -160,9 +158,6 @@ const hasTargetClass = (name) => {
 const changeButtonText = () => {
   dropdownValues = expandedDropdownValueElems.map(item => +item.textContent);
   expandedDropdownButton.firstElementChild.textContent = getDropdownResult();
-  //console.log(dropdownValues.forEach((item) => console.log('value: ' + item + ' type: ' + typeof item)));
-  console.log(getDropdownResult());
-  //console.log(getDropdownResult());
 };
 
 const getGuests = () => { //гости
