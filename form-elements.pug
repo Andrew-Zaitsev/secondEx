@@ -27,7 +27,7 @@ html(lang="en")
           //- inserting dropdown block default-large length
           .form-elements__dropdown.form-elements__dropdown_default-normal
             include blocks/dropdown/dropdown.pug
-            +dropdown({title: "dropdown", state: "expanded", isWide: true, content: "guests", buttonText: "Сколько гостей"})
+            +dropdown({title: "dropdown", state: "expanded", isWide: true, content: "guests", buttonText: "Сколько гостей", hasApplyButton: true})
           
           //- inserting masked text field block
           .form-elements__masked-text-field masked text field
@@ -47,7 +47,7 @@ html(lang="en")
 
           //- inserting dropdown block expanded-normal width
           .form-elements__dropdown-expanded-normal
-            +dropdown({title: "dropdown", state: "expanded", content: "facilities", buttonText: "Ваши удобства", hasApplyButton: true})
+            +dropdown({title: "dropdown", state: "expanded", content: "facilities", buttonText: "Ваши удобства"})
         .form-elements__middle-section right
         .form-elements__right-section middle
         .form-elements__bottom-section bottom

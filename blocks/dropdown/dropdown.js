@@ -15,7 +15,7 @@ let expandedDropdownButton = null; // кнопка расширенного др
 let expandedDropdownPlusButtons = null; // коллекция кнопок плюс расширенного дропдауна
 let expandedDropdownMinusButtons = null; // коллекция кнопок минус расширенного дропдауна
 let expandedDropdownId = null;
-let expandedDropdownContent = null; //контент расширенного дропдауна 29/04
+//let expandedDropdownContent = null; //контент расширенного дропдауна 29/04
 let expandedDropdownItemsNouns = null; //существительные элементов
 let expandedDropdownValueElems = null; //элементы значений счетчика
 let getDropdownResult; //функция
@@ -109,7 +109,7 @@ const closeDropdown = () => {
   expandedDropdownPlusButtons = null;
   expandedDropdownMinusButtons = null;
   expandedDropdownId = null;
-  expandedDropdownContent = null; //контент расширенного дропдауна 29/04
+  //expandedDropdownContent = null; //контент расширенного дропдауна 29/04
   expandedDropdownItemsNouns = null; //существительные элементов
   expandedDropdownValueElems = null;
   dropdownValues = null;
@@ -121,14 +121,17 @@ const listClickHandler = (event) => {
   let valueElem;
   switch (true) {
     case hasTargetClass('dropdown__apply-button'): // случай нажатия кнопки "применить"
-      //закрыть дропдаун
-      console.log('apply button');
+      closeDropdown();
       break;
     case hasTargetClass('dropdown__clean-button'): // случай нажатия кнопки "очистить"
       //уменьшить все значения до 0
+      expandedDropdownValueElems.forEach(item => item.textContent = 0);
+      expandedDropdownMinusButtons.forEach(item => item.classList.add('dropdown__item-minus-button_transparent')); //не работает
+      expandedDropdownButton.querySelector('.dropdown__clean-button').classList.remove('dropdown__clean-button_visible');
+      changeButtonText();
       //сделать рамки и значки укнопок "-" светлыми
       //убрать кнопку "очистить"
-      console.log('clean button');
+      //console.log('clean button');
       break;
     case hasTargetClass('dropdown__item-plus-button'): // случай нажатия кнопки "+"
       //console.log('+ button: ' + Array.from(expandedDropdownPlusButtons).indexOf(event.target)); // отображает индекс нажатого + ...массив из коллекции
@@ -136,18 +139,21 @@ const listClickHandler = (event) => {
       valueElem = event.target.previousElementSibling;
       valueElem.textContent = +valueElem.textContent + 1;
       changeButtonText(); //запись в текст кнопки button
-      (valueElem.textContent > 0) ? (valueElem.previousElementSibling.classList.remove('dropdown__item-minus-button_transparent')) : '';
+      valueElem.previousElementSibling.classList.remove('dropdown__item-minus-button_transparent');
+      (expandedDropdownId === 'guests') ? expandedDropdownButton.querySelector('.dropdown__clean-button').classList.add('dropdown__clean-button_visible'): '';
       break;
     case hasTargetClass('dropdown__item-minus-button'): // случай нажатия кнопки "-"
       valueElem = event.target.nextElementSibling;
       if (valueElem.textContent > 0) {
         valueElem.textContent = +valueElem.textContent - 1;
         if (valueElem.textContent == 0) {
-          //valueElem.textContent = +valueElem.textContent - 1;
           event.target.classList.add('dropdown__item-minus-button_transparent');
         }
       }
       changeButtonText();
+      if (expandedDropdownId === 'guests') {
+        (dropdownValues.join('') == 0) ? expandedDropdownButton.querySelector('.dropdown__clean-button').classList.remove('dropdown__clean-button_visible'): '';
+      }
   }
 };
 
