@@ -7,8 +7,14 @@ html(lang="en")
     meta(name="description' value='this page contains form elements in all possible conditions")
     title form elements
     link(href="./form-elements.scss" rel="stylesheet")
-    script(src="./blocks/dropdown/dropdown.js" type="text/javascript" defer)
+    script(src="./src/js/jquery-in-parcel.js" type="text/javascript" defer)
+
+    //-script(src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript" defer)
     
+    script(src="./blocks/text-field/text-field.js" type="module")
+
+    script(src="./blocks/dropdown/dropdown.js" type="text/javascript" defer)
+
   body
     .form-elements
       .form-elements__logo
@@ -30,8 +36,8 @@ html(lang="en")
             +dropdown({title: "dropdown", state: "expanded", isWide: true, content: "guests", buttonText: "Сколько гостей", hasApplyButton: true})
           
           //- inserting masked text field block
-          .form-elements__masked-text-field masked text field
-
+          .form-elements__masked-text-field
+            +text-field({title: "masked text field", state: "default", placeholder: "ДД.ММ.ГГГГ", isMasked: true})
           //- inserting date dropdown block
           .form-elements__date-dropdown date dropdown
 
