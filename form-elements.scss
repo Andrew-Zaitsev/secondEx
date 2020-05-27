@@ -67,11 +67,17 @@ button {
     @media (max-width: 1376px) {
       margin-top: 140px;
     }
+
+    &::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
   }
 
   //sections for blocks placement
   &__left-section {
-    display: inline-block;
+    float: left;
   }
 
   &__text-field {
@@ -129,17 +135,48 @@ button {
   }
 
   &__middle-section {
-    display: inline-block;
-    background-color: cadetblue;
+    float: left;
+    margin-left: 7.95rem; //7.875rem;
+    //border: cadetblue solid 1px;
+  }
+
+  &__radio-buttons {
+    margin-top: 2.555rem;
+    width: 16.625rem;
+    height: 3.4375rem;
+    border: 1px solid orange;
+  }
+
+  &__toggle {
+    margin-top: 2.25rem;
+    width: 16.625rem;
+    height: 5.5625rem;
+    border: 1px solid orange;
+  }
+
+  &__like-button {
+    margin-top: 2.555rem;
+    width: 16.625rem;
+    height: 3.1875rem;
+    border: 1px solid orange;
+  }
+
+  &__rate-button {
+    margin-top: 2.555rem;
+    width: 16.625rem;
+    height: 1.5rem;
+    border: 1px solid orange;
   }
 
   &__right-section {
-    display: inline-block;
+    //margin-left: 21.3125rem;
+    float: left;
     background-color: cadetblue;
   }
 
   &__bottom-section {
-    display: inline-block;
+    //margin-left: 31.3125rem;
+    float: left;
     background-color: cadetblue;
   }
 }
@@ -148,3 +185,5 @@ button {
 @import 'blocks/logo/_color/logo_color_grey.scss';
 @import 'blocks/text-field/text-field.scss';
 @import 'blocks/dropdown/dropdown.scss';
+@import 'blocks/checkbox/checkbox.scss';
+@import 'blocks/checkbox-field/checkbox-field.scss';

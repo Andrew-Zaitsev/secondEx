@@ -1,0 +1,7 @@
+include ../checkbox/checkbox.pug
+
+mixin checkbox-field(options)
+  .checkbox-field
+    .checkbox-field__title= options.title
+    for text in options.checkboxText
+      +checkbox({text: text})
