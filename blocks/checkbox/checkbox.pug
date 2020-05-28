@@ -1,5 +1,17 @@
 mixin checkbox(options)
-  label.checkbox
-    input.checkbox__input(type="checkbox")
-    .checkbox__picture
-    .checkbox__text!= options.text
+
+  -
+    let textClassName = "checkbox__text";
+    textClassName += (options.isRich) ? " checkbox__text_color-rich": "";
+  
+  .checkbox
+    .checkbox__title= options.title
+    
+    - for (let i = 0; i < options.text.length; i++)
+      label.checkbox__label
+        input.checkbox__input(type="checkbox")
+        .checkbox__picture
+        div(class = textClassName)!= options.text[i]
+        
+        - if (options.isRich)
+          .checkbox__additional-text!= options.additionalText[i]
