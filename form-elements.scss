@@ -33,6 +33,7 @@ button {
 
 .form-elements {
   max-width: 1440px;
+  min-height: 1853px; //for dev, remove after form-elements fully filled
   // margin: 0 auto; // comment fo perfect pixel dev
   background-color: #ffffff;
   font-family: Montserrat;
@@ -131,6 +132,16 @@ button {
     margin-top: 1.1rem;
   }
 
+  &__expandable-checkbox-list {
+    margin-top: 9.875rem;
+  }
+
+  &__expandable-checkbox-list-expanded {
+    margin-top: 1.25rem;
+    width: 16.625rem;
+    //border: 1px solid orange;
+  }
+
   &__middle-section {
     float: left;
     margin-left: 7.95rem; //7.875rem;
@@ -191,3 +202,4 @@ button {
 @import 'blocks/text-field/text-field.scss';
 @import 'blocks/dropdown/dropdown.scss';
 @import 'blocks/checkbox/checkbox.scss';
+@import 'blocks/expandable-checkbox-list/expandable-checkbox-list.scss';

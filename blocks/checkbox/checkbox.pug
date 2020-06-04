@@ -5,7 +5,8 @@ mixin checkbox(options)
     textClassName += (options.isRich) ? " checkbox__text_color-rich": "";
   
   .checkbox
-    .checkbox__title= options.title
+    - if (options.title)
+      .checkbox__title= options.title
     
     - for (let i = 0; i < options.text.length; i++)
       label.checkbox__label
