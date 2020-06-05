@@ -21,6 +21,7 @@ html(lang="en")
     include blocks/dropdown/dropdown.pug
     include blocks/checkbox/checkbox.pug
     include blocks/expandable-checkbox-list/expandable-checkbox-list.pug
+    include blocks/room-info/room-info.pug
 
     .form-elements
 
@@ -84,7 +85,7 @@ html(lang="en")
               content: "facilities",
               buttonText: "Ваши удобства"
               })
-              //-expandable-checkbox-list здесь *******************************************************************************
+              
           .form-elements__expandable-checkbox-list
             +expandable-checkbox-list({
               listTitle: "expandable checkbox list",
@@ -104,6 +105,15 @@ html(lang="en")
                 "Можно пригласить гостей (до&nbsp;10&nbsp;человек)"
                 ],
             })
+          //- *************************************************************************
+          .form-elements__room-info
+            +room-info({
+              features: [
+                  {img: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены"},
+                  {img: "location_city", title: "Удобство", text: "Окно в каждой из спален"}
+                ]
+            })
+
         .form-elements__middle-section
 
           .form-elements__checkbox

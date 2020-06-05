@@ -23,10 +23,14 @@
   },
   "homepage": "https://github.com/Andrew-Zaitsev/secondEx#readme",
   "devDependencies": {
-    "pug": "^2.0.4",
-    "sass": "^1.24.3"
+    "parcel": "^1.12.4",
+    "pug": "^3.0.0",
+    "sass": "^1.26.8"
   },
   "dependencies": {
+    "autoprefixer": "^9.8.0",
+    "browserlist": "^1.0.1",
+    "caniuse-lite": "^1.0.30001078",
     "jquery": "^3.5.1",
     "src": "^1.1.2"
   }

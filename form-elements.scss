@@ -1,6 +1,8 @@
 @import 'blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/fonts/montserrat_bold/Montserrat-Bold.scss';
+@import 'blocks/fonts/quicksand_bold/Quicksand_Bold.scss';
 @import 'blocks/fonts/material-icons_regular/MaterialIcons_Regular.scss';
+
 
 * {
   box-sizing: border-box; //width calculation algoritm changed
@@ -98,8 +100,8 @@ button {
 
   &__masked-text-field {
     margin-top: 1.25rem;
-    width: 20rem;
-    height: 4.1875rem;
+    //width: 20rem;
+    //height: 4.1875rem;
     //border: solid orange 1px;
   }
 
@@ -138,8 +140,15 @@ button {
 
   &__expandable-checkbox-list-expanded {
     margin-top: 1.25rem;
-    width: 16.625rem;
+    //width: 16.625rem;
     //border: 1px solid orange;
+  }
+
+  &__room-info {
+    margin-top: 15.875rem; //17.125rem;
+    width: 18.1875rem;
+    height: 9.875rem;
+    //border: solid orange 1px;
   }
 
   &__middle-section {
@@ -203,3 +212,4 @@ button {
 @import 'blocks/dropdown/dropdown.scss';
 @import 'blocks/checkbox/checkbox.scss';
 @import 'blocks/expandable-checkbox-list/expandable-checkbox-list.scss';
+@import 'blocks/room-info/room-info.scss';

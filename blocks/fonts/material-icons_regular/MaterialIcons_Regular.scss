@@ -37,4 +37,18 @@
   vertical-align: middle;
 }
 
+.md-48 {
+  font-size: 3rem;
+}
+
+.md-gradient-color {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); //color: orange;
+  -webkit-background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -moz-background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 //  including the icon into html <i class="material-icons">face</i>

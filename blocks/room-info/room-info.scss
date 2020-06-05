@@ -1,0 +1,31 @@
+.room-info__title {
+  font-family: Quicksand;
+  font-weight: bold;
+  font-size: 1.1875rem;
+}
+
+.room-info__feature {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 0 1.25rem;
+  border-bottom: 0.0625rem solid rgba(31, 32, 65, 0.1);
+}
+
+.room-info__feature-img {
+  margin-right: 0.625rem;
+}
+
+.room-info__feature-description {
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.room-info__feature-title {
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.room-info__feature-text {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}

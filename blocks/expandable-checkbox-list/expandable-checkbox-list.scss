@@ -1,11 +1,6 @@
 .expandable-checkbox-list {
   max-width: 266px;
 
-  /*
-  &:hover .expandable-checkbox-list__checkbox {
-    display: block;
-  }
-*/
   &__button {
     width: 100%;
     display: flex;
@@ -33,6 +28,9 @@
 
     &_expanded {
       display: block;
+      position: absolute;
+      width: 16.625rem;
+      background-color: #FFFFFF;
     }
   }
 
