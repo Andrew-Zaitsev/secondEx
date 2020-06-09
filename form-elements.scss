@@ -157,10 +157,7 @@ button {
   }
 
   &__toggle {
-    margin-top: 2.25rem;
-    width: 16.625rem;
-    height: 5.5625rem;
-    border: 1px solid orange;
+    margin-top: 2.5rem;
   }
 
   &__like-button {
@@ -206,3 +203,4 @@ button {
 @import 'blocks/expandable-checkbox-list/expandable-checkbox-list.scss';
 @import 'blocks/room-info/room-info.scss';
 @import 'blocks/radio/radio.scss';
+@import 'blocks/toggle/toggle.scss';

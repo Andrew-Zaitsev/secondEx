@@ -23,6 +23,7 @@ html(lang="en")
     include blocks/expandable-checkbox-list/expandable-checkbox-list.pug
     include blocks/room-info/room-info.pug
     include blocks/radio/radio.pug
+    include blocks/toggle/toggle.pug
 
     .form-elements
 
@@ -136,8 +137,17 @@ html(lang="en")
                 {value: "female", text: "Женщина"}
                 ]
             })
-          .form-elements__toggle toggle
-          .form-elements__like-button button
+
+          .form-elements__toggle
+            +toggle({
+              title: "toggle",
+              buttons: [
+                {name: "subscribe", value: "specialOffer", text: "Получать спецпредложения", isChecked: true},
+                {name: "subscribe", value: "specialOffer", text: "Получать спецпредложения"}
+              ]
+            })
+
+          .form-elements__like-button like button
           .form-elements__rate-button rate button
 
           .form-elements__dropdown-expanded-wide
