@@ -140,15 +140,10 @@ button {
 
   &__expandable-checkbox-list-expanded {
     margin-top: 1.25rem;
-    //width: 16.625rem;
-    //border: 1px solid orange;
   }
 
   &__room-info {
     margin-top: 15.875rem; //17.125rem;
-    width: 18.1875rem;
-    height: 9.875rem;
-    //border: solid orange 1px;
   }
 
   &__middle-section {
@@ -157,11 +152,8 @@ button {
     //border: cadetblue solid 1px;
   }
 
-  &__radio-buttons {
+  &__radio {
     margin-top: 2.555rem;
-    width: 16.625rem;
-    height: 3.4375rem;
-    border: 1px solid orange;
   }
 
   &__toggle {
@@ -213,3 +205,4 @@ button {
 @import 'blocks/checkbox/checkbox.scss';
 @import 'blocks/expandable-checkbox-list/expandable-checkbox-list.scss';
 @import 'blocks/room-info/room-info.scss';
+@import 'blocks/radio/radio.scss';

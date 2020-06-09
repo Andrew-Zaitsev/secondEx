@@ -22,6 +22,7 @@ html(lang="en")
     include blocks/checkbox/checkbox.pug
     include blocks/expandable-checkbox-list/expandable-checkbox-list.pug
     include blocks/room-info/room-info.pug
+    include blocks/radio/radio.pug
 
     .form-elements
 
@@ -105,7 +106,6 @@ html(lang="en")
                 "Можно пригласить гостей (до&nbsp;10&nbsp;человек)"
                 ],
             })
-          //- *************************************************************************
           .form-elements__room-info
             +room-info({
               features: [
@@ -116,18 +116,26 @@ html(lang="en")
 
         .form-elements__middle-section
 
-          .form-elements__checkbox
-            +checkbox({
-              title: "checkbox buttons",
-              text: [
-                "Можно курить",
-                "Можно с питомцами",
-                "Можно пригласить гостей (до&nbsp;10&nbsp;человек)"
-                ],
-              isRich: false
-              })
+          //-.form-elements__checkbox
+          +checkbox({
+            title: "checkbox buttons",
+            text: [
+              "Можно курить",
+              "Можно с питомцами",
+              "Можно пригласить гостей (до&nbsp;10&nbsp;человек)"
+              ],
+            isRich: false
+            })
 
-          .form-elements__radio-buttons radio buttons
+          .form-elements__radio
+            +radio({
+              title: "radio buttons",
+              name: "gender",
+              buttons: [
+                {value: "male", text: "Мужчина"},
+                {value: "female", text: "Женщина"}
+                ]
+            })
           .form-elements__toggle toggle
           .form-elements__like-button button
           .form-elements__rate-button rate button
