@@ -1,0 +1,30 @@
+.like-button {
+  //box-sizing: content-box;
+  border-radius: 0.625rem;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-clip: border-box;
+  padding: 0.0625rem;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    border-radius: 0.5625rem;
+    background-color: #FFFFFF;
+  }
+}
+
+.like-button__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.1875rem;
+  height: 1.125rem;
+  color: #BC9CFF;
+}
+
+.like-button__number {
+  width: 1.1875rem;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+  color: #BC9CFF;
+}

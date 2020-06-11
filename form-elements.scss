@@ -160,11 +160,23 @@ button {
     margin-top: 2.5rem;
   }
 
-  &__like-button {
+  &__like-buttons {
     margin-top: 2.555rem;
     width: 16.625rem;
     height: 3.1875rem;
     border: 1px solid orange;
+  }
+
+  &__like-buttons-title {
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    text-transform: uppercase;
+    color: #1F2041;
+  }
+
+  &__like-buttons-wrap {
+    display: flex;
   }
 
   &__rate-button {
@@ -204,3 +216,4 @@ button {
 @import 'blocks/room-info/room-info.scss';
 @import 'blocks/radio/radio.scss';
 @import 'blocks/toggle/toggle.scss';
+@import 'blocks/like-button/like-button.scss';
