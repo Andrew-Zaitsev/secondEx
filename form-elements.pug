@@ -14,6 +14,7 @@ html(lang="en")
     //script(src="./blocks/text-field/text-field.js" type="module")
     script(src="./blocks/dropdown/dropdown.js" type="text/javascript" defer)
     script(src="./blocks/expandable-checkbox-list/expandable-checkbox-list.js" type="text/javascript" defer)
+    script(src="./blocks/like-button/like-button.js" type="text/javascript" defer)
 
   body
     include blocks/logo/logo.pug
@@ -118,7 +119,6 @@ html(lang="en")
 
         .form-elements__middle-section
 
-          //-.form-elements__checkbox
           +checkbox({
             title: "checkbox buttons",
             text: [
@@ -151,12 +151,11 @@ html(lang="en")
           .form-elements__like-buttons
             .form-elements__like-buttons-title like button
             .form-elements__like-buttons-wrap
-              // like-button ************************
               +like-button({
-                defaultNumber: "0"
+                defaultNumber: "2"
               })
               +like-button({
-                defaultNumber: "0"
+                defaultNumber: "11"
               })
 
           .form-elements__rate-button rate button

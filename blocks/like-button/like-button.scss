@@ -1,49 +1,67 @@
 .like-button {
   max-width: 40px;
+  border-radius: 0.625rem;
+  border-width: 0.0625rem;
+  border-style: solid;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+
+  &_border-color_grey {
+    border-color: rgba(31, 32, 65, 0.25);
+    background-image: linear-gradient(white, white), none;
+  }
+
+  &_border-color_gradient {
+    border-color: transparent;
+    background-image: linear-gradient(white, white),
+      linear-gradient(to bottom, #BC9CFF, #8BA4F9);
+  }
+
+  &_content-color_grey {
+    color: rgba(31, 32, 65, 0.25);
+  }
+
+  &_content-color_violet {
+    color: #BC9CFF;
+  }
 
   &__label {
     //box-sizing: content-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0.625rem;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background-clip: border-box;
-
-
-  }
-
-
-
-  &__wrap {
-    //width: 95%;
-    display: flex;
-    align-items: center;
-    margin: 0.0625rem 0.0625rem;
-    border-radius: 0.5625rem;
-    background-color: #FFFFFF;
+    cursor: pointer;
   }
 
   &__input {
     position: absolute;
-    margin: 0 0.5rem;
-    //z-index: -1;
+    z-index: -1;
   }
 
   &__img {
-    position: relative;
+    //position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 1.1875rem;
     height: 1.125rem;
-    color: #BC9CFF;
   }
 
+  /*
+    &_color_grey {
+      color: rgba(31, 32, 65, 0.25);
+    }
+
+    &_color_violet {
+      color: #BC9CFF;
+    }
+  }
+*/
   &__number {
     width: 1.1875rem;
     font-size: 0.625rem;
     line-height: 0.75rem;
-    color: #BC9CFF;
+    //color: #BC9CFF;
   }
 }

@@ -161,13 +161,14 @@ button {
   }
 
   &__like-buttons {
-    margin-top: 2.555rem;
+    margin-top: 2.7rem;
     width: 5.625rem;
     height: 3.1875rem;
-    border: 1px solid orange;
+    //border: 1px solid orange;
   }
 
   &__like-buttons-title {
+    margin-bottom: 1rem;
     font-weight: bold;
     font-size: 0.75rem;
     line-height: 0.9375rem;
