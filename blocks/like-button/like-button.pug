@@ -1,7 +1,9 @@
 mixin like-button(options)
 
   .like-button
-    .like-button__wrap
-      .like-button__img
-        i.material-icons.md-10 favorite
-      .like-button__number= options.defaultNumber
+    label.like-button__label
+      .like-button__wrap
+        input.like-button__input(type="checkbox")
+        .like-button__img
+          i.material-icons.md-10 favorite
+        .like-button__number= options.defaultNumber

@@ -162,7 +162,7 @@ button {
 
   &__like-buttons {
     margin-top: 2.555rem;
-    width: 16.625rem;
+    width: 5.625rem;
     height: 3.1875rem;
     border: 1px solid orange;
   }
@@ -177,6 +177,8 @@ button {
 
   &__like-buttons-wrap {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   &__rate-button {
