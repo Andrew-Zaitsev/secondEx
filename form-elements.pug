@@ -26,6 +26,7 @@ html(lang="en")
     include blocks/radio/radio.pug
     include blocks/toggle/toggle.pug
     include blocks/like-button/like-button.pug
+    include blocks/rate/rate.pug
 
     .form-elements
 
@@ -158,7 +159,15 @@ html(lang="en")
                 defaultNumber: "11"
               })
 
-          .form-elements__rate-button rate button
+          .form-elements__rate
+            .form-elements__rate-title rate button
+            .form-elements__rate-wrap
+              +rate({
+                defaultNumber: "4"
+              })
+              +rate({
+                defaultNumber: "5"
+              })
 
           .form-elements__dropdown-expanded-wide
             +dropdown({

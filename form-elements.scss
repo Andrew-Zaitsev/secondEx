@@ -179,14 +179,25 @@ button {
   &__like-buttons-wrap {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    //width: 100%;
   }
 
-  &__rate-button {
-    margin-top: 2.555rem;
-    width: 16.625rem;
-    height: 3.4375rem;
-    border: 1px solid orange;
+  &__rate {
+    margin-top: 2.5rem;
+    width: 16.25rem;
+  }
+
+  &__rate-title {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #1F2041;
+  }
+
+  &__rate-wrap {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__dropdown-expanded-wide {
@@ -220,3 +231,4 @@ button {
 @import 'blocks/radio/radio.scss';
 @import 'blocks/toggle/toggle.scss';
 @import 'blocks/like-button/like-button.scss';
+@import 'blocks/rate/rate.scss';
