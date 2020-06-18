@@ -209,14 +209,43 @@ button {
   }
 
   &__right-section {
-    //margin-left: 21.3125rem;
+    margin-left: 4.5rem; //21.3125rem;
     float: left;
-    background-color: cadetblue;
+    //background-color: cadetblue;
+  }
+
+  &__range-slider {
+    height: 2.965rem;
+    border: solid orange 1px;
+  }
+
+  &__buttons {
+    height: 2.75rem;
+    margin-top: 2.5rem;
+    border: solid orange 1px;
+  }
+
+  &__pagination {
+    height: 6.625rem;
+    margin-top: 16.8125rem;
+    border: solid orange 1px;
+  }
+
+  &__dropdown-expanded-wide-filled {
+    margin-top: 14.375rem;
+  }
+
+  &__bullet-list {
+    //height: 5rem; //9.1875rem;
+    margin-top: 15.9rem;
+    //border: solid orange 1px;
   }
 
   &__bottom-section {
-    //margin-left: 31.3125rem;
     float: left;
+    width: 44.43rem;
+    height: 8.3125rem;
+    margin: 14.5625rem 0 0 7.875rem;
     background-color: cadetblue;
   }
 }
@@ -232,3 +261,4 @@ button {
 @import 'blocks/toggle/toggle.scss';
 @import 'blocks/like-button/like-button.scss';
 @import 'blocks/rate/rate.scss';
+@import 'blocks/bullet-list/bullet-list.scss';

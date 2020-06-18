@@ -1,0 +1,9 @@
+mixin bullet-list(options)
+
+  .bullet-list
+    - if (options.title)
+      .bullet-list__title= options.title
+    
+    ul.bullet-list__list
+      - for (let text of options.text)
+        li.bullet-list__item!= text

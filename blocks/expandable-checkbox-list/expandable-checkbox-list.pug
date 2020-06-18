@@ -10,13 +10,4 @@ mixin expandable-checkbox-list(options)
         i.material-icons expand_more
 
     .expandable-checkbox-list__checkbox
-      +checkbox({
-              text: [
-                "Завтрак",
-                "Письменный стол",
-                "Стул для кормления",
-                "Кроватка",
-                "Телевизор",
-                "Шампунь"
-                ]
-              })
+      +checkbox(options)
