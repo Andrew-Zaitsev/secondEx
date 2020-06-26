@@ -30,7 +30,7 @@
   "dependencies": {
     "autoprefixer": "^9.8.0",
     "browserlist": "^1.0.1",
-    "caniuse-lite": "^1.0.30001078",
+    "caniuse-lite": "^1.0.30001084",
     "jquery": "^3.5.1",
     "src": "^1.1.2"
   }

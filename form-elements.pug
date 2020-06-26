@@ -12,9 +12,10 @@ html(lang="en")
     //-script(src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript" defer)
     
     //script(src="./blocks/text-field/text-field.js" type="module")
-    script(src="./blocks/dropdown/dropdown.js" type="text/javascript" defer)
+    script(src="./blocks/dropdown/dropdown.js" type="module")
     script(src="./blocks/expandable-checkbox-list/expandable-checkbox-list.js" type="text/javascript" defer)
     script(src="./blocks/like-button/like-button.js" type="text/javascript" defer)
+    script(src="./blocks/review/review.js" type="module")
 
   body
     include blocks/logo/logo.pug
@@ -28,6 +29,7 @@ html(lang="en")
     include blocks/like-button/like-button.pug
     include blocks/rate/rate.pug
     include blocks/bullet-list/bullet-list.pug
+    include blocks/review/review.pug
 
     .form-elements
 
@@ -64,7 +66,8 @@ html(lang="en")
               })
           
           .form-elements__masked-text-field
-            +text-field({title: "masked text field",
+            +text-field({
+              title: "masked text field",
               state: "default",
               placeholder: "ДД.ММ.ГГГГ",
               isMasked: true
@@ -117,12 +120,13 @@ html(lang="en")
                 "Шампунь"
                 ],
             })
+
           .form-elements__room-info
             +room-info({
               features: [
-                  {img: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены"},
-                  {img: "location_city", title: "Удобство", text: "Окно в каждой из спален"}
-                ]
+                {img: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены"},
+                {img: "location_city", title: "Удобство", text: "Окно в каждой из спален"}
+              ]
             })
 
         .form-elements__middle-section
@@ -133,9 +137,9 @@ html(lang="en")
               "Можно курить",
               "Можно с питомцами",
               "Можно пригласить гостей (до&nbsp;10&nbsp;человек)"
-              ],
+            ],
             isRich: false
-            })
+          })
 
           .form-elements__radio
             +radio({
@@ -144,7 +148,7 @@ html(lang="en")
               buttons: [
                 {value: "male", text: "Мужчина"},
                 {value: "female", text: "Женщина"}
-                ]
+              ]
             })
 
           .form-elements__toggle
@@ -224,4 +228,18 @@ html(lang="en")
               ]
             })
 
-        .form-elements__bottom-section bottom
+        .form-elements__bottom-section
+          +review({
+            title: "",
+            users: [
+              {
+              name: "Мурад Сарафанов",
+              photo: "./blocks/review/review__photo_name_murad-sarafanov.png",
+              text: "Великолепный матрас на кровати в основной спальне! " +
+                    "А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. " + 
+                    "Выкрикивал комплименты повару — никто не жаловался из соседей.",
+              date: "2020-06-20",
+              likes: "11"
+              }
+            ]
+          })
