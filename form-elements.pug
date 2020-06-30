@@ -21,6 +21,7 @@ html(lang="en")
     include blocks/logo/logo.pug
     include blocks/text-field/text-field.pug
     include blocks/dropdown/dropdown.pug
+    include blocks/subscription-text-field/subscription-text-field.pug
     include blocks/checkbox/checkbox.pug
     include blocks/expandable-checkbox-list/expandable-checkbox-list.pug
     include blocks/room-info/room-info.pug
@@ -76,8 +77,15 @@ html(lang="en")
           .form-elements__date-dropdown date dropdown
 
           .form-elements__filter-date-dropdown filter date dropdown
-          
-          .form-elements__subscription-text-field subscription text field 
+          //- ****************************************************************************************************************
+          .form-elements__subscription-text-field
+            +subscription-text-field({
+              title: "subscription text field",
+              action: "",
+              type: "email",
+              name: "email",
+              placeholder: "Email"
+            })
 
           .form-elements__dropdown-default-normal
             +dropdown({

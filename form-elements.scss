@@ -120,14 +120,11 @@ button {
   }
 
   &__subscription-text-field {
-    margin-top: 2.5625rem; // 41px
-    width: 16.625rem;
-    height: 4.0625rem;
-    border: solid orange 1px;
+    margin-top: 2.5rem; // 41px
   }
 
   &__dropdown-default-normal {
-    margin-top: 5.90rem //6.25rem;// 100px
+    margin-top: 6.1rem; // 100px
   }
 
   &__dropdown-expanded-normal {
@@ -253,6 +250,7 @@ button {
 @import 'blocks/logo/_color/logo_color_grey.scss';
 @import 'blocks/text-field/text-field.scss';
 @import 'blocks/dropdown/dropdown.scss';
+@import 'blocks/subscription-text-field/subscription-text-field.scss';
 @import 'blocks/checkbox/checkbox.scss';
 @import 'blocks/expandable-checkbox-list/expandable-checkbox-list.scss';
 @import 'blocks/room-info/room-info.scss';
