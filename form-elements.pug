@@ -7,14 +7,15 @@ html(lang="en")
     meta(name="description' value='this page contains form elements in all possible conditions")
     title form elements
     link(href="./form-elements.scss" rel="stylesheet")
-    //script(src="./src/js/jquery-in-parcel.js" type="text/javascript" defer) 
+    script(src="./src/js/jquery-in-parcel.js" type="text/javascript" defer) 
 
-    //-script(src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript" defer)
+    script(src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript" defer)
     
     //script(src="./blocks/text-field/text-field.js" type="module")
     script(src="./blocks/dropdown/dropdown.js" type="module")
     script(src="./blocks/expandable-checkbox-list/expandable-checkbox-list.js" type="text/javascript" defer)
     script(src="./blocks/like-button/like-button.js" type="text/javascript" defer)
+    script(src="./blocks/range-slider/range-slider.js" type="module")
     script(src="./blocks/review/review.js" type="module")
 
   body
@@ -29,6 +30,7 @@ html(lang="en")
     include blocks/toggle/toggle.pug
     include blocks/like-button/like-button.pug
     include blocks/rate/rate.pug
+    include blocks/range-slider/range-slider.pug
     include blocks/bullet-list/bullet-list.pug
     include blocks/review/review.pug
 
@@ -77,7 +79,7 @@ html(lang="en")
           .form-elements__date-dropdown date dropdown
 
           .form-elements__filter-date-dropdown filter date dropdown
-          //- ****************************************************************************************************************
+
           .form-elements__subscription-text-field
             +subscription-text-field({
               title: "subscription text field",
@@ -212,8 +214,17 @@ html(lang="en")
             })
 
         .form-elements__right-section
-          
-          .form-elements__range-slider range-slider
+          .form-elements__range-slider
+            +range-slider({
+              title: "range slider",
+              name: "costRange",
+              unit: "₽",
+              min: "0",
+              max: "15000",
+              from: "5000",
+              to: "10000"
+            })
+
           .form-elements__buttons buttons
           .form-elements__pagination pagination
           .form-elements__dropdown-expanded-wide-filled

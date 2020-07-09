@@ -1,5 +1,6 @@
 export {
-  getNoun
+  getNoun,
+  prettifyNumber
 };
 
 const getNoun = (number, nouns) => {
@@ -16,3 +17,7 @@ const getNoun = (number, nouns) => {
       return getNoun(numberLastDigit, nouns);
   }
 };
+
+const prettifyNumber = (number, separator = '\u00A0') => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+}
