@@ -23,14 +23,21 @@ button {
   padding: 0;
 }
 
+div,
+button {
+  outline: none;
+}
+
 ul {
   list-style: none;
 }
 
 button {
   border-style: none;
+  font-size: inherit;
   font-family: inherit;
   text-transform: none;
+  background: none;
 }
 
 .form-elements {
@@ -95,14 +102,10 @@ button {
 
   &__dropdown-default-wide {
     margin-top: 1.1rem; //1.24
-    //width: 16.6rem;
   }
 
   &__masked-text-field {
     margin-top: 1.25rem;
-    //width: 20rem;
-    //height: 4.1875rem;
-    //border: solid orange 1px;
   }
 
   &__date-dropdown {
@@ -208,6 +211,7 @@ button {
   &__right-section {
     margin-left: 4.5rem;
     float: left;
+    max-width: 320px;
   }
 
   &__range-slider {
@@ -215,9 +219,38 @@ button {
   }
 
   &__buttons {
-    height: 2.75rem;
-    margin-top: 2.5rem;
-    border: solid orange 1px;
+    margin-top: 2.4rem;
+    //border: solid orange 1px;
+  }
+
+  &__buttons-title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__buttons-first-row {
+    width: 13.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.87rem;
+  }
+
+  &__buttons-second-row {
+    width: 13.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.875rem;
+  }
+
+  &__buttons-third-row {
+    width: 8.875rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.875rem;
   }
 
   &__pagination {
@@ -240,7 +273,6 @@ button {
     width: 44.43rem;
     height: 8.3125rem;
     margin: 14.38rem 0 0 7.95rem;
-    //background-color: cadetblue;
   }
 }
 
@@ -259,3 +291,4 @@ button {
 @import 'blocks/bullet-list/bullet-list.scss';
 @import 'blocks/range-slider/range-slider.scss';
 @import 'blocks/review/review.scss';
+@import 'blocks/button/button.scss';

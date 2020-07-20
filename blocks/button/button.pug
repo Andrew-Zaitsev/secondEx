@@ -1,0 +1,27 @@
+mixin button(options)
+
+  - 
+    let buttonClassName = "button";
+    let titleClassName = "button__title";
+
+  - 
+    if (options.hasVolume) {
+      buttonClassName += " button_has-volume";
+      buttonClassName += (options.isInHeader) ? " button_in-header" : "";
+      buttonClassName += (options.hasBorder) ? " button_has-border" : "";
+      buttonClassName += (options.hasArrow) ? " button_has-arrow" : "";
+      titleClassName += (options.hasBorder) ? " button__title_color_purple" : " button__title_color_white";
+    } else {
+      titleClassName += (options.isGrey) ? " button__title_color_grey" : " button__title_color_purple";
+    }
+
+  button(class = buttonClassName, type = options.type)
+    
+    - if (options.href)
+      a(class = titleClassName, href= options.href)= options.text
+    - else 
+      span(class = titleClassName)= options.text
+
+    - if (options.hasArrow)
+      .button__arrow
+        i.material-icons arrow_forward

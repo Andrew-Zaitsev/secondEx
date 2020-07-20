@@ -1,0 +1,83 @@
+.button {
+  display: block;
+  background-color: none;
+  cursor: pointer;
+
+  &_has-volume {
+    width: auto;
+    line-height: 0.9375rem;
+    padding: 0.75rem 1.07rem 0.8rem;
+    border-radius: 1.375rem;
+    border: 0.125rem solid transparent;
+    background-origin: border-box;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+    &:hover {
+      background-image: linear-gradient(180deg, change-color(#BC9CFF, $alpha: 0.50) 0%, change-color(#8BA4F9, $alpha: 0.50) 100%);
+      //opacity: 0.5;
+    }
+  }
+
+  &_has-border {
+    max-width: 99px;
+    border-width: 0.125rem;
+    border-style: solid;
+    border-color: transparent;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%),
+      linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+    &:hover {
+      background-image: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%),
+        linear-gradient(180deg, change-color(#BC9CFF, $alpha: 0.50) 0%, change-color(#8BA4F9, $alpha: 0.50) 100%);
+    }
+  }
+
+  &_in-header {
+    width: auto;
+    max-width: none;
+    border-radius: 1.0625rem;
+    padding: 0.4375rem 1.05rem 0.5rem;
+  }
+
+  &_has-arrow {
+    position: relative;
+    width: 100%;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+  }
+
+  &__title {
+    display: block;
+    font-family: Montserrat;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-decoration-line: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &_color_white {
+      color: #FFFFFF;
+    }
+
+    &_color_purple {
+      color: #BC9CFF;
+    }
+
+    &_color_grey {
+      color: rgba(31, 32, 65, 0.5);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}

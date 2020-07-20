@@ -31,6 +31,7 @@ html(lang="en")
     include blocks/like-button/like-button.pug
     include blocks/rate/rate.pug
     include blocks/range-slider/range-slider.pug
+    include blocks/button/button.pug
     include blocks/bullet-list/bullet-list.pug
     include blocks/review/review.pug
 
@@ -225,7 +226,71 @@ html(lang="en")
               to: "10000"
             })
 
-          .form-elements__buttons buttons
+          .form-elements__buttons
+            .form-elements__buttons-title buttons
+            .form-elements__buttons-first-row
+              +button({
+                type: "button",
+                text: "click me",
+                href: "",
+                hasVolume: "true",
+                isInHeader: "",
+                hasBorder: "",
+                hasArrow: ""
+              })
+              +button({
+                type: "button",
+                text: "click me",
+                href: "",
+                hasVolume: "true",
+                isInHeader: "",
+                hasBorder: "",
+                hasArrow: ""
+              })
+            .form-elements__buttons-second-row
+              +button({
+                type: "button",
+                text: "click me",
+                href: "",
+                hasVolume: "true",
+                isInHeader: "",
+                hasBorder: "true",
+                hasArrow: ""
+              })
+              +button({
+                type: "button",
+                text: "click me",
+                href: "",
+                hasVolume: "true",
+                isInHeader: "",
+                hasBorder: "true",
+                hasArrow: ""
+              })
+            .form-elements__buttons-third-row
+              +button({
+                type: "button",
+                href: "https://www.google.ru",
+                text: "click me",
+                isBig: "",
+                hasBorder: "",
+                hasArrow: "",
+              })
+              +button({
+                text: "click me",
+                textColor: "",
+                isGrey: "true"
+              })
+
+            +button({
+              type: "button",
+              text: "перейти к оплате",
+              href: "",
+              hasVolume: "true",
+              isInHeader: "",
+              hasBorder: "",
+              hasArrow: "true"
+            })
+
           .form-elements__pagination pagination
           .form-elements__dropdown-expanded-wide-filled
             +dropdown({
