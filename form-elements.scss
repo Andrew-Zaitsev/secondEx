@@ -149,7 +149,6 @@ button {
   &__middle-section {
     float: left;
     margin-left: 7.95rem; //7.875rem;
-    //border: cadetblue solid 1px;
   }
 
   &__radio {
@@ -164,7 +163,6 @@ button {
     margin-top: 2.7rem;
     width: 5.625rem;
     height: 3.1875rem;
-    //border: 1px solid orange;
   }
 
   &__like-buttons-title {
@@ -220,7 +218,6 @@ button {
 
   &__buttons {
     margin-top: 2.4rem;
-    //border: solid orange 1px;
   }
 
   &__buttons-title {
@@ -254,18 +251,23 @@ button {
   }
 
   &__pagination {
-    height: 6.625rem;
-    margin-top: 16.8125rem;
-    border: solid orange 1px;
+    margin-top: 2.6rem;
+  }
+
+  &__pagination-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #1F2041;
+    margin-bottom: 1rem;
   }
 
   &__dropdown-expanded-wide-filled {
-    margin-top: 14.375rem;
+    margin-top: 14.55rem;
   }
 
   &__bullet-list {
-    margin-top: 15.9rem;
-    //border: solid orange 1px;
+    margin-top: 16rem;
   }
 
   &__bottom-section {
@@ -292,3 +294,4 @@ button {
 @import 'blocks/range-slider/range-slider.scss';
 @import 'blocks/review/review.scss';
 @import 'blocks/button/button.scss';
+@import 'blocks/pagination/pagination.scss';
