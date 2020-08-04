@@ -2,7 +2,7 @@
   "name": "secondEx",
   "version": "1.0.0",
   "description": "making a search hotel numbers site",
-  "main": "test.pug",
+  "main": "headers-and-footors.pug",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hnf": "parcel headers-n-footers.pug -p 3004 --open --out-dir dist/headers-n-footers --cache-dir dist/cache",
@@ -23,14 +23,15 @@
   },
   "homepage": "https://github.com/Andrew-Zaitsev/secondEx#readme",
   "devDependencies": {
-    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
     "pug": "^3.0.0",
-    "sass": "^1.26.8"
+    "sass": "^1.26.10"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.0",
+    "air-datepicker": "^2.2.3",
+    "autoprefixer": "^9.8.5",
     "browserlist": "^1.0.1",
-    "caniuse-lite": "^1.0.30001084",
+    "caniuse-lite": "^1.0.30001107",
     "jquery": "^3.5.1",
     "src": "^1.1.2"
   }

@@ -20,8 +20,6 @@ jQuery(document).ready(function () {
 
       data.slider.prev().find('.range-slider__caption').text(
         `${prettifyNumber(data.from, '\u00A0')}${unit} - ${prettifyNumber(data.to, '\u00A0')}${unit}`);
-      console.log(
-        `${prettifyNumber(data.from, '\u00A0')}${unit} - ${prettifyNumber(data.to, '\u00A0')}${unit}`);
     },
 
     onChange: function (data) {

@@ -1,0 +1,21 @@
+@import '../../src/plagins/air-datapicker/datepicker.scss';
+
+.date-dropdown {
+  //opacity: 1;
+  position: relative;
+  border: solid orange 1px;
+}
+
+.datepicker {
+  display: block;
+  background-color: #FFFFFF;
+}
+
+
+.datepicker--day-name {
+  //color: red;
+}
+
+.datepicker--sell {
+  cursor: help;
+}

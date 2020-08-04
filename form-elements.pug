@@ -7,22 +7,27 @@ html(lang="en")
     meta(name="description' value='this page contains form elements in all possible conditions")
     title form elements
     link(href="./form-elements.scss" rel="stylesheet")
+    //link(href="./node_modules/air-datepicker/dist/css/datepicker.css")
     script(src="./src/js/jquery-in-parcel.js" type="text/javascript" defer) 
 
     script(src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript" defer)
+    //script(src="./node_modules/air-datepicker/dist/js/datepicker.js" type="text/javascript" defer)
     
     //script(src="./blocks/text-field/text-field.js" type="module")
+    script(src="./blocks/date-dropdown/date-dropdown.js" type="module")
     script(src="./blocks/dropdown/dropdown.js" type="module")
     script(src="./blocks/expandable-checkbox-list/expandable-checkbox-list.js" type="text/javascript" defer)
     script(src="./blocks/like-button/like-button.js" type="text/javascript" defer)
     script(src="./blocks/range-slider/range-slider.js" type="module")
     script(src="./blocks/review/review.js" type="module")
     script(src="./blocks/pagination/pagination.js" type="module")
+    
 
   body
     include blocks/logo/logo.pug
     include blocks/text-field/text-field.pug
     include blocks/dropdown/dropdown.pug
+    include blocks/date-dropdown/date-dropdown.pug
     include blocks/subscription-text-field/subscription-text-field.pug
     include blocks/checkbox/checkbox.pug
     include blocks/expandable-checkbox-list/expandable-checkbox-list.pug
@@ -79,8 +84,15 @@ html(lang="en")
               isMasked: true
               })
 
-          .form-elements__date-dropdown date dropdown
-
+          .form-elements__date-dropdown
+            +date-dropdown({
+              placeholder: "ДД.ММ.ГГГГ",
+            })
+            
+            +date-dropdown({
+              placeholder: "ДД.ММ.ГГГГ",
+            })
+            
           .form-elements__filter-date-dropdown filter date dropdown
 
           .form-elements__subscription-text-field

@@ -1,7 +1,8 @@
 .copyright-bar__text {
   display: inline-block;
-  @include montserrat_normal; //font-family and letter-spacing interpolation
-  font-size: 0.860rem;//0.875rem (16px);
+  font-family: Montserrat; //font-family and letter-spacing interpolation
+  font-weight: normal;
+  font-size: 0.860rem; //0.875rem (16px);
   //width: 380px;
   //border: solid grey 2px;
   //background-color: coral;
