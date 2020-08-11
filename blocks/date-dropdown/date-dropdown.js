@@ -4,81 +4,84 @@ jQuery(document).ready(function () {
 
   let dateDropdown = $('.date-dropdown');
   let calendars = $('.date-dropdown__calendar');
-  //let fromInput = $('.date-dropdown__from-field'); //not used
-  //let toInput = $('.date-dropdown__to-field');  // not used
-  let calDate = 'any';
 
   calendars.datepicker({
-    //inline: true,
     range: true,
     multipleDatesSeparator: '-',
-    language: "ru",
+
     clearButton: true,
     todayButton: true,
-    //altField: "hi",
+    language: {
+      today: 'применить'
+    },
+    navTitles: {
+      days: 'MM yyyy'
+    },
 
+    prevHtml: '<i class = "material-icons">arrow_back</i>',
+    nextHtml: '<i class = "material-icons">arrow_forward</i>',
+
+    // выбор дат при клике на кнопках 
     onSelect: function (formattedDate, date, inst) {
 
-      const getFormattedDateString = (dateObj) => {
-        if (dateObj.length === 0) {
-          return '';
-        };
-        console.log(dateObj.length);
-        return `${(dateObj.getDate() < 10) ? '0' + dateObj.getDate() : dateObj.getDate()}.${((dateObj.getMonth() + 1) < 10) ? '0' + (dateObj.getMonth() + 1) : (dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
-      };
+      const currentFromInputValue = (value) => $(inst.el).prev().find('.date-dropdown__from-field').val(value);
+      const currentToInputValue = (value) => $(inst.el).prev().find('.date-dropdown__to-field').val(value);
 
-      calDate = formattedDate;
-      //console.log('first', inst.selectedDates[0], inst.selectedDates[0] == true);
-      let str = undefined;
-      console.log('inst: ', inst);
-      
-      const fromDateString = inst.selectedDates[0];
+      let fromDateString = (inst.selectedDates[0] == null) ? '' : inst.selectedDates[0];
+      let toDateString = (inst.selectedDates[1] == null) ? '' : inst.selectedDates[1];
 
-      $(inst.el).prev().children().first().val(getFormattedDateString(fromDateString));
-
-      if (inst.selectedDates.length === 2) {
-        const toDateString = inst.selectedDates[1];
-        //const toDateString = `${(toDateString.getDate() < 10) ? '0' + toDateString.getDate() : toDateString.getDate()}.${(toDateString.getDate() < 10) ? '0' + (toDateString.getDate() + 1) : (toDateString.getDate() + 1)}.${toDateString.getFullYear()}`;
-        $(inst.el).prev().children().last().val(getFormattedDateString(toDateString));
-        
+      switch (true) {
+        case (inst.selectedDates.length == 0):
+          currentFromInputValue('');
+          currentToInputValue('');
+          break;
+        case (inst.selectedDates.length == 1):
+          currentFromInputValue(getFormattedDateString(fromDateString));
+          currentToInputValue(getFormattedDateString(toDateString))
+          break;
+        case (inst.selectedDates.length == 2):
+          currentFromInputValue(getFormattedDateString(fromDateString));
+          currentToInputValue(getFormattedDateString(toDateString));
       }
-      //$(inst.el).prev().children().last().val(toDateString): '';
-      //console.log(new Date(datestring));
     },
-    onShow: function (inst) {},
+    //onShow: function (inst) {},
   });
 
-  $('.date-dropdown__calendar').data('datepicker');
-
-  let datepicker = $('.datepicker');
+  calendars.data('datepicker');
 
   calendars.hide();
 
-  $(document).on('mouseup', function (e) { // событие клика по веб-документу
+  // закрытие календаря при клике вне дропдауна
+  $(document).on('mouseup', function (e) {
     if (dateDropdown.has(e.target).length === 0) {
       calendars.hide();
     }
   });
 
+  // закрыть при клике по кнопке "применить"
+  const applyButtons = calendars.find('.datepicker--button[data-action = "today"]')
+  applyButtons.on('click', function () {
+    $(this).parents().filter('.date-dropdown__calendar').hide();
+  });
+
+  // закрытие-открытие календаря при клике по инпутам
   calendars.prev().children().each(
     function (index, el) {
-
       el.onclick = function (e) {
         let currentCalendar = dateDropdown.has(e.target).find('.date-dropdown__calendar');
-        console.log(currentCalendar.css('display') === 'none');
 
         if (currentCalendar.css('display') === 'none') {
           calendars.hide();
           currentCalendar.show();
         } else {
           currentCalendar.hide();
-        } 
+        }
       }
     }
   );
 
-  console.log(calDate);
-});
-
-jQuery(document).ready(function () {
+  const getFormattedDateString = (dateObj) => {
+    if (dateObj.length !== 0) return `${(dateObj.getDate() < 10) ? '0' + dateObj.getDate() : dateObj.getDate()}.${((dateObj.getMonth() + 1) < 10) ? '0' + (dateObj.getMonth() + 1) : (dateObj.getMonth() + 1)}.${dateObj.getFullYear()}`;
+    return '';
+  };
 });

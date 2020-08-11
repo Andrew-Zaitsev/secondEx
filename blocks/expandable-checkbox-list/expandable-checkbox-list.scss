@@ -6,7 +6,6 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    //border: 1px solid orange;
   }
 
   &__list-title {
@@ -21,6 +20,7 @@
     width: 2.6rem;
     text-align: center;
     line-height: 2.63rem;
+    color: rgba(31, 32, 65, 0.5);
   }
 
   &__checkbox {

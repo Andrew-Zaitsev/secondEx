@@ -25,7 +25,6 @@
   &__input {
     width: 100%;
     font-family: Montserrat;
-    //font-weight: normal;
     font-size: 0.850rem; //0.875rem; //14px
     line-height: 2.6rem; //2.75rem as input height; // 1.125rem; 18px
     padding-left: 0.9375rem;
@@ -35,8 +34,6 @@
 
     &::placeholder {
       color: rgba(31, 32, 65, 0.25);
-      font-family: Montserrat;
-      font-weight: normal;
     }
 
     &:hover,

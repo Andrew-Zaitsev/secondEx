@@ -1,6 +1,7 @@
 @import 'blocks/fonts/montserrat_regular/Montserrat-Regular.scss';
 @import 'blocks/fonts/montserrat_bold/Montserrat-Bold.scss';
 @import 'blocks/fonts/quicksand_bold/Quicksand_Bold.scss';
+@import 'blocks/fonts/opensans_bold/Opensans_Bold.scss';
 @import 'blocks/fonts/material-icons_regular/MaterialIcons_Regular.scss';
 
 
@@ -24,7 +25,8 @@ button {
 }
 
 div,
-button {
+button,
+input {
   outline: none;
 }
 
@@ -109,10 +111,10 @@ button {
   }
 
   &__date-dropdown {
-    margin-top: 2.5rem;
+    margin-top: 2.6rem;
     width: 20rem; // 320px
     height: 4.0625rem; // 65px
-    border: solid orange 1px;
+    //border: solid orange 1px;
   }
 
   &__filter-date-dropdown {
