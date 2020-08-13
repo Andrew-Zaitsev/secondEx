@@ -12,6 +12,7 @@ jQuery(document).ready(function () {
     clearButton: true,
     todayButton: true,
     language: {
+      clear: 'очистить',
       today: 'применить'
     },
     navTitles: {
