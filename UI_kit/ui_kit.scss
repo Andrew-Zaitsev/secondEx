@@ -51,22 +51,21 @@ span {
     padding: 0px;
 }
 
-$colors: (
-    /*colors array*/
+$colors: ( //colors array
     1: #1F2041,
-    /*Dark Shade 100%*/
+    //Dark Shade 100% / rgba(31, 32, 65, 1);
     2: change-color(#1F2041, $alpha: 0.75),
-    /*Dark Shade 75%*/
+    //Dark Shade 75% / rgba(31, 32, 65, 0.75);
     3: change-color(#1F2041, $alpha: 0.50),
-    /*Dark Shade 50%*/
+    //Dark Shade 50% / rgba(31, 32, 65, 0.50);
     4: change-color(#1F2041, $alpha: 0.25),
-    /*Dark Shade 25%*/
+    //Dark Shade 25% / rgba(31, 32, 65, 0.25);
     5: change-color(#1F2041, $alpha: 0.05),
-    /*Dark Shade 5%*/
+    //Dark Shade 5% / rgba(31, 32, 65, 0.05);
     6: #BC9CFF,
-    /*Purple*/
-    7: #6FCF97
-    /*Green*/
+    //Purple / rgba(188, 156, 255, 1);
+    7: #6FCF97,
+    //Green / rgba(111, 207, 151, 1);
 );
 $tags_font_parameters: (('H1', 1.5rem, 1.8125rem),
     /*24 29px*/
