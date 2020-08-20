@@ -1,15 +1,10 @@
 @import '../../src/plagins/air-datapicker/datepicker.scss';
 
-//color: change-color(#BC9CFF, $alpha: 0.50);
-
 .date-dropdown {
-  //opacity: 1;
   position: relative;
-  //z-index: 1; /// возможно применить зед индекс при открытии календаря???
   max-width: 320px;
   width: 20rem;
-  background-color: #FFFFFF;
-  //border: solid orange 1px;
+  background-color: $white;
 
   &__fields {
     display: flex;
@@ -29,7 +24,6 @@
   }
 
   &__from-field-label {
-    //width: 100%;
     display: flex;
     border: 0.0625rem solid rgba($black, $aThird);
     border-radius: 0.25rem;
@@ -86,7 +80,6 @@
   }
 
   &__to-field-label {
-    //width: 100%;
     display: flex;
     border: 0.0625rem solid rgba($black, $aThird);
     border-radius: 0.25rem;
@@ -142,15 +135,13 @@
 }
 
 .datepicker {
-  //position: absolute;
   display: block;
   box-sizing: border-box;
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: $white;
   font-family: Montserrat;
   font-size: 0.75rem;
   border: 0.0625rem solid rgba($black, $aThird);
-  //box-shadow: 10px 10px 20px rgba(31, 32, 65, 0.5); //0px 0.625rem 1.25rem rgba(31, 32, 65, 0.05);
   border-radius: 0.25rem;
   padding: 1.25rem;
   padding-top: 1.15rem;
@@ -181,7 +172,7 @@
   font-family: Quicksand, Opensans;
   font-weight: bold;
   font-size: 1.1875rem;
-  color: $black; // #1F2041;
+  color: $black;
 
   &:hover {
     background: none;
@@ -202,29 +193,69 @@
   font-weight: bold;
   text-transform: none;
   height: 2.5rem;
-  color: #BC9CFF;
+  color: $purple;
 }
 
 .datepicker--cell {
   color: rgba($black, $aSecond);
 
-
   &.-focus- {
     background: none;
+    font-weight: bold;
+  }
+
+  &.-current- {
+    background: $greenGradient;
+    font-weight: bold;
     color: $white;
+    border-radius: 50%;
+  }
+
+  &.-current-.-focus- {
+    background: $greenGradientTransparent;
+    color: $white;
+  }
+
+  &.-selected- {
+    background: $purpleGradient;
+    border: none;
+    border-radius: 50%;
+  }
+
+  &.-selected-.-focus- {
+    background: $purpleGradient;
+  }
+
+  &.-selected-.-current- {
+    background: $purpleGradient;
+  }
+
+  &.-range-from-,
+  &.-range-to- {
+    font-weight: bold;
+  }
+
+  &.-range-from-.-range-to- {
+    border-radius: 50%;
+  }
+}
+
+.datepicker--cell-day {
+  line-height: 2.5rem;
+  height: auto;
+
+  &.-in-range-.-focus- {
+    color: $white;
+    background: $purpleGradientTransparent;
   }
 
   &.-range-from- {
     position: relative;
-    //background: $greenGradient;
     background: $purpleGradient;
-    //background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
     border: none;
-    border-radius: 1.375rem 0 0 1.375rem;
+    border-radius: 50%;
+    color: $white;
 
-    //change-color(#BC9CFF, $alpha: 0.50);
-    //linear-gradient(180deg, change-color(#BC9CFF, $alpha: 0.50) 0%, change-color(#8BA4F9, $alpha: 0.50)  100%);
     &:before {
       position: absolute;
       z-index: -1;
@@ -233,80 +264,116 @@
       top: 0;
       width: 50%;
       height: 100%;
+      background: $purpleGradientTransparent;
+    }
 
+    &.-current-.-focus- {
+      background: $purpleGradient;
+    }
 
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      opacity: 0.25;
+    &.-other-month-.-focus- {
+      color: $white;
+    }
+
+    &.-other-month-.-selected- {
+      background: $purpleGradient;
     }
   }
 
   &.-range-to- {
     position: relative;
-    //background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
+    background: $purpleGradient;
     border: none;
-    border-radius: 0 1.375rem 1.375rem 0;
-
+    border-radius: 50%;
+    color: $white;
 
     &:before {
       position: absolute;
       z-index: -1;
       content: "";
       left: 0;
-      top: 0; //bottom: 0;
+      top: 0;
       width: 50%;
       height: 100%;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      opacity: 0.25;
+      background: $purpleGradientTransparent;
+    }
+
+    &.-current-.-focus- {
+      background: $purpleGradient;
+    }
+
+    &.-other-month-.-focus- {
+      color: $white;
+    }
+
+    &.-other-month-.-selected- {
+      background: $purpleGradient;
     }
   }
 
   &.-in-range- {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
-
-
+    background: $purpleGradientTransparent;
+    color: rgba($black, $aSecond);
   }
 
-  &.-current-.-in-range- //.-current-.-focus- 
-
-    {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
-    color: #FFFFFF;
+  &.-current-.-in-range- {
+    background: $purpleGradientTransparent;
+    color: $white;
     border-radius: 0;
   }
 
-  &.-selected- {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); //, rgba(31, 32, 65, 0.5);
-    opacity: 1;
-    //background-clip: content-box;
-
-    border: none;
-    border-radius: 22px;
+  &.-current-.-selected- {
+    background: $purpleGradient;
   }
 
-  &.-selected-.-focus- {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); //, rgba(31, 32, 65, 0.5);
-    //position: absolute;
+  &.-other-month- {
+    color: rgba($black, $aThird);
+  }
+
+  &.-other-month-.-focus- {
+    color: rgba($black, $aSecond);
+  }
+
+  &.-other-month-.-in-range- {
+    background: $purpleGradientTransparent;
+    color: rgba($black, $aSecond);
+  }
+
+  &.-other-month-.-in-range-.-focus- {
+    color: $white;
+    background: $purpleGradientTransparent;
   }
 }
 
-.datepicker--cell-day {
-  line-height: 2.5rem;
+.datepicker--cells-months {
   height: auto;
+}
 
-  &.-current- {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 1.375rem;
-    font-weight: bold;
-    color: #FFFFFF;
+.datepicker--cell-month {
+  width: 5.75rem;
+  height: 5.75rem;
+
+  &.-range-from-.-focus-,
+  &.-range-to-.-focus- {
+    background: $purpleGradientTransparent;
   }
+}
 
-  &.-current-:hover {
-    font-weight: normal;
-    color: rgba(31, 32, 65, 0.5);
+.datepicker--years {
+  height: auto;
+}
+
+.datepicker--cells-years {
+  height: auto;
+}
+
+.datepicker--cell-year {
+  width: 4.3125rem;
+  height: 4.3125rem;
+
+  &.-range-from-.-focus-,
+  &.-range-to-.-focus- {
+    background: $purpleGradientTransparent;
   }
 }
 
@@ -324,12 +391,22 @@
   text-transform: uppercase;
 
   &[data-action="clear"] {
-    color: rgba(31, 32, 65, 0.5);
+    color: rgba($black, $aSecond);
     justify-content: flex-start;
+
+    &:hover {
+      background: none;
+      color: rgba($black, $aThird);
+    }
   }
 
   &[data-action="today"] {
-    color: #BC9CFF;
+    color: $purple;
     justify-content: flex-end;
+
+    &:hover {
+      background: none;
+      color: rgba($purple, $aSecond);
+    }
   }
 }
