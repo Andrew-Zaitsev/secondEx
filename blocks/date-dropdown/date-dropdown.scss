@@ -51,7 +51,6 @@
     border-radius: 0.25rem;
     font-family: Montserrat;
     font-size: 0.875rem;
-    text-transform: uppercase;
     color: rgba($black, $aFirst);
     cursor: pointer;
 
@@ -138,6 +137,7 @@
   display: block;
   box-sizing: border-box;
   width: 100%;
+  max-width: 320px;
   background-color: $white;
   font-family: Montserrat;
   font-size: 0.75rem;
@@ -241,8 +241,10 @@
 }
 
 .datepicker--cell-day {
-  line-height: 2.5rem;
-  height: auto;
+  width: 2.482rem; //2.4925 может поиграть с отступами лево-право
+  height: 2.5rem;
+  //line-height: 2.5rem;
+  //height: auto;
 
   &.-in-range-.-focus- {
     color: $white;

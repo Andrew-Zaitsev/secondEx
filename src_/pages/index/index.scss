@@ -1,0 +1,13 @@
+@import '../../assets/scss/main.scss';
+@import '../../layouts/ui-layout/ui-layout.scss';
+
+.index {
+  //background-color: hotpink;
+
+  &__title {
+    font-family: Opensans;
+    //text-transform: uppercase;
+  }
+}
+
+@import '../../../blocks/button/button.scss'

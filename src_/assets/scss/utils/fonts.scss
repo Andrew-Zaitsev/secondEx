@@ -1,0 +1,105 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/montserrat-bold/Montserrat-Bold.woff') format('woff');
+  src: url('../../assets/fonts/montserrat-bold/Montserrat-Bold.svg') format('svg');
+  src: url('../../assets/fonts/montserrat-bold/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../assets/fonts/montserrat-regular/Montserrat-Regular.woff') format('woff');
+  src: url('../../assets/fonts/montserrat-regular/Montserrat-Regular.svg') format('svg');
+  src: url('../../assets/fonts/montserrat-regular/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Opensans';
+  src: url('../../assets/fonts/opensans-bold/Opensans-Bold.woff') format('woff');
+  src: url('../../assets/fonts/opensans-bold/Opensans-Bold.svg') format('svg');
+  src: url('../../assets/fonts/opensans-bold/Opensans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../../assets/fonts/quicksand-bold/Quicksand-Bold.woff') format('woff');
+  src: url('../../assets/fonts/quicksand-bold/Quicksand-Bold.svg') format('svg');
+  src: url('../../assets/fonts/quicksand-bold/Quicksand-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../../assets/fonts/quicksand-regular/Quicksand-Regular.woff') format('woff');
+  src: url('../../assets/fonts/quicksand-Regular/Quicksand-Regular.svg') format('svg');
+  src: url('../../assets/fonts/quicksand-regular/Quicksand-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  // connecting  MaterialIcons font
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../../assets/fonts/material-icons-regular/MaterialIcons-Regular.woff') format('woff');
+  src: url('../../assets/fonts/material-icons-regular/MaterialIcons-Regular.svg') format('svg');
+  src: url('../../assets/fonts/material-icons-regular/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+
+  // my added properties
+  vertical-align: middle;
+}
+
+.md-10 {
+  font-size: 0.625rem;
+}
+
+.md-48 {
+  font-size: 3rem;
+}
+
+.md-gradient-color {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); //color: orange;
+  -webkit-background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -moz-background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+//  including the icon into html <i class="material-icons">face</i>

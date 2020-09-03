@@ -1,0 +1,30 @@
+html,
+body,
+input,
+ul,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+div,
+button,
+input {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border-style: none;
+  font-size: inherit;
+  font-family: inherit;
+  text-transform: none;
+  background: none;
+}
+
+input {
+  background: none;
+}

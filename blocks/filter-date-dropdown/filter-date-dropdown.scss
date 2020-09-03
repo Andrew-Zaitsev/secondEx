@@ -1,0 +1,63 @@
+.filter-date-dropdown {
+  max-width: 266px;
+  width: 16.625rem;
+  //position: relative;
+
+  &__title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 0.3125rem;
+  }
+
+  &__field-holder {
+    display: flex;
+    margin-bottom: 0.34375rem;
+    border: 0.0625rem solid rgba($black, $aThird);
+    border-radius: 0.25rem;
+    background-color: $white;
+
+    &:hover,
+    &:focus {
+      border-color: rgba($black, $aSecond);
+
+      .filter-date-dropdown__field::placeholder {
+        color: rgba($black, $aFirst);
+      }
+
+      .filter-date-dropdown__field-arrow {
+        color: rgba($black, $aFirst);
+      }
+    }
+  }
+
+  &__field {
+    width: 100%;
+    padding-left: 0.9375rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    color: rgba($black, $aFirst);
+    cursor: pointer;
+  }
+
+  &__field::placeholder {
+    text-transform: uppercase;
+    color: rgba($black, $aThird);
+  }
+
+  &__field-arrow {
+    width: 2.6rem;
+    text-align: center;
+    line-height: 2.63rem;
+    color: rgba($black, $aSecond);
+    cursor: pointer;
+  }
+
+  &__calendar {
+    //max-width: 320px;
+    position: absolute;
+    z-index: 2;
+  }
+}

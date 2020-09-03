@@ -1,0 +1,21 @@
+//main colors
+$black: rgba(31, 32, 65, 1); //#1F2041
+$purple: rgba(188, 156, 255, 1); //#BC9CFF
+$green: rgba(111, 207, 151, 1); //#6FCF97
+$white: rgba(255, 255, 255, 1); //#FFFFFF
+
+//secondary colors
+$purpleSecondary: rgba(139, 164, 249, 1); //#8BA4F9
+$greenSecondary: rgba(102, 210, 234, 1); //#66D2EA
+
+//transparencies
+$aFirst: 0.75;
+$aSecond: 0.5;
+$aThird: 0.25;
+$aFourth: 0.05;
+
+//gradients
+$purpleGradient: linear-gradient(180deg, $purple 0%, $purpleSecondary 100%);
+$purpleGradientTransparent: linear-gradient(180deg, rgba($purple, $aThird) 0%, rgba($purpleSecondary, $aThird) 100%);
+$greenGradient: linear-gradient(180deg, $green 0%, $greenSecondary 100%);
+$greenGradientTransparent: linear-gradient(180deg, rgba($green, $aFirst) 0%, rgba($greenSecondary, $aFirst) 100%);

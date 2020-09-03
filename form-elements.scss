@@ -22,7 +22,7 @@ $aFourth: 0.05;
 
 //gradients
 $purpleGradient: linear-gradient(180deg, $purple 0%, $purpleSecondary 100%);
-$purpleGradientTransparent: linear-gradient(180deg, rgba($purple, $aSecond) 0%, rgba($purpleSecondary, $aSecond) 100%);
+$purpleGradientTransparent: linear-gradient(180deg, rgba($purple, $aThird) 0%, rgba($purpleSecondary, $aThird) 100%);
 $greenGradient: linear-gradient(180deg, $green 0%, $greenSecondary 100%);
 $greenGradientTransparent: linear-gradient(180deg, rgba($green, $aFirst) 0%, rgba($greenSecondary, $aFirst) 100%);
 
@@ -70,10 +70,14 @@ input {
 .form-elements {
   max-width: 1440px;
   min-height: 1853px; //for dev, remove after form-elements fully filled
-  // margin: 0 auto; // comment for perfect pixel dev
+  margin: 0 auto; // comment for perfect pixel dev
   background-color: #ffffff;
   font-family: Montserrat;
   font-weight: normal;
+
+  @media (max-width: 1376px) {
+    max-width: 1246px;
+  }
 
   &::before {
     // empty element to avoid dropping up the form-elements__logo margin (follows below)
@@ -91,7 +95,6 @@ input {
     margin-top: 30px; //2.083%;
 
     @media (max-width: 1376px) {
-      //was 1440px
       display: none;
     }
   }
@@ -99,10 +102,12 @@ input {
   &__wrap {
     max-width: 1160px;
     width: 100%;
-    margin: 62px auto 0px;
+    margin: 0 auto; //62px auto 0px;
+    padding: 3.875rem 0 8.1875rem;
 
     @media (max-width: 1376px) {
-      margin-top: 140px;
+      padding-top: 8.75rem;
+      //margin-top: 140px;
     }
 
     &::after {
@@ -138,15 +143,10 @@ input {
   &__date-dropdown {
     margin-top: 2.6rem;
     width: 20rem; // 320px
-    //height: 4.0625rem; // 65px
-    //border: solid orange 1px;
   }
 
   &__filter-date-dropdown {
     margin-top: 2.5rem; // 40px
-    width: 16.625rem; // 266px
-    height: 4.0625rem; // 65px
-    border: solid orange 1px;
   }
 
   &__subscription-text-field {
@@ -310,6 +310,7 @@ input {
 @import 'blocks/text-field/text-field.scss';
 @import 'blocks/dropdown/dropdown.scss';
 @import 'blocks/date-dropdown/date-dropdown.scss';
+@import 'blocks/filter-date-dropdown/filter-date-dropdown.scss';
 @import 'blocks/subscription-text-field/subscription-text-field.scss';
 @import 'blocks/checkbox/checkbox.scss';
 @import 'blocks/expandable-checkbox-list/expandable-checkbox-list.scss';

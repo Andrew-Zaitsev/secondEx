@@ -4,7 +4,7 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width")
     meta(name="keywords" value="uikit, fonts, colors, blocks")
-    meta(name="description' value='this page contains form elements in all possible conditions")
+    meta(name="description" value="this page contains form elements in all possible conditions")
     title form elements
     link(href="./form-elements.scss" rel="stylesheet")
     //link(href="./node_modules/air-datepicker/dist/css/datepicker.css")
@@ -15,6 +15,7 @@ html(lang="en")
     
     //script(src="./blocks/text-field/text-field.js" type="module")
     script(src="./blocks/date-dropdown/date-dropdown.js" type="module")
+    script(src="./blocks/filter-date-dropdown/filter-date-dropdown.js" type="module")
     script(src="./blocks/dropdown/dropdown.js" type="module")
     script(src="./blocks/expandable-checkbox-list/expandable-checkbox-list.js" type="text/javascript" defer)
     script(src="./blocks/like-button/like-button.js" type="text/javascript" defer)
@@ -28,6 +29,7 @@ html(lang="en")
     include blocks/text-field/text-field.pug
     include blocks/dropdown/dropdown.pug
     include blocks/date-dropdown/date-dropdown.pug
+    include blocks/filter-date-dropdown/filter-date-dropdown.pug
     include blocks/subscription-text-field/subscription-text-field.pug
     include blocks/checkbox/checkbox.pug
     include blocks/expandable-checkbox-list/expandable-checkbox-list.pug
@@ -91,7 +93,11 @@ html(lang="en")
               placeholder: "дд.мм.гггг",
             })
             
-          .form-elements__filter-date-dropdown filter date dropdown
+          .form-elements__filter-date-dropdown
+            +filter-date-dropdown({
+              title: "filter date dropdown",
+              placeholder: "дд.мм.гггг"
+            })
 
           .form-elements__subscription-text-field
             +subscription-text-field({

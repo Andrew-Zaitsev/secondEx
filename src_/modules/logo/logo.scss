@@ -1,0 +1,14 @@
+.logo {
+  width: 6.625rem;
+  height: 2.5rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(../../modules/logo/images/logo.svg);
+
+  &_for-ui {
+    width: 3rem;
+    height: 3rem;
+    background-image: url(../../modules/logo/images/logo_for-ui.svg);
+  }
+}

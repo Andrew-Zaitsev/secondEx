@@ -1,0 +1,28 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+include ../../../blocks/button/button.pug
+
+block meta
+  meta(name="keywords" value="uikit, fonts, colors, blocks")
+  meta(name="description" value="this page contains links to the pages of this project")
+  
+block title
+  title entry page
+
+block links
+  link(href="./index.scss" rel="stylesheet")
+
+block content
+  .index
+    h1.index__title The project of "FSD Frontend 2nd step education"
+    ul.index__ui-links
+      +button({
+        type: "button",
+        text: "google.com",
+        hasVolume: "true",
+        isInHeader: "",
+        href: "../colors-n-type/colors-n-type.pug",
+        
+        hasArrow: "true"
+      })
+    ul.indes__pages-links
+

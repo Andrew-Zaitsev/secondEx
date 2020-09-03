@@ -1,0 +1,20 @@
+include ../../modules/logo/logo.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width")
+    block meta
+    block title
+    link(href="../../layouts/ui-layout/ui-layout.scss" rel="stylesheet")
+    block links
+    block scripts
+
+  body
+    .ui-layout
+      .ui-layout__logo
+        +logo({
+          isForUI: false
+          })
+      block content

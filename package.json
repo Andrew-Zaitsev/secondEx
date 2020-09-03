@@ -9,7 +9,9 @@
     "fe": "parcel form-elements.pug -p 3002 --open --out-dir dist/form-elements --cache-dir dist/cache",
     "clean": "rm -rf dist/*",
     "cleanfe": "rm -rf dist/form-elements/* && npm run fe",
-    "cleanhnf": "rm -rf dist/headers-n-footers/* && npm run hnf"
+    "cleanhnf": "rm -rf dist/headers-n-footers/* && npm run hnf",
+    "index": "parcel src_/pages/index/index.pug -p 3000 --open --out-dir dist/index --cache-dir dist/cache/index",
+    "cleani": "npm run clean && npm run index"
   },
   "repository": {
     "type": "git",
