@@ -28,3 +28,11 @@ button {
 input {
   background: none;
 }
+
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}

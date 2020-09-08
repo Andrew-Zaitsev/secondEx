@@ -1,12 +1,44 @@
-@import '../../assets/scss/main.scss';
 @import '../../layouts/ui-layout/ui-layout.scss';
 
 .index {
-  //background-color: hotpink;
+  max-width: 1142px;
+  width: 100%;
+  margin: 4.1875rem auto 0; // 9.0625rem;
+  padding-bottom: 9.0625rem;
+  //border: 1px solid black;
+  font-family: Opensans;
+
+  @media (max-width: 1142px) {
+    //max-width: 278px; убрать паддинг лево-право для резиновости  доработать резиновость
+  }
+
+  &__wrap {
+    max-width: 250px;
+    width: 100%;
+    margin: 0 auto;
+  }
 
   &__title {
-    font-family: Opensans;
-    //text-transform: uppercase;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__list-title {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    //padding: 0 5rem;
+  }
+
+  &__button {
+    padding: 0.458rem 0;
   }
 }
 

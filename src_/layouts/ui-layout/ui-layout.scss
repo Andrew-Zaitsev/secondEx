@@ -1,6 +1,33 @@
+@import '../../assets/scss/main.scss';
 @import '../../modules/logo/logo.scss';
 
-.ui-layout__logo {
-  width: 100px;
-  height: 100px;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  background-color: $grey;
+}
+
+.ui-layout {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+
+  &_color_grey {
+    background-color: $lightgrey;
+  }
+
+  &::before {
+    // empty element to avoid dropping up the form-elements__logo margin (follows below)
+    content: "";
+    overflow: hidden; // обязательно!
+    display: block;
+  }
+
+  &__logo {
+    padding-left: 1.875rem;
+    padding-top: 1.875rem;
+  }
 }

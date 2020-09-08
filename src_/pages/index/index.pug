@@ -1,6 +1,9 @@
 extends ../../layouts/ui-layout/ui-layout.pug
 include ../../../blocks/button/button.pug
 
+block variables
+  - let pageColor = "grey";
+
 block meta
   meta(name="keywords" value="uikit, fonts, colors, blocks")
   meta(name="description" value="this page contains links to the pages of this project")
@@ -13,16 +16,31 @@ block links
 
 block content
   .index
-    h1.index__title The project of "FSD Frontend 2nd step education"
-    ul.index__ui-links
-      +button({
-        type: "button",
-        text: "google.com",
-        hasVolume: "true",
-        isInHeader: "",
-        href: "../colors-n-type/colors-n-type.pug",
-        
-        hasArrow: "true"
-      })
-    ul.indes__pages-links
-
+    .index__wrap
+      h1.index__title "FSD Frontend 2nd step education" project
+      h2.index__list-title ui kit
+      .index__buttons
+        -
+          let buttons;
+          buttons = [
+            {type: "button", text: "colors & type", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
+            {type: "button", text: "form elements", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
+            {type: "button", text: "cards", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
+            {type: "button", text: "headers & footers", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"}
+          ]
+        - for (let button of buttons)
+          .index__button
+            +button(button)
+              
+      h2.index__list-title pages
+      .index__buttons
+        -
+          buttons = [
+            {type: "button", text: "landing page", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
+            {type: "button", text: "search room", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
+            {type: "button", text: "roomm details", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
+            {type: "button", text: "registration", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"}
+          ]
+        - for (let button of buttons)
+          .index__button
+            +button(button)

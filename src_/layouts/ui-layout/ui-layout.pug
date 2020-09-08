@@ -1,4 +1,5 @@
 include ../../modules/logo/logo.pug
+block variables
 
 doctype html
 html(lang="en")
@@ -12,9 +13,13 @@ html(lang="en")
     block scripts
 
   body
-    .ui-layout
+    -
+      let uiLayoutClassName = "ui-layout";
+      uiLayoutClassName += (pageColor) ? " ui-layout_color_grey" : "";
+    
+    div(class = uiLayoutClassName)
       .ui-layout__logo
         +logo({
-          isForUI: false
+          isForUI: true
           })
       block content
