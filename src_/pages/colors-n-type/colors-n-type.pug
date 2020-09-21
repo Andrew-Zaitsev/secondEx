@@ -1,0 +1,52 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+
+block variables
+  - let pageColor = "white";
+
+block meta
+  meta(name="keywords" value="color, type")
+  meta(name="description" value="this page contains links to the pages of this project")
+  
+block title
+  title Colors & Type
+
+block links
+  link(href="./colors-n-type.scss" rel="stylesheet")
+  
+
+block content
+  .colors-n-type
+    .colors-n-type__color-column
+      -
+        let colors = [
+          {colorClass: "dark-shade-100", colorName: "Dark Shade 100%", colorCode: "#1F2041"},
+          {colorClass: "dark-shade-75", colorName: "Dark Shade 75%", colorCode: "#1F2041"},
+          {colorClass: "dark-shade-50", colorName: "Dark Shade 50%", colorCode: "#1F2041"},
+          {colorClass: "dark-shade-25", colorName: "Dark Shade 25%", colorCode: "#1F2041"},
+          {colorClass: "dark-shade-5", colorName: "Dark Shade 5%", colorCode: "#1F2041"},
+          {colorClass: "purple", colorName: "Purple", colorCode: "#BC9CFF"},
+          {colorClass: "green", colorName: "Green", colorCode: "#6FCF97"},
+        ]
+      - for (let color of colors)
+        -
+          let colorClassName = `colors-n-type__color-sample`;
+          colorClassName += ` ${colorClassName}_color_${color.colorClass}`;
+        //- console.log(colorClassName);
+        .colors-n-type__color-wrap
+          div(class = colorClassName)
+          .colors-n-type__text
+            .colors-n-type__name= color.colorName
+            .colors-n-type__code= color.colorCode
+
+    .colors-n-type__type-column
+      -
+        let types = [
+          {tagSample: "H1", typeSample: "This one is the sub-section or widget title"},
+          {tagSample: "H2", typeSample: "Next one is the item title inside widgets"},
+          {tagSample: "H3", typeSample: "This is a label or CTA text"},
+          {tagSample: "Body", typeSample: "This is the body text which is used for most of the design, like paragraphs, lists, etc."},
+        ]
+      - for (let type of types)
+        .colors-n-type__type-wrap
+          .colors-n-type__tag
+          .colors-n-type__type-sample

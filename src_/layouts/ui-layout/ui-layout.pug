@@ -15,7 +15,7 @@ html(lang="en")
   body
     -
       let uiLayoutClassName = "ui-layout";
-      uiLayoutClassName += (pageColor) ? " ui-layout_color_grey" : "";
+      uiLayoutClassName += (pageColor) ? ` ui-layout_color_${pageColor}` : "";
     
     div(class = uiLayoutClassName)
       .ui-layout__logo

@@ -1,0 +1,61 @@
+@import '../../layouts/ui-layout/ui-layout.scss';
+
+.colors-n-type {
+  width: 100%;
+  max-width: 1099px;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid black;
+
+  &__color-column {
+    max-width: 696px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__color-wrap {}
+
+  &__color-sample {
+    width: 70px;
+    height: 70px;
+    border-radius: 8.57%;
+
+    &_color_dark-shade-100 {
+      background-color: black; //$dark-shade-100; //colors-n-type__color-sample colors-n-type__color-sample_color_dark-shade-50
+    }
+
+    &_color_dark-shade-75 {
+      background-color: $dark-shade-75;
+    }
+
+    &_color_dark-shade-50 {
+      background-color: $dark-shade-50;
+    }
+
+    &_color_dark-shade-25 {
+      background-color: $dark-shade-25;
+    }
+
+    &_color_dark-shade-5 {
+      background-color: $dark-shade-5;
+    }
+
+    &_color_purple {
+      background-color: $purple;
+    }
+
+    &_color_green {
+      background-color: $green;
+    }
+
+  }
+
+  &__color-text {}
+
+  &__color-name {}
+
+  &__color-code {}
+
+  &__type-column {}
+
+}

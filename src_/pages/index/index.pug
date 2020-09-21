@@ -2,7 +2,7 @@ extends ../../layouts/ui-layout/ui-layout.pug
 include ../../../blocks/button/button.pug
 
 block variables
-  - let pageColor = "grey";
+  - let pageColor = "lightgrey";
 
 block meta
   meta(name="keywords" value="uikit, fonts, colors, blocks")
@@ -39,7 +39,8 @@ block content
             {type: "button", text: "landing page", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
             {type: "button", text: "search room", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
             {type: "button", text: "roomm details", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
-            {type: "button", text: "registration", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"}
+            {type: "button", text: "registration", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
+            {type: "button", text: "sign in", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"}
           ]
         - for (let button of buttons)
           .index__button

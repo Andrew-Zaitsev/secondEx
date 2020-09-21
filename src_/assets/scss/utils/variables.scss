@@ -6,15 +6,24 @@ $white: rgba(255, 255, 255, 1); //#FFFFFF
 $grey: rgba(229, 229, 229, 1); //#E5E5E5
 $lightgrey: rgba(244, 244, 246, 1); //#F4F4F6;
 
-//secondary colors
-$purpleSecondary: rgba(139, 164, 249, 1); //#8BA4F9
-$greenSecondary: rgba(102, 210, 234, 1); //#66D2EA
-
 //transparencies
 $aFirst: 0.75;
 $aSecond: 0.5;
 $aThird: 0.25;
 $aFourth: 0.05;
+
+//ui colors
+$dark-shade-100: $black;
+$dark-shade-75: rgba($black, $aFirst);
+$dark-shade-50: rgba($black, $aSecond);
+$dark-shade-25: rgba($black, $aThird);
+$dark-shade-5: rgba($black, $aFourth);
+
+//secondary colors
+$purpleSecondary: rgba(139, 164, 249, 1); //#8BA4F9
+$greenSecondary: rgba(102, 210, 234, 1); //#66D2EA
+
+
 
 //gradients
 $purpleGradient: linear-gradient(180deg, $purple 0%, $purpleSecondary 100%);

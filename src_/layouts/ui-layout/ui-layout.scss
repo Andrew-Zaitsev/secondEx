@@ -15,17 +15,22 @@ html {
   width: 100%;
   margin: 0 auto;
 
-  &_color_grey {
+  &_color_lightgrey {
     background-color: $lightgrey;
   }
 
+  &_color_white {
+    background-color: $white;
+  }
+
+  /*
   &::before {
     // empty element to avoid dropping up the form-elements__logo margin (follows below)
     content: "";
     overflow: hidden; // обязательно!
     display: block;
   }
-
+  */
   &__logo {
     padding-left: 1.875rem;
     padding-top: 1.875rem;
