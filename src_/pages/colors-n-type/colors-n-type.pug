@@ -31,22 +31,29 @@ block content
         -
           let colorClassName = `colors-n-type__color-sample`;
           colorClassName += ` ${colorClassName}_color_${color.colorClass}`;
-        //- console.log(colorClassName);
+
         .colors-n-type__color-wrap
           div(class = colorClassName)
-          .colors-n-type__text
-            .colors-n-type__name= color.colorName
-            .colors-n-type__code= color.colorCode
+          .colors-n-type__color-text
+            .colors-n-type__color-name= color.colorName
+            .colors-n-type__color-code= color.colorCode
 
     .colors-n-type__type-column
       -
         let types = [
-          {tagSample: "H1", typeSample: "This one is the sub-section or widget title"},
-          {tagSample: "H2", typeSample: "Next one is the item title inside widgets"},
-          {tagSample: "H3", typeSample: "This is a label or CTA text"},
-          {tagSample: "Body", typeSample: "This is the body text which is used for most of the design, like paragraphs, lists, etc."},
+          {tagSample: "h1", typeSample: "This one is the sub-section or widget title"},
+          {tagSample: "h2", typeSample: "Next one is the item title inside widgets"},
+          {tagSample: "h3", typeSample: "This is a label or CTA text"},
+          {tagSample: "body", typeSample: "This is the body text which is used for most of\u00A0the design, like paragraphs, lists, etc."},
         ]
       - for (let type of types)
+        -
+          let tagSampleClass = ["colors-n-type__tag-sample"];
+          let typeSampleClass = ["colors-n-type__type-sample"];
+
+          tagSampleClass.push(`colors-n-type__tag-sample_tag_${type.tagSample}`);
+          typeSampleClass.push(`colors-n-type__type-sample_tag_${type.tagSample}`);
+
         .colors-n-type__type-wrap
-          .colors-n-type__tag
-          .colors-n-type__type-sample
+          div(class = tagSampleClass)= type.tagSample
+          div(class = typeSampleClass)= type.typeSample
