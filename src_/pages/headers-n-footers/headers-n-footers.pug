@@ -1,0 +1,51 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+include ../../modules/header/header.pug
+
+block variables
+  - let pageColor = "lightgrey";
+
+block meta
+  meta(name="keywords" value="headres, footers")
+  meta(name="description" value="this page contains header versions and footer of the project")
+
+block title
+  title Headers & Footers
+
+block links
+  link(href = "./headers-n-footers.scss" rel="stylesheet")
+
+block content
+  .headers-n-footers
+    .headers-n-footers__header-signed-out
+      +header({
+        buttonSignIn: {
+          text: "войти",
+          href: "/mock-address/change-me",
+          type: "button",
+          hasVolume: true,
+          isInHeader: true,
+          hasBorder: true,
+        },
+        buttonRegister: {
+          text: "зарегистрироваться",
+          href: "/mock-address/change-me",
+          type: "button",
+          hasVolume: true,
+          isInHeader: true,
+        },
+      })
+    .headers-n-footers__header-signed-in
+      +header({
+        isSigned: true,
+        buttonSignIn: {
+          text: "войти",
+          href: "/mock-address/change-me",
+          type: "button",
+          hasVolume: true,
+          isInHeader: true,
+          hasBorder: true,
+        },
+        buttonRegister: {},
+      })
+    .headers-n-footers__footer-desktop
+    .headers-n-footers__footer-mobile

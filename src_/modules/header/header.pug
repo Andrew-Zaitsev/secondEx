@@ -1,0 +1,42 @@
+include ../logo/logo.pug
+include ../header-menu/header-menu.pug
+include ../button/button.pug
+
+mixin header({isSigned, buttonSignIn, buttonRegister})
+  .header
+    .header__logo
+      +logo({})
+    nav.header__header-menu
+      +header-menu({
+        items: [
+          {name: "О нас", href: "/mock-address/change-me"},
+          {name: "Услуги", links: [
+            {linkName: "first", linkHref: "/mock-address/change-me"},
+            {linkName: "second", linkHref: "/mock-address/change-me"},
+            {linkName: "third", linkHref: "/mock-address/change-me"}
+          ]},
+          {name: "Вакансии", href: "/mock-address/change-me"},
+          {name: "Новости", href: "/mock-address/change-me"},
+          {name: "Соглашения", links: [
+            {linkName: "first", linkHref: "/mock-address/change-me"},
+            {linkName: "second", linkHref: "/mock-address/change-me"},
+            {linkName: "third", linkHref: "/mock-address/change-me"}
+          ]}
+        ],
+      })
+      
+    -
+      let buttonsClasses = ["header__buttons"];
+      let accountLinkClasses = ["header__account-link"];
+
+      if (isSigned)
+        buttonsClasses.push("header__buttons_hidden");
+        
+      else
+        accountLinkClasses.push("header__account-link_hidden");
+  
+    div(class = buttonsClasses)
+      +button(buttonSignIn)
+      +button(buttonRegister)
+
+    div(class = accountLinkClasses) Юлий Цезарь

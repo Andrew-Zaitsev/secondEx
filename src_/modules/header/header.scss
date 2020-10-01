@@ -1,0 +1,15 @@
+.header {
+
+  &__buttons {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__account-link {
+
+    &_hidden {
+      display: none;
+    }
+  }
+}

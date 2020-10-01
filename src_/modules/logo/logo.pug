@@ -1,8 +1,8 @@
 //- choose {color: "grey"} for a grey icon
 //- or choose {color: "gradient"} for a gradiently colored icon with toxin text
-mixin logo(options)
+mixin logo({isForUI})
   -
     let logoClassName = "logo";
-    logoClassName += (options.isForUI) ? " logo_for-ui" : "";
+    logoClassName += (isForUI) ? " logo_for-ui" : "";
 
   div(class = logoClassName)

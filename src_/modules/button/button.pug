@@ -1,0 +1,29 @@
+mixin button({text, href, type, isGrey, hasVolume, isInHeader, hasBorder, hasArrow})
+  //- console.log("options.type: ", options.type);
+  //- let {text, href, type, isGrey, hasVolume, isInHeader, hasBorder, hasArrow} = options;
+  
+  - 
+    let buttonClassName = "button";
+    let titleClassName = "button__title";
+
+  - 
+    if (hasVolume) {
+      buttonClassName += " button_has-volume";
+      buttonClassName += (isInHeader) ? " button_in-header" : "";
+      buttonClassName += (hasBorder) ? " button_has-border" : "";
+      buttonClassName += (hasArrow) ? " button_has-arrow" : "";
+      titleClassName += (hasBorder) ? " button__title_color_purple" : " button__title_color_white";
+    } else {
+      titleClassName += (isGrey) ? " button__title_color_grey" : " button__title_color_purple";
+    }
+
+  button(class = buttonClassName, type = type)
+    
+    - if (href)
+      a(class = titleClassName, href = href)= text
+    - else 
+      span(class = titleClassName)= text
+
+    - if (hasArrow)
+      .button__arrow
+        i.material-icons arrow_forward
