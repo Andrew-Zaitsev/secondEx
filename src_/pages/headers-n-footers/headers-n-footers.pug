@@ -18,6 +18,21 @@ block content
   .headers-n-footers
     .headers-n-footers__header-signed-out
       +header({
+        headerMenu: [
+            {name: "О нас", href: "/mock-address/change-me"},
+            {name: "Услуги", links: [
+              {linkName: "Интересная услуга", linkHref: "/mock-address/change-me"},
+              {linkName: "Еще интереснее", linkHref: "/mock-address/change-me"},
+              {linkName: "Самая интересная", linkHref: "/mock-address/change-me"}
+            ]},
+            {name: "Вакансии", href: "/mock-address/change-me"},
+            {name: "Новости", href: "/mock-address/change-me"},
+            {name: "Соглашения", links: [
+              {linkName: "Важно", linkHref: "/mock-address/change-me"},
+              {linkName: "Очень важно", linkHref: "/mock-address/change-me"},
+              {linkName: "Совсем важно", linkHref: "/mock-address/change-me"}
+            ]}
+        ],
         buttonSignIn: {
           text: "войти",
           href: "/mock-address/change-me",
@@ -37,6 +52,21 @@ block content
       })
     .headers-n-footers__header-signed-in
       +header({
+        headerMenu: [
+            {name: "О нас", href: "/mock-address/change-me"},
+            {name: "Услуги", links: [
+              {linkName: "Интересная услуга", linkHref: "/mock-address/change-me"},
+              {linkName: "Еще интереснее", linkHref: "/mock-address/change-me"},
+              {linkName: "Самая интересная", linkHref: "/mock-address/change-me"}
+            ]},
+            {name: "Вакансии", href: "/mock-address/change-me"},
+            {name: "Новости", href: "/mock-address/change-me"},
+            {name: "Соглашения", links: [
+              {linkName: "Важно", linkHref: "/mock-address/change-me"},
+              {linkName: "Очень важно", linkHref: "/mock-address/change-me"},
+              {linkName: "Совсем важно", linkHref: "/mock-address/change-me"}
+            ]}
+        ],
         isSigned: true,
         buttonSignIn: {
           text: "войти",

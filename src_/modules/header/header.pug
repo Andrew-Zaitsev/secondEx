@@ -2,30 +2,14 @@ include ../logo/logo.pug
 include ../header-menu/header-menu.pug
 include ../button/button.pug
 
-mixin header({isSigned, buttonSignIn, buttonRegister, accountLink})
+mixin header({headerMenu, isSigned, buttonSignIn, buttonRegister, accountLink})
   .header
     .header__wrap
       .header__logo
         +logo({})
       nav.header__header-menu
-        +header-menu({
-          items: [
-            {name: "О нас", href: "/mock-address/change-me"},
-            {name: "Услуги", links: [
-              {linkName: "Интересная услуга", linkHref: "/mock-address/change-me"},
-              {linkName: "Еще интереснее", linkHref: "/mock-address/change-me"},
-              {linkName: "Самая интересная", linkHref: "/mock-address/change-me"}
-            ]},
-            {name: "Вакансии", href: "/mock-address/change-me"},
-            {name: "Новости", href: "/mock-address/change-me"},
-            {name: "Соглашения", links: [
-              {linkName: "Важно", linkHref: "/mock-address/change-me"},
-              {linkName: "Очень важно", linkHref: "/mock-address/change-me"},
-              {linkName: "Совсем важно", linkHref: "/mock-address/change-me"}
-            ]}
-          ],
-        })
-        
+        +header-menu(headerMenu)
+
       -
         let buttonsClasses = ["header__buttons"];
         let accountLinkClasses = ["header__account-link"];
