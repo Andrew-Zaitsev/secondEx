@@ -5,7 +5,11 @@
 
 .headers-n-footers {
   width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 62px 40px 140px 40px;
+  //max-width: 1240px;
+  //margin: 0 auto;
+  padding: 62px 0 140px 0; //62px 40px 140px 40px;
+
+  &__header-signed-out {
+    margin-bottom: 40px;
+  }
 }

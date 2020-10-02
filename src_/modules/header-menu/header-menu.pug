@@ -2,10 +2,11 @@ mixin header-menu({items})
   ul.header-menu
     each item in items
       if (item.links)
-        ul.header-menu__dropdown= item.name
-          each link in item.links
-            li.header-menu__dropdown-item
-              a.header-menu__dropdown-link(href = link.linkHref)= link.linkName
+        .header-menu__item.header-menu__item_dropdown= item.name  
+          ul.header-menu__dropdown
+            each link in item.links
+              li.header-menu__dropdown-item
+                a.header-menu__dropdown-link(href = link.linkHref)= link.linkName
       else
         li.header-menu__item
           a.header-menu__link(href = items.href)= item.name

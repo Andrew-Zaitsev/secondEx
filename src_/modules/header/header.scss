@@ -1,15 +1,49 @@
 .header {
+  padding: 15px 0px;
+  background-color: $white;
+
+  &__wrap {
+    width: 100%;
+    max-width: 1200px; //1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    flex-grow: 1;
+  }
 
   &__buttons {
+    display: flex;
+    align-items: center;
+
     &_hidden {
       display: none;
     }
   }
 
+  &__button-sign-in {
+    padding: 0 20px;
+  }
+
   &__account-link {
+    margin-left: 20px;
+    padding-left: 20px;
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    line-height: 30px;
+    border-left: 1px solid rgba($black, 0.1);
+    color: $dark-shade-50;
 
     &_hidden {
       display: none;
+    }
+
+    &:hover {
+      color: $dark-shade-75;
     }
   }
 }

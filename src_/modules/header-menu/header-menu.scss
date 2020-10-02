@@ -1,0 +1,65 @@
+.header-menu {
+  display: flex;
+  align-items: center;
+  //border: 1px solid orange;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  color: $dark-shade-50;
+
+
+
+  &__item {
+    padding: 0 10px;
+
+    &:first-child {
+      padding-left: 0;
+      font-weight: bold;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:hover {
+      color: $dark-shade-75;
+      cursor: pointer;
+    }
+  }
+
+  &__item_dropdown {
+    position: relative;
+    padding: 0 10px;
+
+    &:hover>* {
+      display: block;
+    }
+
+    &:after {
+      display: inline-block;
+      vertical-align: middle;
+      content: '\e313';
+      font-family: 'Material Icons';
+      font-size: 1.5rem;
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+
+  }
+
+  &__dropdown-item {
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 5px;
+    border-radius: 17px;
+    background-color: $white;
+    color: $dark-shade-50;
+    box-shadow: 0 0 25px 0px $dark-shade-25;
+
+    &:hover {
+      color: $dark-shade-75;
+    }
+  }
+}
