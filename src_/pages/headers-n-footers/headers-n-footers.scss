@@ -1,7 +1,5 @@
 @import '../../layouts/ui-layout/ui-layout.scss';
-@import '../../modules/header/header.scss';
-@import '../../modules/header-menu/header-menu.scss';
-@import '../../modules/button/button.scss';
+
 
 .headers-n-footers {
   width: 100%;
@@ -12,4 +10,19 @@
   &__header-signed-out {
     margin-bottom: 40px;
   }
+
+  &__header-signed-in {
+    margin-bottom: 40px;
+  }
+
+  &__footer-desktop {
+    margin-bottom: 40px;
+  }
 }
+
+@import '../../modules/header/header.scss';
+@import '../../modules/header-menu/header-menu.scss';
+@import '../../modules/button/button.scss';
+@import '../../modules/footer/footer.scss';
+@import '../../modules/footer-menu/footer-menu.scss';
+@import '../../modules/social-icons/social-icons.scss';

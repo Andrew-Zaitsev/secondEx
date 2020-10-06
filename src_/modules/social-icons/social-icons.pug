@@ -1,0 +1,9 @@
+mixin social-icons(icons)
+
+  .social-icons
+    for icon in icons
+      -
+        let {name, href} = icon;
+        let iconClassName = ["social-icons__icon"];
+        iconClassName.push(`social-icons__icon_${name}`);
+      a(class = iconClassName, href = href)

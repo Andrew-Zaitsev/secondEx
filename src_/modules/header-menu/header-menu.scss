@@ -1,7 +1,6 @@
 .header-menu {
   display: flex;
   align-items: center;
-  //border: 1px solid orange;
   font-family: Montserrat;
   font-size: 0.875rem;
   color: $dark-shade-50;
@@ -56,7 +55,7 @@
     border-radius: 17px;
     background-color: $white;
     color: $dark-shade-50;
-    box-shadow: 0 0 25px 0px $dark-shade-25;
+    box-shadow: 0 0 20px 0px rgba($black, 0.15);
 
     &:hover {
       color: $dark-shade-75;

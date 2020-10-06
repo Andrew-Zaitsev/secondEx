@@ -1,0 +1,31 @@
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 560px;
+  padding-top: 4px;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+
+  &__column {
+    width: 100%;
+    max-width: 160px;
+  }
+
+  &__title {
+    //padding-top: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: flex;
+    padding-bottom: 1px;
+  }
+
+  &__link {
+    display: block;
+    padding-top: 20px;
+    color: rgba($black, $aSecond);
+  }
+}

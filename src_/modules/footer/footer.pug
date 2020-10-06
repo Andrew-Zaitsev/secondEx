@@ -1,0 +1,19 @@
+include ../logo/logo.pug
+include ../social-icons/social-icons.pug
+include ../footer-menu/footer-menu.pug
+
+mixin footer({companyInfoText, footerMenuColumns, subscriptionTitle, subscriptionText, copyrightText, socialIcons})
+  .footer
+    .footer__main-section
+      .footer__company-info-block
+        +logo({})
+        p.footer__company-info-text= companyInfoText
+      +footer-menu(footerMenuColumns)
+      .footer__subscription-block
+        .footer__subscription-title= subscriptionTitle
+        .footer__subscription-text= subscriptionText
+        .footer__subscription-input
+    .footer__separator
+    .footer__copyright-section
+      .footer__copyright-text= copyrightText
+      +social-icons(socialIcons)

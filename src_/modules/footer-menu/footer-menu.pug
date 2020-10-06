@@ -1,0 +1,11 @@
+mixin footer-menu(columns)
+
+  .footer-menu
+    each column in columns
+      - let {columnTitle, columnLinks} = column;
+      .footer-menu__column
+        h3.footer-menu__title= columnTitle
+        nav.footer-menu__links
+        each link in columnLinks
+          - let {href, text} = link;
+          a.footer-menu__link= text

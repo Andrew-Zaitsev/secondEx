@@ -1,0 +1,29 @@
+.social-icons {
+  max-width: 112px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__icon {
+    display: block;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 24px;
+    background: $purpleGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    &_twitter:before {
+      content: '\f099';
+    }
+
+    &_facebook::before {
+      content: '\f082';
+    }
+
+    &_instagram::before {
+      content: '\f16d';
+    }
+  }
+}
