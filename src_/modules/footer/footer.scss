@@ -58,6 +58,9 @@
     align-items: center;
     margin: 0 auto;
     padding: 22px 20px;
-    //border: 1px solid orange;
+  }
+
+  &__copyright-text {
+    color: rgba($black, $aFirst);
   }
 }

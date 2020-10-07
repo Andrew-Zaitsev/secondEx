@@ -3,8 +3,6 @@
 
 .headers-n-footers {
   width: 100%;
-  //max-width: 1240px;
-  //margin: 0 auto;
   padding: 62px 0 140px 0; //62px 40px 140px 40px;
 
   &__header-signed-out {
@@ -18,6 +16,11 @@
   &__footer-desktop {
     margin-bottom: 40px;
   }
+
+  &__footer-mobile {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @import '../../modules/header/header.scss';
@@ -26,3 +29,4 @@
 @import '../../modules/footer/footer.scss';
 @import '../../modules/footer-menu/footer-menu.scss';
 @import '../../modules/social-icons/social-icons.scss';
+@import '../../modules/footer-mobile/footer-mobile.scss';

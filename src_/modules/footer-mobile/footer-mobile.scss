@@ -1,0 +1,17 @@
+.footer-mobile {
+  width: 100%;
+  max-width: 768px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 0 118px;
+  background-color: $white;
+  box-shadow: 0 10px 20px rgba($black, $aFourth);
+
+  &__copyright-text {
+    padding: 20px 0 24px;
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    color: rgba($black, $aFirst);
+  }
+}

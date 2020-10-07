@@ -1,6 +1,7 @@
 extends ../../layouts/ui-layout/ui-layout.pug
 include ../../modules/header/header.pug
 include ../../modules/footer/footer.pug
+include ../../modules/footer-mobile/footer-mobile.pug
 
 block variables
   - let pageColor = "lightgrey";
@@ -112,34 +113,13 @@ block content
           {name: "instagram", href: "http://instagram.com"},
         ],
       })
+    
     .headers-n-footers__footer-mobile
-      +footer({
-        companyInfoText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
-        footerMenuColumns: [
-          {columnTitle: "навигация", columnLinks: [
-              {href: "/mock-address/change-me", text: "О нас"},
-              {href: "/mock-address/change-me", text: "Новости"},
-              {href: "/mock-address/change-me", text: "Служба поддержки"},
-              {href: "/mock-address/change-me", text: "Услуги"},
-            ]},
-          {columnTitle: "о нас", columnLinks: [
-              {href: "/mock-address/change-me", text: "О сервисе"},
-              {href: "/mock-address/change-me", text: "Наша команда"},
-              {href: "/mock-address/change-me", text: "Вакансии"},
-              {href: "/mock-address/change-me", text: "Инвесторы"},
-            ]},
-          {columnTitle: "служба поддержки", columnLinks: [
-              {href: "/mock-address/change-me", text: "Соглашения"},
-              {href: "/mock-address/change-me", text: "Сообщества"},
-              {href: "/mock-address/change-me", text: "Связь с нами"},
-            ]},
-        ],
-        subscriptionTitle: "подписка",
-        subscriptionText: "Получайте специальные предложения и новости сервиса",
+      +footer-mobile({
         copyrightText: "Copyright © 2018 Toxin отель. Все права зачищены.",
         socialIcons: [
-          {name: "twitter", href: "http://twitter.com"},
-          {name: "facebook", href: "http://facebook.com"},
-          {name: "instagram", href: "http://instagram.com"},
+            {name: "twitter", href: "http://twitter.com"},
+            {name: "facebook", href: "http://facebook.com"},
+            {name: "instagram", href: "http://instagram.com"},
         ],
       })
