@@ -1,0 +1,19 @@
+mixin subscription-text-field({title, action, type, name, placeholder})
+
+  .subscription-text-field
+
+    form(action= action name = "subscription")
+
+      if title
+        .subscription-text-field__title= title
+      
+      .subscription-text-field__wrap
+        input.subscription-text-field__field(
+          type= type
+          name= name
+          placeholder= placeholder
+        )
+        label.subscription-text-field__button-label
+          input.subscription-text-field__button(type = "submit" value = "")
+          .subscription-text-field__button-arrow
+            i.material-icons.md-gradient-color arrow_forward

@@ -1,8 +1,9 @@
 include ../logo/logo.pug
 include ../social-icons/social-icons.pug
 include ../footer-menu/footer-menu.pug
+include ../subscription-text-field/subscription-text-field.pug
 
-mixin footer({companyInfoText, footerMenuColumns, subscriptionTitle, subscriptionText, copyrightText, socialIcons})
+mixin footer({companyInfoText, footerMenuColumns, subscriptionTitle, subscriptionText, subscriptionInput, copyrightText, socialIcons})
   .footer
     .footer__main-section
       .footer__company-info-block
@@ -12,7 +13,7 @@ mixin footer({companyInfoText, footerMenuColumns, subscriptionTitle, subscriptio
       .footer__subscription-block
         .footer__subscription-title= subscriptionTitle
         .footer__subscription-text= subscriptionText
-        .footer__subscription-input
+        +subscription-text-field(subscriptionInput)
     .footer__separator
     .footer__copyright-section
       .footer__copyright-text= copyrightText
