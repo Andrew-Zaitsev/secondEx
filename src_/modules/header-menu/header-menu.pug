@@ -1,13 +1,17 @@
 mixin header-menu(items)
 
-  ul.header-menu
-    each item in items
-      if (item.links)
-        .header-menu__item.header-menu__item_dropdown= item.name  
-          ul.header-menu__dropdown
-            each link in item.links
-              li.header-menu__dropdown-item
-                a.header-menu__dropdown-link(href = link.linkHref)= link.linkName
-      else
-        li.header-menu__item
-          a.header-menu__link(href = item.href)= item.name
+  nav.header-menu
+    button.header-menu__button
+      i.material-icons.md-40 blur_on
+    ul.header-menu__list
+      each item in items
+        if (item.links)
+          .header-menu__item.header-menu__item_dropdown
+            .header-menu__item-title= item.name
+            ul.header-menu__dropdown
+              each link in item.links
+                li.header-menu__dropdown-item
+                  a.header-menu__dropdown-link(href = link.linkHref)= link.linkName
+        else
+          li.header-menu__item
+            a.header-menu__link(href = item.href)= item.name

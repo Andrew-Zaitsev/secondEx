@@ -1,5 +1,4 @@
 .header {
-  //padding: 15px 0px;
   background-color: $white;
   box-shadow: 0px 10px 20px $dark-shade-5;
 
@@ -27,11 +26,11 @@
   }
 
   &__button-sign-in {
-    padding: 0 20px;
+    padding: 0 20px 0 10px;
   }
 
   &__account-link {
-    margin-left: 20px;
+    margin-left: 10px;
     padding-left: 20px;
     font-family: Montserrat;
     font-size: 0.875rem;

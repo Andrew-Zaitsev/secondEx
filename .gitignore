@@ -6,3 +6,5 @@
 /node_modules/*
 #git files
 /git ignore/*
+#some files??
+/debug.log

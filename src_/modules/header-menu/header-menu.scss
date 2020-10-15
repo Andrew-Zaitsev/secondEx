@@ -1,36 +1,83 @@
 .header-menu {
-  display: flex;
-  align-items: center;
-  font-family: Montserrat;
-  font-size: 0.875rem;
-  color: $dark-shade-50;
 
+  &__button {
+    display: none;
+    color: $dark-shade-50;
+    cursor: pointer;
 
-
-  &__item {
-    padding: 0 10px;
-
-    &:first-child {
-      padding-left: 0;
-      font-weight: bold;
+    &:hover {
+      color: $dark-shade-100;
     }
 
-    &:last-child {
-      padding-right: 0;
+    @media (max-width: 940px) {
+      display: block;
+
+      &_hidden {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    color: $dark-shade-50;
+
+    @media (max-width: 940px) {
+      max-width: 400px;
+      flex-direction: column;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+
+      &_hidden {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+
+    &:first-child {
+      font-weight: bold;
     }
 
     &:hover {
       color: $dark-shade-75;
       cursor: pointer;
     }
+
+    @media (max-width: 940px) {
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 34px;
+      text-align: center;
+      background-color: $white;
+      box-shadow: 0 0 20px 0px rgba($black, 0.15);
+    }
+
+    &_dropdown {
+      position: relative;
+    }
   }
 
-  &__item_dropdown {
-    position: relative;
+  &__link {
+    display: block;
     padding: 0 10px;
 
-    &:hover>* {
-      display: block;
+    @media (max-width: 940px) {
+      padding: 20px 40px;
+    }
+  }
+
+  &__item-title {
+    padding: 0 11px;
+
+    &_hidden {
+      display: none;
     }
 
     &:after {
@@ -40,25 +87,48 @@
       font-family: 'Material Icons';
       font-size: 1.5rem;
     }
+
+    @media (max-width: 940px) {
+      padding: 20px 40px 15px;
+    }
   }
 
   &__dropdown {
-    display: none;
     position: absolute;
+    display: block;
 
+    &_hidden {
+      display: none;
+    }
+
+    @media (max-width: 940px) {
+      position: relative;
+    }
   }
 
   &__dropdown-item {
     text-align: center;
-    padding: 10px 10px;
     margin-top: 5px;
-    border-radius: 17px;
+    border-radius: 20px;
     background-color: $white;
     color: $dark-shade-50;
     box-shadow: 0 0 20px 0px rgba($black, 0.15);
 
     &:hover {
       color: $dark-shade-75;
+    }
+
+    @media (max-width: 940px) {
+      margin: 5px 20px;
+    }
+  }
+
+  &__dropdown-link {
+    display: block;
+    padding: 10px 10px;
+
+    @media (max-width: 940px) {
+      padding: 20px 0px;
     }
   }
 }
