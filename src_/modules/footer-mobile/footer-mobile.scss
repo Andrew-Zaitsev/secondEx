@@ -8,10 +8,15 @@
   background-color: $white;
   box-shadow: 0 10px 20px rgba($black, $aFourth);
 
+  @media (min-width: 768px) {
+    display: none;
+  }
+
   &__copyright-text {
     padding: 20px 0 24px;
     font-family: Montserrat;
     font-size: 0.875rem;
+    text-align: center;
     color: rgba($black, $aFirst);
   }
 }

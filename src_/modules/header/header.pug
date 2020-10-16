@@ -23,6 +23,11 @@ mixin header({headerMenu, isSigned, buttonSignIn, buttonRegister, accountLink})
       div(class = buttonsClasses)
         .header__button-sign-in
           +button(buttonSignIn)
-        +button(buttonRegister)
-
-      a(class = accountLinkClasses, href = accountLink.href)= accountLink.userName
+        .header__button-register
+          +button(buttonRegister)
+        a.header__register-link
+          i.material-icons.md-40 person_add
+      a(class = accountLinkClasses, href = accountLink.href)
+        span.header__account-link-text= accountLink.userName
+        .header__account-link-image
+          i.material-icons.md-40 person

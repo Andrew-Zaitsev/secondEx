@@ -3,7 +3,7 @@
 
 .headers-n-footers {
   width: 100%;
-  padding: 62px 0 140px 0; //62px 40px 140px 40px;
+  padding: 62px 0 140px 0;
 
   &__header-signed-out {
     margin-bottom: 40px;
@@ -15,11 +15,17 @@
 
   &__footer-desktop {
     margin-bottom: 40px;
+
+
   }
 
   &__footer-mobile {
     display: flex;
     justify-content: center;
+
+    & .footer-mobile {
+      display: flex;
+    }
   }
 }
 

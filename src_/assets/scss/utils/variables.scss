@@ -27,6 +27,6 @@ $greenSecondary: rgba(102, 210, 234, 1); //#66D2EA
 
 //gradients
 $purpleGradient: linear-gradient(180deg, $purple 0%, $purpleSecondary 100%);
-$purpleGradientTransparent: linear-gradient(180deg, rgba($purple, $aThird) 0%, rgba($purpleSecondary, $aThird) 100%);
+$purpleGradientTransparent: linear-gradient(180deg, rgba($purple, $aSecond) 0%, rgba($purpleSecondary, $aSecond) 100%);
 $greenGradient: linear-gradient(180deg, $green 0%, $greenSecondary 100%);
 $greenGradientTransparent: linear-gradient(180deg, rgba($green, $aFirst) 0%, rgba($greenSecondary, $aFirst) 100%);

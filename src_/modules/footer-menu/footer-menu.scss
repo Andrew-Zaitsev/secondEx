@@ -2,10 +2,14 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 560px;
-  padding-top: 4px;
+  max-width: 600px;
+  padding: 4px 20px 0;
   font-family: Montserrat;
   font-size: 0.875rem;
+
+  @media (max-width: 940px) {
+    display: none;
+  }
 
   &__column {
     width: 100%;
@@ -13,7 +17,6 @@
   }
 
   &__title {
-    //padding-top: 4px;
     font-size: 0.75rem;
     text-transform: uppercase;
   }

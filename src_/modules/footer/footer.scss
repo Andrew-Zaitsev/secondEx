@@ -4,6 +4,10 @@
   background-color: $white;
   box-shadow: 0px 10px 20px $dark-shade-5;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   &__main-section {
     width: 100%;
     max-width: 1200px;
@@ -14,6 +18,11 @@
     padding: 100px 20px;
     //box-shadow: 0px 1px 0px rgba($black, 0.1);
     //border: 1px solid orange;
+
+    @media (max-width: 940px) {
+      justify-content: space-around;
+      padding: 100px 100px;
+    }
   }
 
   &__company-info-block {

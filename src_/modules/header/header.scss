@@ -27,6 +27,35 @@
 
   &__button-sign-in {
     padding: 0 20px 0 10px;
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__button-register {
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__register-link {
+    display: none;
+    padding-left: 20px;
+    background-image: $purpleGradient;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      background-image: $purpleGradientTransparent;
+    }
+
+    @media (max-width: 640px) {
+      display: block;
+    }
   }
 
   &__account-link {
@@ -44,6 +73,20 @@
 
     &:hover {
       color: $dark-shade-75;
+    }
+  }
+
+  &__account-link-text {
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__account-link-image {
+    display: none;
+
+    @media (max-width: 640px) {
+      display: block;
     }
   }
 }
