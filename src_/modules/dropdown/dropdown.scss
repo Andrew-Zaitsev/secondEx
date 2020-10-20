@@ -1,0 +1,175 @@
+.dropdown {
+  width: 100%;
+  max-width: 320px;
+
+  &__title-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0 4.8px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $black;
+    line-height: 15px;
+  }
+
+  &__state-field {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: $black;
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-family: $mainFont;
+    font-size: 0.875rem;
+    border: 1px solid rgba($black, $aThird);
+    border-radius: 4px;
+    color: rgba($black, $aFirst);
+
+
+    &:hover,
+    &:focus {
+      border-color: rgba($black, $aSecond);
+      cursor: pointer;
+
+      .dropdown__button-arrow {
+        color: rgba($black, $aFirst);
+      }
+    }
+
+    &_expanded {
+      border-radius: 4px 4px 0 0;
+      border-bottom: none;
+
+      .dropdown__list {
+        display: block;
+        z-index: 1;
+        cursor: default;
+      }
+    }
+  }
+
+  &__button-text {
+    width: 100%;
+    padding-left: 15px;
+    line-height: 42px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__button-arrow {
+    width: 46px;
+    text-align: center;
+    line-height: 42px;
+    color: rgba($black, $aSecond);
+  }
+
+  &__list {
+    display: none;
+    width: 100.68%;
+    position: absolute;
+    left: -0.3%;
+    top: 41.12px;
+    border: solid rgba($black, $aSecond) 1px;
+    border-radius: 0 0 4px 4px;
+    background-color: $white;
+    padding: 0 5.44px 8px 13.6px;
+  }
+
+  &__item {
+    padding-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $black;
+  }
+
+  &__item-counter {
+    width: 100%;
+    max-width: 92px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item-minus-button {
+    position: relative;
+    width: 29.3px;
+    height: 29.3px;
+    border: 1px solid rgba($black, $aThird);
+    border-radius: 14.64px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      background-color: rgba($black, $aSecond);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%);
+      width: 4.7px;
+      height: 1.1px;
+    }
+
+    &_transparent {
+      opacity: 0.38;
+    }
+  }
+
+  &__item-value {}
+
+  &__item-plus-button {
+    width: 29.3px;
+    height: 29.3px;
+    border: 1px solid rgba($black, $aThird);
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-family: 'Quicksand';
+    color: rgba($black, $aSecond);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__apply-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 19px 0 5px;
+  }
+
+  &__clean-button {
+    display: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: rgba($black, $aSecond);
+    background-color: $white;
+    cursor: pointer;
+
+    &_visible {
+      display: block;
+    }
+  }
+
+  &__apply-button {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: $purple;
+    background-color: $white;
+    cursor: pointer;
+  }
+}

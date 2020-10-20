@@ -1,0 +1,53 @@
+@import '../../layouts/ui-layout/ui-layout.scss';
+
+.form-elements {
+  width: 100%;
+  max-width: 1198px; //1440-282+20=1198;
+  //min-width: 260px;
+  margin: 0 auto;
+  padding: 62px 0 131px;
+  //display: flex;
+  //justify-content: space-between;
+  /*
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  */
+
+  &__left-section {
+    padding: 0 74px 0 20px;
+  }
+
+  &__left-section-wide-column {
+    max-width: 320px;
+  }
+
+  &__text-field-focused {
+    margin-top: 19px;
+  }
+
+  &__dropdown-default-wide {
+    margin-top: 18px;
+  }
+
+  &__masked-text-field {
+    margin-top: 20px;
+  }
+
+  &__left-section-narrow-column {
+    max-width: 266px;
+  }
+
+  &__middle-section {}
+
+  &__right-section {}
+
+  &__bottom-section {
+    width: 100%;
+  }
+}
+
+@import '../../modules/text-field/text-field.scss';
+@import '../../modules/dropdown/dropdown.scss';
+@import '../../modules/button/button.scss';

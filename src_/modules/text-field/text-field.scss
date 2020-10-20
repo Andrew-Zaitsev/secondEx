@@ -1,0 +1,47 @@
+.text-field {
+  width: 100%;
+  max-width: 320px;
+
+  &__title-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #1F2041;
+    line-height: 15px;
+    padding: 3px 0 5px;
+  }
+
+  &__state {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: rgba($black, $aSecond);
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 13.6px;
+    line-height: 41.6px;
+    padding-left: 15px;
+    border: 1px solid rgba($black, $aThird);
+    border-radius: 4px;
+    color: rgba($black, $aFirst);
+
+    &::placeholder {
+      color: rgba($black, $aThird);
+    }
+
+    &:hover,
+    &:focus {
+      border-color: rgba($black, $aSecond);
+
+      &::placeholder {
+        color: rgba($black, $aFirst);
+      }
+    }
+  }
+}

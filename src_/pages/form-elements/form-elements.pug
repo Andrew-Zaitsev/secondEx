@@ -1,0 +1,60 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+include ../../modules/text-field/text-field.pug
+include ../../modules/dropdown/dropdown.pug
+
+block variables
+  - let pageColor = "white";
+
+block meta
+  meta(name="keywords" value="modules, site modules")
+  meta(name="description" value="this page contains project modules")
+
+block title
+  title Form Elements
+
+block links
+  //-link(href="../../assets/fonts/fontawesome/css/all.css" rel="stylesheet")
+  link(href = "./form-elements.scss" rel="stylesheet")
+
+block scripts
+  script(src="./form-elements.js" type="module")
+
+block content
+  .form-elements
+    .form-elements__left-section
+  
+      .form-elements__left-section-wide-column  
+        +text-field({
+          title: "text field",
+          state: "default",
+          placeholder: "Email",
+        })
+    
+        .form-elements__text-field-focused
+          +text-field({
+            title: "text field",
+            state: "hover / focus",
+            placeholder: "Email",
+            value: "This is pretty awesome",
+          })
+        
+        .form-elements__dropdown-default-wide
+          +dropdown({
+            title: "dropdown",
+            state: "default",
+            id: "guests",
+            content: ["взрослые", "дети", "младенцы"],
+            buttonText: "Сколько гостей",
+            isWide: true,
+            hasApplySection: true
+          })
+
+        .form-elements__masked-text-field
+          +text-field({
+            title: "masked text field",
+            state: "default",
+            placeholder: "ДД.ММ.ГГГГ",
+            isMasked: true
+          })
+
+      .form-elements__left-section-narrow-column

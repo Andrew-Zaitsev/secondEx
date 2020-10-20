@@ -1,0 +1,38 @@
+include ../button/button.pug
+
+mixin dropdown({title, state, id, content, buttonText, isWide, hasApplySection})
+  - let facilities = ["спальни", "кровати", "ванные комнаты"];  
+    
+  div.dropdown(id = id)
+    .dropdown__title-wrap
+      .dropdown__title= title
+      if state
+        .dropdown__state-field= state
+    
+    div.dropdown__button(tabindex = 0)
+      .dropdown__button-text= buttonText
+      .dropdown__button-arrow
+        i.material-icons expand_more
+      
+      ul.dropdown__list
+
+        for item in content
+          li.dropdown__item= item
+            .dropdown__item-counter
+              .dropdown__item-minus-button.dropdown__item-minus-button_transparent
+              .dropdown__item-value= 0
+              .dropdown__item-plus-button +
+        
+        if hasApplySection
+          .dropdown__apply-section
+            .dropdown__apply-button
+              +button({
+                text: "применить",
+                type: "button",
+              })
+            .dropdown__clean-button
+              +button({
+                text: "очистить",
+                type: "button",
+                isGrey: true,
+              })

@@ -1,0 +1,13 @@
+mixin text-field({title, state, placeholder, value, isMasked})
+  .text-field
+    if title
+      .text-field__title-wrap
+        .text-field__title= title
+        if state
+          .text-field__state= state
+    input(
+      id = ((isMasked) ? "masked-text-field__input" : null)
+      class = "text-field__input"
+      placeholder = placeholder
+      value = value
+    )
