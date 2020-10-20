@@ -35,6 +35,18 @@
     margin-top: 20px;
   }
 
+  &__date-dropdown {
+    margin-top: 40px;
+  }
+
+  &__filter-date-dropdown {
+    margin-top: 40px;
+  }
+
+  &__subscription-text-field {
+    margin-top: 41px;
+  }
+
   &__left-section-narrow-column {
     max-width: 266px;
   }
@@ -51,3 +63,6 @@
 @import '../../modules/text-field/text-field.scss';
 @import '../../modules/dropdown/dropdown.scss';
 @import '../../modules/button/button.scss';
+@import '../../modules/date-dropdown/date-dropdown.scss';
+@import '../../modules/filter-date-dropdown/filter-date-dropdown.scss';
+@import '../../modules/subscription-text-field/subscription-text-field.scss';

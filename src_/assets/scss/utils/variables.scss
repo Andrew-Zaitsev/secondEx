@@ -30,6 +30,7 @@ $purpleGradient: linear-gradient(180deg, $purple 0%, $purpleSecondary 100%);
 $purpleGradientTransparent: linear-gradient(180deg, rgba($purple, $aSecond) 0%, rgba($purpleSecondary, $aSecond) 100%);
 $greenGradient: linear-gradient(180deg, $green 0%, $greenSecondary 100%);
 $greenGradientTransparent: linear-gradient(180deg, rgba($green, $aFirst) 0%, rgba($greenSecondary, $aFirst) 100%);
+$whiteGradient: linear-gradient(180deg, $white 0%, $white 100%);
 
 //font
 $mainFont: Montserrat,

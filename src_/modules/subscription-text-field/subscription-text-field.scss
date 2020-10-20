@@ -3,10 +3,10 @@
   max-width: 267px;
 
   &__title {
-    font-size: 0.75rem;
+    font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
-    padding-bottom: 0.3125rem;
+    padding-bottom: 5px;
   }
 
   &__wrap {
@@ -14,38 +14,39 @@
     display: flex;
     box-sizing: border-box;
     //justify-content: space-between;
-    border: 0.0625rem solid rgba(31, 32, 65, 0.25);
-    border-radius: 0.25rem;
+    border: 1px solid rgba($black, $aThird);
+    border-radius: 4px;
   }
 
   &__field {
     width: 100%;
-    font-size: 0.875rem;
-    color: rgba(31, 32, 65, 0.75);
-    padding-left: 0.9375rem;
+    font-size: 14px;
+    color: rgba($black, $aFirst);
+    padding-left: 15px;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 4px;
 
     &::placeholder {
-      color: rgba(31, 32, 65, 0.25);
+      color: rgba($black, $aThird);
     }
   }
 
   &__button-label {
     display: block;
+    cursor: pointer;
   }
 
   &__button {
     position: absolute;
-    width: 2.65rem;
-    height: 2.65rem;
+    width: 42.4px;
+    height: 42.4px;
     z-index: -1;
     //opacity: 0;
   }
 
   &__button-arrow {
-    width: 2.6rem; //2.75rem;
-    line-height: 2.65rem; //2.75rem;
+    width: 41.6px; //2.75rem;
+    line-height: 42.4px; //2.75rem;
     text-align: center;
   }
 }

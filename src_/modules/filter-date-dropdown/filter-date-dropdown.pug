@@ -1,0 +1,9 @@
+mixin filter-date-dropdown({title, placeholder})
+  
+  .filter-date-dropdown
+    .filter-date-dropdown__title= title
+    .filter-date-dropdown__field-holder
+      input.filter-date-dropdown__field(placeholder= placeholder, value = "")
+      .filter-date-dropdown__field-arrow
+        i.material-icons expand_more
+    .filter-date-dropdown__calendar

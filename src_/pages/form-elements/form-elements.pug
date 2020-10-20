@@ -1,6 +1,9 @@
 extends ../../layouts/ui-layout/ui-layout.pug
 include ../../modules/text-field/text-field.pug
 include ../../modules/dropdown/dropdown.pug
+include ../../modules/date-dropdown/date-dropdown.pug
+include ../../modules/filter-date-dropdown/filter-date-dropdown.pug
+include ../../modules/subscription-text-field/subscription-text-field.pug
 
 block variables
   - let pageColor = "white";
@@ -57,4 +60,25 @@ block content
             isMasked: true
           })
 
+        .form-elements__date-dropdown
+          +date-dropdown({
+            fromFieldTitle: "date dropdown",
+            toFieldTitle: "date dropdown",
+            placeholder: "дд.мм.гггг",
+          })
+
       .form-elements__left-section-narrow-column
+        .form-elements__filter-date-dropdown
+          +filter-date-dropdown({
+            title: "filter date dropdown",
+            placeholder: "дд.мм.гггг"
+          })
+
+        .form-elements__subscription-text-field
+          +subscription-text-field({
+            title: "subscription text field",
+            action: "",
+            type: "email",
+            name: "email",
+            placeholder: "Email"
+          })

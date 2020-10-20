@@ -1,0 +1,18 @@
+mixin date-dropdown({fromFieldTitle, toFieldTitle, placeholder})
+  
+  .date-dropdown
+    .date-dropdown__fields
+      .date-dropdown__from-field-wrap
+        .date-dropdown__from-field-title= fromFieldTitle
+        .date-dropdown__from-field-label
+          input(class = "date-dropdown__from-field" placeholder= placeholder value = "")
+          .date-dropdown__from-field-arrow
+            i.material-icons expand_more
+      .date-dropdown__to-field-wrap
+        .date-dropdown__to-field-title= toFieldTitle
+        .date-dropdown__to-field-label
+          input(class = "date-dropdown__to-field" placeholder= placeholder value = "")
+          .date-dropdown__to-field-arrow
+            i.material-icons expand_more
+    
+    .date-dropdown__calendar
