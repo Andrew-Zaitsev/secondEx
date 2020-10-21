@@ -1,0 +1,16 @@
+mixin toggle({title, buttons})
+
+  .toggle
+    - if (title)
+      .toggle__title= title
+    
+    - for (let button of buttons)
+      - let {name, value, text, isChecked} = button;
+      label.toggle__label
+        input.toggle__input(
+          type= "checkbox",
+          name= name,
+          value= value,
+          checked= isChecked
+          )
+        .toggle__text= text

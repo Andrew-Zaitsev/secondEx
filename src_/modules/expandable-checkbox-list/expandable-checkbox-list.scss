@@ -1,0 +1,39 @@
+.expandable-checkbox-list {
+  max-width: 320px;
+  position: relative;
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $black;
+    line-height: 44px;
+  }
+
+  &__arrow {
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    color: rgba($black, $aSecond);
+  }
+
+  &__checkbox {
+    display: none;
+
+    &_expanded {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      background-color: $white;
+    }
+  }
+
+}

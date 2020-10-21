@@ -1,0 +1,66 @@
+.toggle {
+  max-width: 320px;
+}
+
+.toggle__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  color: #1F2041;
+  padding-bottom: 0.2rem;
+}
+
+.toggle__label {
+  display: block;
+  margin-top: 0.625rem;
+  cursor: pointer;
+}
+
+.toggle__input {
+  position: absolute;
+  margin-left: 0.22rem;
+  margin-top: 0.47rem;
+  opacity: 0;
+
+  &:checked+.toggle__text:before {
+    border-color: #BC9CFF;
+  }
+
+  &:checked+.toggle__text:after {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    left: 1.5rem;
+  }
+}
+
+.toggle__text {
+  position: relative;
+  padding-left: 3.125rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+
+  &:before {
+    box-sizing: border-box;
+    position: absolute;
+    content: '';
+    width: 2.5rem;
+    height: 1.25rem;
+    left: 0;
+    top: 0.2rem;
+    border: 0.0625rem solid rgba(31, 32, 65, 0.25);
+    border-radius: 0.625rem;
+    background-color: #FFFFFF;
+  }
+
+  &:after {
+    box-sizing: border-box;
+    position: absolute;
+    content: '';
+    width: 0.75rem;
+    height: 0.75rem;
+    left: 0.25rem;
+    top: 0.45rem;
+    border-radius: 0.375rem;
+    background-color: rgba(31, 32, 65, 0.25);
+  }
+}

@@ -1,0 +1,20 @@
+mixin checkbox({title, elements, isRich})
+
+  -
+    let textClassName = "checkbox__text";
+    textClassName += (isRich) ? " checkbox__text_rich": "";
+  
+  .checkbox
+
+    if title
+      .checkbox__title= title
+    
+    for element in elements
+      - let {text, additionalText, isChecked} = element;
+      label.checkbox__label
+        input.checkbox__input(type="checkbox" checked= isChecked)
+        .checkbox__picture
+        div(class = textClassName)!= text
+        
+        if isRich
+          .checkbox__additional-text!= additionalText

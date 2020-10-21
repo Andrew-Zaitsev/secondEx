@@ -1,0 +1,17 @@
+mixin radio({title, name, buttons})
+
+  .radio
+    - if (title)
+      .radio__title= title
+    
+    .radio__wrap
+      - for (let button of buttons)
+        - let {value, text, isChecked} = button
+        label.radio__label
+          input.radio__input(
+            type= 'radio'
+            name= name
+            value= value
+            checked = isChecked
+            )
+          .radio__text= text

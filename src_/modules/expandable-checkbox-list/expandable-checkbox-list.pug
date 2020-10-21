@@ -1,0 +1,10 @@
+include ../checkbox/checkbox.pug
+
+mixin expandable-checkbox-list({title, checkbox})
+  .expandable-checkbox-list
+    .expandable-checkbox-list__button(tabindex = 0)
+      .expandable-checkbox-list__title= title
+      .expandable-checkbox-list__arrow
+        i.material-icons expand_more
+    .expandable-checkbox-list__checkbox
+      +checkbox(checkbox)

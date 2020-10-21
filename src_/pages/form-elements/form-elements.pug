@@ -4,6 +4,9 @@ include ../../modules/dropdown/dropdown.pug
 include ../../modules/date-dropdown/date-dropdown.pug
 include ../../modules/filter-date-dropdown/filter-date-dropdown.pug
 include ../../modules/subscription-text-field/subscription-text-field.pug
+include ../../modules/expandable-checkbox-list/expandable-checkbox-list.pug
+include ../../modules/radio/radio.pug
+include ../../modules/toggle/toggle.pug
 
 block variables
   - let pageColor = "white";
@@ -24,50 +27,46 @@ block scripts
 
 block content
   .form-elements
-    .form-elements__left-section
+    .form-elements__section.form-elements__section_position_left
+      +text-field({
+        title: "text field",
+        state: "default",
+        placeholder: "Email",
+      })
   
-      .form-elements__left-section-wide-column  
+      .form-elements__text-field-focused
         +text-field({
           title: "text field",
-          state: "default",
+          state: "hover / focus",
           placeholder: "Email",
+          value: "This is pretty awesome",
         })
-    
-        .form-elements__text-field-focused
-          +text-field({
-            title: "text field",
-            state: "hover / focus",
-            placeholder: "Email",
-            value: "This is pretty awesome",
-          })
-        
-        .form-elements__dropdown-default-wide
-          +dropdown({
-            title: "dropdown",
-            state: "default",
-            id: "guests",
-            content: ["взрослые", "дети", "младенцы"],
-            buttonText: "Сколько гостей",
-            isWide: true,
-            hasApplySection: true
-          })
+      
+      .form-elements__dropdown-default-wide
+        +dropdown({
+          title: "dropdown",
+          state: "default",
+          id: "guests",
+          content: ["взрослые", "дети", "младенцы"],
+          buttonText: "Сколько гостей",
+          
+          hasApplySection: true,
+        })
+      .form-elements__masked-text-field
+        +text-field({
+          title: "masked text field",
+          state: "default",
+          placeholder: "ДД.ММ.ГГГГ",
+          isMasked: true
+        })
+      .form-elements__date-dropdown
+        +date-dropdown({
+          fromFieldTitle: "date dropdown",
+          toFieldTitle: "date dropdown",
+          placeholder: "дд.мм.гггг",
+        })
 
-        .form-elements__masked-text-field
-          +text-field({
-            title: "masked text field",
-            state: "default",
-            placeholder: "ДД.ММ.ГГГГ",
-            isMasked: true
-          })
-
-        .form-elements__date-dropdown
-          +date-dropdown({
-            fromFieldTitle: "date dropdown",
-            toFieldTitle: "date dropdown",
-            placeholder: "дд.мм.гггг",
-          })
-
-      .form-elements__left-section-narrow-column
+      .form-elements__column.form-elements__column_width_266
         .form-elements__filter-date-dropdown
           +filter-date-dropdown({
             title: "filter date dropdown",
@@ -82,3 +81,85 @@ block content
             name: "email",
             placeholder: "Email"
           })
+
+        .form-elements__dropdown-default
+          +dropdown({
+            title: "dropdown",
+            state: "default",
+            id: "facilities",
+            content: ["спальни", "кровати", "ванные комнаты"],
+            buttonText: "Ваши удобства",
+          })
+
+        .form-elements__dropdown-expanded
+          +dropdown({
+            title: "dropdown",
+            state: "expanded",
+            id: "facilities",
+            content: ["спальни", "кровати", "ванные комнаты"],
+            buttonText: "Ваши удобства",
+          })
+
+        .form-elements__expandable-checkbox-list
+          +expandable-checkbox-list({
+            title: "expandable checkbox list",
+            checkbox: {
+              elements: [
+                {text: "Завтрак"},
+                {text: "Письменный стол"},
+                {text: "Стул для кормления"},
+                {text: "Кроватка"},
+                {text: "Телевизор"},
+                {text: "Шампунь"},
+              ]
+            },
+          })  
+            
+        .form-elements__expandable-checkbox-list-expanded
+          +expandable-checkbox-list({
+            title: "expandable checkbox list",
+            checkbox: {
+              elements: [
+                {text: "Завтрак"},
+                {text: "Письменный стол"},
+                {text: "Стул для кормления"},
+                {text: "Кроватка"},
+                {text: "Телевизор"},
+                {text: "Шампунь"},
+              ]
+            },
+          })
+    
+    .form-elements__section
+      +checkbox({
+        title: "checkbox buttons",
+        elements: [
+          {text: "Можно курить"},
+          {text: "Можно с питомцами", isChecked: true},
+          {text: "Можно пригласить гостей (до&nbsp;10&nbsp;человек)", isChecked: true}
+        ],
+      })
+
+      .form-elements__radio
+        +radio({
+          title: "radio buttons",
+          name: "gender",
+          buttons: [
+            {value: "male", text: "Мужчина", isChecked: true},
+            {value: "female", text: "Женщина",}
+          ]
+        })
+      
+      .form-elements__toggle
+        +toggle({
+          title: "toggle",
+          buttons: [
+            {name: "subscribe", value: "specialOffer", text: "Получать спецпредложения", isChecked: true},
+            {name: "subscribe", value: "specialOffer", text: "Получать спецпредложения"}
+          ]
+        })
+
+    .form-elements__section right
+    .form-elements__section.form-elements__section_position_bottom
+      .form-elements__room-info
+      
