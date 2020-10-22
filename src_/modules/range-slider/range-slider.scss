@@ -1,0 +1,56 @@
+@import '../../assets/js/plagins/ion.rangeSlider/ion.rangeSlider.scss';
+
+.range-slider {
+  max-width: 266px;
+
+  &__title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    text-transform: uppercase;
+    margin-bottom: 1.125rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    color: #1F2041;
+  }
+
+  &__caption {
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__input {
+    //this class is for plagin intialization
+  }
+}
+
+.irs--round {
+  height: 1rem;
+}
+
+.irs--round .irs-line {
+  top: 0.3125rem;
+  height: 0.375rem;
+  background-color: #FFFFFF;
+  border: 0.0625rem solid rgba(31, 32, 65, 0.25);
+  border-radius: 0.1875rem;
+}
+
+.irs--round .irs-bar {
+  top: 0.3125rem;
+  height: 0.375rem;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.irs--round .irs-handle {
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  border: 0.125rem solid #FFFFFF;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 0.5rem;
+  box-shadow: none;
+}

@@ -1,0 +1,54 @@
+.like-button {
+  max-width: 40px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+
+  &_border-color_grey {
+    border-color: rgba($black, $aThird);
+    background-image: $whiteGradient, none;
+  }
+
+  &_border-color_gradient {
+    border-color: transparent;
+    background-image: $whiteGradient,
+      $purpleGradient;
+  }
+
+  &_content-color_grey {
+    color: rgba($black, $aThird);
+  }
+
+  &_content-color_violet {
+    color: $purple;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19px;
+    height: 18px;
+  }
+
+  &__number {
+    width: 19px;
+    font-size: 0.625rem;
+    line-height: 12px;
+  }
+}

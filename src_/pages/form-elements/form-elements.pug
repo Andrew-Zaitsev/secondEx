@@ -7,6 +7,9 @@ include ../../modules/subscription-text-field/subscription-text-field.pug
 include ../../modules/expandable-checkbox-list/expandable-checkbox-list.pug
 include ../../modules/radio/radio.pug
 include ../../modules/toggle/toggle.pug
+include ../../modules/like-button/like-button.pug
+include ../../modules/rate/rate.pug
+include ../../modules/range-slider/range-slider.pug
 
 block variables
   - let pageColor = "white";
@@ -49,7 +52,6 @@ block content
           id: "guests",
           content: ["взрослые", "дети", "младенцы"],
           buttonText: "Сколько гостей",
-          
           hasApplySection: true,
         })
       .form-elements__masked-text-field
@@ -159,7 +161,58 @@ block content
           ]
         })
 
-    .form-elements__section right
+      .form-elements__like-buttons
+        .form-elements__like-buttons-title like button
+        .form-elements__like-buttons-wrap
+          +like-button({
+            defaultNumber: "2"
+          })
+          +like-button({
+            defaultNumber: "11"
+          })
+        
+      .form-elements__rate
+        .form-elements__rate-title rate button
+        .form-elements__rate-wrap
+          +rate({
+            defaultNumber: "4"
+          })
+          +rate({
+            defaultNumber: "5"
+          })
+
+      .form-elements__dropdown-expanded-wide
+        +dropdown({
+          title: "dropdown",
+          state: "",
+          id: "guests",
+          content: ["взрослые", "дети", "младенцы"],
+          buttonText: "Сколько гостей",
+          hasApplySection: true,
+        })
+        
+      .form-elements__rich-checkbox
+        +checkbox({
+          title: "rich checkbox buttons",
+          elements: [
+            {text: "Широкий коридор", additionalText: "Ширина коридоров в номере не&nbsp;менее 91 см."},
+            {text: "Помощник для инвалидов", additionalText: "На 1 этаже вас встретит специалист и&nbsp;проводит до номера."},
+          ],
+          isRich: true,
+        })
+
+    .form-elements__section
+      .form-elements__range-slider
+        +range-slider({
+          title: "range slider",
+          name: "costRange",
+          unit: "₽",
+          min: "0",
+          max: "15000",
+          from: "5000",
+          to: "10000"
+        })
+        
     .form-elements__section.form-elements__section_position_bottom
       .form-elements__room-info
       

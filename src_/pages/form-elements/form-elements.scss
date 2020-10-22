@@ -63,15 +63,15 @@
   }
 
   &__dropdown-default {
-    margin-top: 100px;
+    margin-top: 97px;
   }
 
   &__dropdown-expanded {
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
   &__expandable-checkbox-list {
-    margin-top: 40px;
+    margin-top: 159px;
   }
 
   &__expandable-checkbox-list-expanded {
@@ -85,6 +85,57 @@
   &__toggle {
     margin-top: 40px;
   }
+
+  &__like-buttons {
+    margin-top: 43px;
+  }
+
+  &__like-buttons-title {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__like-buttons-wrap {
+    max-width: 90px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__rate {
+    margin-top: 40px;
+  }
+
+  &__rate-title {
+    margin-bottom: 16px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__rate-wrap {
+    max-width: 260px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__dropdown-expanded-wide {
+    margin-top: 192px;
+  }
+
+  &__rich-checkbox {
+    margin-top: 254px;
+    max-width: 266px;
+  }
+
+  &__range-slider {
+    margin-top: 4px;
+    width: 266px;
+  }
 }
 
 @import '../../modules/text-field/text-field.scss';
@@ -97,3 +148,6 @@
 @import '../../modules/checkbox/checkbox.scss';
 @import '../../modules/radio/radio.scss';
 @import '../../modules/toggle/toggle.scss';
+@import '../../modules/like-button/like-button.scss';
+@import '../../modules/rate/rate.scss';
+@import '../../modules/range-slider/range-slider.scss';

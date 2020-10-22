@@ -1,0 +1,5 @@
+mixin rate({defaultNumber})
+  .rate
+    - for (let i = 1; i <= 5; ++i)
+      .rate__star
+        i.material-icons.md-gradient-color= (i <= defaultNumber) ? "star" : "star_border"

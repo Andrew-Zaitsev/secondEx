@@ -1,0 +1,16 @@
+mixin range-slider({title, name, unit, min, max, from, to})
+
+  .range-slider
+    .range-slider__title-wrap
+      .range-slider__title= title
+      .range-slider__caption
+    input.range-slider__input(
+      type = "text",
+      value = "",
+      name= name,
+      data-unit= unit,
+      data-min= min,
+      data-max= max,
+      data-from= from,
+      data-to= to
+    )
