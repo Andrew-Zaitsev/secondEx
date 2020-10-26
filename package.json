@@ -5,6 +5,7 @@
   "main": "headers-and-footors.pug",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/*",
     "index": "parcel src/pages/index/index.pug -p 3000 --open --out-dir dist/index --cache-dir dist/cache/index",
     "cleani": "npm run clean && npm run index"
   },
