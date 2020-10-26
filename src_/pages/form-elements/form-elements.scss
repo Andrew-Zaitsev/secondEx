@@ -9,12 +9,19 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /*
-  @media (max-width: 900px) {
+
+  @media (max-width: 1135px) {
+    //flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 775px) {
     flex-direction: column;
     align-items: center;
+    //justify-content: space-around;
   }
-  */
+
 
   &__section {
     width: 100%;
@@ -30,8 +37,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      //flex-wrap: wrap;
       max-width: none;
       margin-top: 200px;
+
+      @media (max-width: 775px) {
+        margin-top: 40px;
+      }
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        //justify-content: space-around;
+      }
     }
   }
 
@@ -76,6 +94,10 @@
 
   &__expandable-checkbox-list {
     margin-top: 159px;
+
+    @media (max-width: 775px) {
+      margin-top: 40px;
+    }
   }
 
   &__expandable-checkbox-list-expanded {
@@ -129,16 +151,28 @@
 
   &__dropdown-expanded-wide {
     margin-top: 192px;
+
+    @media (max-width: 775px) {
+      margin-top: 40px;
+    }
   }
 
   &__rich-checkbox {
     margin-top: 254px;
     max-width: 266px;
+
+    @media (max-width: 775px) {
+      margin-top: 40px;
+    }
   }
 
   &__range-slider {
     margin-top: 4px;
     max-width: 266px;
+
+    @media (max-width: 775px) {
+      margin-top: 40px;
+    }
   }
 
   &__buttons {
@@ -200,10 +234,18 @@
 
   &__dropdown-expanded-wide-filled {
     margin-top: 233px;
+
+    @media (max-width: 775px) {
+      margin-top: 40px;
+    }
   }
 
   &__bullet-list {
     margin-top: 256px;
+
+    @media (max-width: 775px) {
+      margin-top: 40px;
+    }
   }
 
   &__room-info {
