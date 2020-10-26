@@ -1,0 +1,9 @@
+mixin pagination({areCardsHidden})
+  .pagination
+    - 
+      let roomCardsClassName = "pagination__room-cards";
+      roomCardsClassName += (areCardsHidden) ? " pagination__room-cards_hidden" : "";
+
+    div(class = roomCardsClassName)
+      //- сделать блок room-card
+    .pagination__buttons

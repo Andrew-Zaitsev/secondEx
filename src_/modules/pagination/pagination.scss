@@ -1,0 +1,90 @@
+.pagination {
+
+  &__room-cards {
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    max-width: 241px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button-page a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    color: rgba($black, $aSecond);
+    ;
+  }
+
+  &__button-ellipsis a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-decoration: none;
+    color: rgba($black, $aSecond);
+  }
+
+  &__button-active a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: $purpleGradient;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $white;
+  }
+
+  &__button-prev a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: $greenGradient;
+    color: $white;
+  }
+
+  &__button-next a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: $greenGradient;
+    color: $white;
+  }
+
+  &__button-nav {
+    margin-top: 11px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba($black, $aFirst);
+  }
+}

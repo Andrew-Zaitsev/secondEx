@@ -1,0 +1,9 @@
+mixin bullet-list({title, list})
+
+  .bullet-list
+    if title
+      .bullet-list__title= title
+      
+    ul.bullet-list__list
+      for string in list
+        li.bullet-list__item!= string

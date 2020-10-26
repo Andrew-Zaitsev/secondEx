@@ -27,7 +27,11 @@
     }
 
     &_position_bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       max-width: none;
+      margin-top: 200px;
     }
   }
 
@@ -134,7 +138,81 @@
 
   &__range-slider {
     margin-top: 4px;
-    width: 266px;
+    max-width: 266px;
+  }
+
+  &__buttons {
+    margin-top: 39px;
+  }
+
+  &__buttons-title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  &__buttons-with-volume-row {
+    width: 218px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__button-with-volume,
+  &__button-with-border {
+    width: 99px;
+    margin-right: 20px;
+  }
+
+  &__buttons-with-border-row {
+    width: 218px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__buttons-row {
+    width: 142px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    margin-right: 20px;
+  }
+
+
+  &__pagination {
+    margin-top: 41px;
+  }
+
+  &__pagination-title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $black;
+    margin-bottom: 16px;
+  }
+
+  &__dropdown-expanded-wide-filled {
+    margin-top: 233px;
+  }
+
+  &__bullet-list {
+    margin-top: 256px;
+  }
+
+  &__room-info {
+    max-width: 291px;
+  }
+
+  &__review {
+    max-width: 711px;
+    margin-top: 10px;
   }
 }
 
@@ -151,3 +229,7 @@
 @import '../../modules/like-button/like-button.scss';
 @import '../../modules/rate/rate.scss';
 @import '../../modules/range-slider/range-slider.scss';
+@import '../../modules/pagination/pagination.scss';
+@import '../../modules/bullet-list/bullet-list.scss';
+@import '../../modules/room-info/room-info.scss';
+@import '../../modules/review/review.scss';
