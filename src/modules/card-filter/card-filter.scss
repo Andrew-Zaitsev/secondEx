@@ -1,0 +1,8 @@
+.card-filter {
+  padding: 30px;
+  background-color: $white;
+  box-shadow: 0px 0px 25px rgba($blackSecondary, $aFifth);
+}
+
+@import '../date-dropdown/date-dropdown.scss';
+@import '../dropdown/dropdown.scss';

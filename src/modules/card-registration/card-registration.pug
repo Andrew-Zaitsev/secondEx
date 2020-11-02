@@ -1,0 +1,69 @@
+include ../text-field/text-field.pug
+include ../radio/radio.pug
+include ../toggle/toggle.pug
+include ../button/button.pug
+
+mixin card-registration({title, signInBlockText})
+  .card-registration
+    form.card-registration__form
+      .card-registration__title= title
+      .card-registration__name-fields
+        +text-field({
+          placeholder: "Имя",
+        })
+        +text-field({
+          placeholder: "Фамилия",
+        })
+      .card-registration__sex-checkbox
+        +radio({
+          name: "sex",
+          buttons: [
+            {text: "Мужчина", value: "male", isChecked: true},
+            {text: "Женщина", value: "female"},
+          ]
+        })
+      .card-registration__birth-date-field
+        +text-field({
+          title: "дата рождения",
+          placeholder: "дд.мм.гггг",
+          isMasked: true,
+        })
+      .card-registration__sign-in-data-fields
+        +text-field({
+          title: "данные для входа в сервис",
+          placeholder: "Email",
+        })
+        +text-field({
+          placeholder: "Пароль",
+        })
+
+      .card-registration__subscription-toggle
+        +toggle({
+          buttons: [
+            {name: "subscribtion", text: "Получать спецпредложинея", value: true},
+
+          ]
+        })
+
+      .card-registration__buttons
+
+        .card-registration__submit-button
+          +button({
+            text: "перейти к оплате",
+            href: "",
+            type: "submit",
+            hasVolume: true,
+            hasArrow: true,
+          })
+
+        .card-registration__sign-in-block
+          .card-registration__sign-in-text= signInBlockText
+          .card-registration__sign-in-button
+            +button({
+              text: "войти",
+              href: "",
+              type: "button",
+              hasVolume: true,
+              hasBorder: true,
+              hasArrow: true,
+            })

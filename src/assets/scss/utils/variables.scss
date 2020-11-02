@@ -12,6 +12,9 @@ $aSecond: 0.5;
 $aThird: 0.25;
 $aFourth: 0.05;
 
+//additional transparencies
+$aFifth: 0.2;
+
 //ui colors
 $dark-shade-100: $black;
 $dark-shade-75: rgba($black, $aFirst);
@@ -22,6 +25,7 @@ $dark-shade-5: rgba($black, $aFourth);
 //secondary colors
 $purpleSecondary: rgba(139, 164, 249, 1); //#8BA4F9
 $greenSecondary: rgba(102, 210, 234, 1); //#66D2EA
+$blackSecondary: rgba(0, 0, 0, 1); //#000000
 
 
 

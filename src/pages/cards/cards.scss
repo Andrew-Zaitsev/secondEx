@@ -1,0 +1,31 @@
+.cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 0 140px;
+  border: 1px solid orange;
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    width: 100%;
+  }
+
+  &__card-registration {
+    margin-top: 40px;
+  }
+
+  &__card-sign-in {
+    margin-top: 40px;
+  }
+}
+
+@import '../../assets/scss/main.scss';
+@import '../../modules/card-filter/card-filter.scss';
+@import '../../modules/button/button.scss';
+@import '../../modules/card-registration/card-registration.scss';
+@import '../../modules/card-booking/card-booking.scss';
+@import '../../modules/card-sign-in/card-sign-in.scss';

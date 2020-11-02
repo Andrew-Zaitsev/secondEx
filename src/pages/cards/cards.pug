@@ -1,0 +1,58 @@
+extends ../../layouts/ui-layout/ui-layout.pug
+include ../../modules/card-filter/card-filter.pug
+include ../../modules/card-registration/card-registration.pug
+include ../../modules/card-booking/card-booking.pug
+include ../../modules/card-sign-in/card-sign-in.pug
+
+block variables
+  - let pageColor = "lightgrey";
+
+block meta
+  meta(name="keywords" value="cards, site cards")
+  meta(name="description" value="this page contains project card modules")
+
+block title
+  title Cards
+
+block links
+  //-link(href="../../assets/fonts/fontawesome/css/all.css" rel="stylesheet")
+  link(href = "./cards.scss" rel="stylesheet")
+
+block scripts
+  script(src="./cards.js" type="module")
+
+block content
+  .cards
+    .cards__column
+      +card-filter({
+        title: "Найдём номера под ваши пожелания",
+      })
+      .cards__card-registration
+        +card-registration({
+          title: "Регистрация аккаунта",
+          signInBlockText: "Уже есть аккаунт на Toxin",
+        })
+    .cards__column
+      .cards__card-booking
+        +card-booking({
+          roomNumber: "888",
+          roomType: "люкс",
+          roomPrice: "9990₽",
+          measurePeriodText: "в сутки",
+          priceList: {
+            items:[
+              {itemText: "9 990₽ х 4 суток", itemPrice: "39 960₽"},
+              {itemText: "Сбор за услуги: скидка 2 179₽", itemPrice: "0₽", hasIcon: true},
+              {itemText: "Сбор за дополнительные услуги", itemPrice: "300₽", hasIcon: true},
+            ],
+            sumText: "Итого",
+            sumPrice: "38 081₽",
+          },
+        })
+      .cards__card-sign-in
+        +card-sign-in({
+          title: "Войти",
+          registrationBlockText: "Нет аккаунта на Toxin",
+        })
+        
+    .cards__column third

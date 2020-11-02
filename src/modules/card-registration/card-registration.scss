@@ -1,0 +1,10 @@
+.card-registration {
+  padding: 30px;
+  background-color: $white;
+  box-shadow: 0px 0px 25px rgba($blackSecondary, $aFifth);
+}
+
+@import '../text-field/text-field.scss';
+@import '../radio/radio.scss';
+@import '../toggle/toggle.scss';
+@import '../button/button.scss';

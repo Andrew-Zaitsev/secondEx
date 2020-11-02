@@ -1,0 +1,47 @@
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin card-booking({roomNumber, roomType, roomPrice, measurePeriodText, priceList})
+
+  .card-booking
+    form.card-booking__form
+      .card-booking__room-info
+        .card-booking__room-number= `№ ${roomNumber}` 
+        .card-booking__room-type= roomType
+        .card-booking__room-price= roomPrice
+        .card-booking__measure-period= measurePeriodText
+      .card-booking__date-dropdown
+        +date-dropdown({
+          fromFieldTitle: "прибытие",
+          toFieldTitle: "выезд",
+          placeholder: "дд.мм.гггг",
+        })
+      .card-booking__drodpown
+        +dropdown({
+          title: "гости",
+          id: "guests",
+          content: ["взрослые", "дети", "ванные младенцы"],
+          buttonText: "Сколько гостей",
+          hasApplySection: true,
+        })
+      .card-booking__price-list
+        each item in priceList.items
+          .card-booking__price-list-item
+            -
+              let itemTextClasses = ['card-booking__item-text'];
+              if (item.hasIcon) {itemTextClasses.push('card-booking__item-text_has-icon')};
+              
+            div(class = itemTextClasses)= item.itemText
+            .card-booking__item-price= item.itemPrice
+        .card-booking__sum-item
+          .card-booking__sum-item-text= priceList.sumText
+          .card-booking__sum-item-price= priceList.sumPrice
+      .card-booking__submit-button
+        +button({
+          text: "забронировать",
+          href: "",
+          type: "submit",
+          hasVolume: true,
+          hasArrow: true,
+        })

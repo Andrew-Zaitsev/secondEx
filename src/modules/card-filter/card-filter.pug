@@ -1,0 +1,29 @@
+include ../date-dropdown/date-dropdown.pug
+include ../dropdown/dropdown.pug
+
+mixin card-filter({title})
+  .card-filter
+    form.card-filter__form  
+      .card-filter__title= title
+      .card-filter__date-dropdown
+        +date-dropdown({
+          fromFieldTitle: "прибытие",
+          toFieldTitle: "выезд",
+          placeholder: "дд.мм.гггг",
+        })
+      .card-filter__dropdown
+        +dropdown({
+          title: "гости",
+          id: "guests",
+          content: ["взрослые", "дети", "ванные младенцы"],
+          buttonText: "Сколько гостей",
+          hasApplySection: true,
+        })
+      .card-filter__button
+        +button({
+          text: "подобрать номер",
+          href: "",
+          type: "submit",
+          hasVolume: true,
+          hasArrow: true,
+        })

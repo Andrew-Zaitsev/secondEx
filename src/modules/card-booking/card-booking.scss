@@ -1,0 +1,31 @@
+.card-booking {
+  padding: 30px;
+  background-color: $white;
+  box-shadow: 0px 0px 25px rgba($blackSecondary, $aFifth);
+
+  &__room-number {
+    font-size: 24px;
+    font-weight: bold;
+
+    &::first-letter {
+      font-size: 14px;
+    }
+  }
+
+  &__item-text {
+    padding-right: 30px;
+
+    &_has-icon::after {
+      display: block;
+      content: 'i';
+      width: 20px;
+      line-height: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid rgba($black, $aThird);
+      border-radius: 50%;
+      color: rgba($black, $aThird);
+    }
+  }
+}
