@@ -3,6 +3,7 @@
 }
 
 .toggle__title {
+  margin-bottom: 10px;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.75rem;
@@ -13,8 +14,11 @@
 
 .toggle__label {
   display: block;
-  margin-top: 10px;
   cursor: pointer;
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
 }
 
 .toggle__input {

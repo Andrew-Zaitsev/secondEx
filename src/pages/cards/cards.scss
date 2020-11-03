@@ -4,18 +4,22 @@
   align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 72px 0 140px;
-  border: 1px solid orange;
+  padding: 73px 0 140px;
+  //border: 1px solid orange;
 
   &__column {
     display: flex;
     flex-direction: column;
-    max-width: 380px;
+    max-width: 378px;
     width: 100%;
+
+    &:last-child {
+      max-width: 320px;
+    }
   }
 
   &__card-registration {
-    margin-top: 40px;
+    margin-top: 42px;
   }
 
   &__card-sign-in {

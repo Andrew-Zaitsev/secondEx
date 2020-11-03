@@ -7,14 +7,15 @@ mixin card-registration({title, signInBlockText})
   .card-registration
     form.card-registration__form
       .card-registration__title= title
-      .card-registration__name-fields
+      .card-registration__full-name-fields
         +text-field({
           placeholder: "Имя",
         })
-        +text-field({
-          placeholder: "Фамилия",
-        })
-      .card-registration__sex-checkbox
+        .card-registration__surname-field
+          +text-field({
+            placeholder: "Фамилия",
+          })
+      .card-registration__sex-radio
         +radio({
           name: "sex",
           buttons: [
@@ -33,9 +34,11 @@ mixin card-registration({title, signInBlockText})
           title: "данные для входа в сервис",
           placeholder: "Email",
         })
-        +text-field({
-          placeholder: "Пароль",
-        })
+
+        .card-registration__password-field
+          +text-field({
+            placeholder: "Пароль",
+          })
 
       .card-registration__subscription-toggle
         +toggle({
@@ -65,5 +68,4 @@ mixin card-registration({title, signInBlockText})
               type: "button",
               hasVolume: true,
               hasBorder: true,
-              hasArrow: true,
             })

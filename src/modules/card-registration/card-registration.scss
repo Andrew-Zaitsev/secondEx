@@ -1,7 +1,63 @@
 .card-registration {
-  padding: 30px;
+  padding: 40px 30px 30px;
   background-color: $white;
   box-shadow: 0px 0px 25px rgba($blackSecondary, $aFifth);
+
+  &__title {
+    font-family: Opensans;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 30px;
+    color: $black;
+  }
+
+  &__full-name-fields {
+    margin-top: 20px;
+  }
+
+  &__surname-field {
+    margin-top: 10px;
+  }
+
+  &__sex-radio {
+    margin-top: 8px;
+  }
+
+  &__birth-date-field {
+    margin-top: 21px;
+  }
+
+  &__sign-in-data-fields {
+    margin-top: 18px;
+  }
+
+  &__password-field {
+    margin-top: 10px;
+  }
+
+  &__subscription-toggle {
+    margin-top: 7px;
+  }
+
+  &__buttons {
+    margin-top: 24px;
+  }
+
+  &__sign-in-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  &__sign-in-text {
+    font-size: 0.875rem;
+    color: $blackSecondary;
+  }
+
+  &__sign-in-button {
+    width: 99px;
+  }
 }
 
 @import '../text-field/text-field.scss';
