@@ -17,7 +17,7 @@ mixin card-booking({roomNumber, roomType, roomPrice, measurePeriodText, priceLis
           toFieldTitle: "выезд",
           placeholder: "дд.мм.гггг",
         })
-      .card-booking__drodpown
+      .card-booking__dropdown
         +dropdown({
           title: "гости",
           id: "guests",
@@ -36,6 +36,7 @@ mixin card-booking({roomNumber, roomType, roomPrice, measurePeriodText, priceLis
             .card-booking__item-price= item.itemPrice
         .card-booking__sum-item
           .card-booking__sum-item-text= priceList.sumText
+          .card-booking__sum-divider
           .card-booking__sum-item-price= priceList.sumPrice
       .card-booking__submit-button
         +button({

@@ -32,7 +32,7 @@
     &:hover,
     &:focus {
       border-color: rgba($black, $aSecond);
-
+      /*
       .date-dropdown__from-field::placeholder {
         color: rgba($black, $aFirst);
       }
@@ -40,6 +40,7 @@
       .date-dropdown__from-field-arrow {
         color: rgba($black, $aFirst);
       }
+*/
     }
   }
 
@@ -54,10 +55,11 @@
     text-transform: uppercase;
     color: rgba($black, $aFirst);
     cursor: pointer;
-
+    /*
     &::placeholder {
       color: rgba($black, $aThird);
     }
+*/
   }
 
   &__from-field-arrow {
@@ -110,10 +112,11 @@
     text-transform: uppercase;
     color: rgba($black, $aFirst);
     cursor: pointer;
-
+    /*
     &::placeholder {
       color: rgba($black, $aThird);
     }
+    */
   }
 
   &__to-field-arrow {

@@ -43,5 +43,9 @@
         color: rgba($black, $aFirst);
       }
     }
+
+    &#masked-text-field__input {
+      text-transform: uppercase;
+    }
   }
 }
