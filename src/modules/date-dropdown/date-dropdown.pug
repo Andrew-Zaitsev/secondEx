@@ -1,7 +1,10 @@
-mixin date-dropdown({fromFieldTitle, toFieldTitle, placeholder})
-  
+mixin date-dropdown({fromFieldTitle, toFieldTitle, placeholder, areFieldsHidden, isCalendarVisible})
+  -
+    let fieldsClassNames = ["date-dropdown__fields"];
+    if (areFieldsHidden) fieldsClassNames.push("date-dropdown__fields_hidden");
+
   .date-dropdown
-    .date-dropdown__fields
+    div(class = fieldsClassNames)
       .date-dropdown__from-field-wrap
         .date-dropdown__from-field-title= fromFieldTitle
         .date-dropdown__from-field-label
@@ -15,4 +18,4 @@ mixin date-dropdown({fromFieldTitle, toFieldTitle, placeholder})
           .date-dropdown__to-field-arrow
             i.material-icons expand_more
     
-    .date-dropdown__calendar
+    .date-dropdown__calendar(data-is-visible = isCalendarVisible)

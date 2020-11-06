@@ -3,6 +3,7 @@ include ../../modules/card-filter/card-filter.pug
 include ../../modules/card-registration/card-registration.pug
 include ../../modules/card-booking/card-booking.pug
 include ../../modules/card-sign-in/card-sign-in.pug
+include ../../modules/date-dropdown/date-dropdown.pug
 
 block variables
   - let pageColor = "lightgrey";
@@ -55,4 +56,9 @@ block content
           registrationBlockText: "Нет аккаунта на Toxin",
         })
         
-    .cards__column third
+    .cards__column
+      +date-dropdown({
+        placeholder: "дд.мм.гггг",
+        areFieldsHidden: true,
+        isCalendarVisible: true,
+      })

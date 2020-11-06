@@ -10,11 +10,12 @@
   &__column {
     display: flex;
     flex-direction: column;
-    max-width: 378px;
+    max-width: 380px; //378px;
     width: 100%;
 
     &:last-child {
-      max-width: 320px;
+      max-width: 322px; //320px
+      border: 1px solid orange;
     }
   }
 
@@ -33,3 +34,4 @@
 @import '../../modules/card-registration/card-registration.scss';
 @import '../../modules/card-booking/card-booking.scss';
 @import '../../modules/card-sign-in/card-sign-in.scss';
+@import '../../modules/date-dropdown/date-dropdown.scss';

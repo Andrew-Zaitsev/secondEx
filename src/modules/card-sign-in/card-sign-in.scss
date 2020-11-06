@@ -1,5 +1,36 @@
 .card-sign-in {
-  padding: 30px;
+  padding: 40px 30px 30px;
   background-color: $white;
   box-shadow: 0px 0px 25px rgba($blackSecondary, $aFifth);
+
+  &__title {
+    font-family: Opensans;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 30px;
+  }
+
+  &__sign-in-data-fields {
+    margin-top: 20px;
+  }
+
+  &__password-field {
+    margin-top: 10px;
+  }
+
+  &__submit-button {
+    margin-top: 20px;
+  }
+
+  &__registration-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  &__registration-block-text {
+    font-size: 0.875rem;
+    color: $blackSecondary;
+  }
 }

@@ -4,15 +4,16 @@ include ../button/button.pug
 mixin card-sign-in({title, registrationBlockText})
   .card-sign-in
     form.card-sign-in__form
-      .card-sign-in__title
+      .card-sign-in__title= title
       .card-sign-in__sign-in-data-fields
         +text-field({
-          title: "данные для входа в сервис",
           placeholder: "Email",
         })
-        +text-field({
-          placeholder: "Пароль",
-        })
+        .card-sign-in__password-field
+          +text-field({
+            placeholder: "Пароль",
+            isPassword: true,
+          })
       .card-sign-in__submit-button
         +button({
           text: "войти",

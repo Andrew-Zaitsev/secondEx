@@ -50,7 +50,10 @@ jQuery(document).ready(function () {
 
   calendars.data('datepicker');
 
-  calendars.hide();
+  calendars.each(function () {
+    if (!(this.dataset.isVisible)) $(this).hide();
+  });
+  //calendars.hide();
 
   // закрытие календаря при клике вне дропдауна
   $(document).on('mouseup', function (e) {
