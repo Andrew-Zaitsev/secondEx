@@ -4,6 +4,7 @@ include ../../modules/card-registration/card-registration.pug
 include ../../modules/card-booking/card-booking.pug
 include ../../modules/card-sign-in/card-sign-in.pug
 include ../../modules/date-dropdown/date-dropdown.pug
+include ../../modules/room-card/room-card.pug
 
 block variables
   - let pageColor = "lightgrey";
@@ -57,8 +58,22 @@ block content
         })
         
     .cards__column
-      +date-dropdown({
-        placeholder: "дд.мм.гггг",
-        areFieldsHidden: true,
-        isCalendarVisible: true,
-      })
+      .cards__date-dropdown
+        +date-dropdown({
+          placeholder: "дд.мм.гггг",
+          areFieldsHidden: true,
+          isCalendarVisible: true,
+        })
+      .cards__room-card
+        +room-card({
+          images: [],
+          roomNumber: "888",
+          roomType: "люкс",
+          roomPrice: "9 990₽",
+          measurePeriodText: "в сутки",
+          defaultRating: "5",
+          reviewsNumber: "145",
+          measureUnit: "Отзыв",
+        })
+      //.cards__room-card
+        +room-card({})

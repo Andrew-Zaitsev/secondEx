@@ -26,6 +26,14 @@
   &__card-sign-in {
     margin-top: 40px;
   }
+
+  &__date-dropdown {
+    margin-bottom: 409px; // for 5 rows of days 369px;
+  }
+
+  &__room-card {
+    margin-top: 40px;
+  }
 }
 
 @import '../../assets/scss/main.scss';
@@ -35,3 +43,5 @@
 @import '../../modules/card-booking/card-booking.scss';
 @import '../../modules/card-sign-in/card-sign-in.scss';
 @import '../../modules/date-dropdown/date-dropdown.scss';
+@import '../../modules/room-card/room-card.scss';
+@import '../../modules/rate/rate.scss';
