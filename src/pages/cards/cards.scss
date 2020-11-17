@@ -15,7 +15,7 @@
 
     &:last-child {
       max-width: 322px; //320px
-      border: 1px solid orange;
+      //border: 1px solid orange;
     }
   }
 
@@ -28,10 +28,14 @@
   }
 
   &__date-dropdown {
-    margin-bottom: 409px; // for 5 rows of days 369px;
+    margin-bottom: 520px; //409px; // for 5 rows of days 369px;
   }
 
   &__room-card {
+    width: 100%;
+    max-width: 270px;
+    //border: 1px solid orange;
+
     margin-top: 40px;
   }
 }

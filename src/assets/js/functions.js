@@ -18,7 +18,7 @@ const prettifyNumber = (number, separator = '\u00A0') => {
 }
 
 function makeDropdown(dropdownClassName, dropdownButtonClassName, dropdownListClassName, needToHideButton) {
-  //it is needed the button and list dropdownents to have a modifiers "_hidden" for hiding them 
+  //it is needed the button and the list of the dropdowns to have modifiers "_hidden" for hiding them 
   //dropdown module have to have such a structure:   |     dropdown
   //                                                 |       dropdown__button
   //                                                 |       dropdown__list

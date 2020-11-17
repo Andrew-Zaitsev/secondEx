@@ -3,14 +3,15 @@ include ../rate/rate.pug
 mixin room-card({images, roomNumber, roomType, roomPrice, measurePeriodText, defaultRating, reviewsNumber, measureUnit})
   .room-card
     .room-card__slider
-    .room-card__rooom-info
-      .room-card__room-number= roomNumber
-      .room-card__room-type= roomType
-      .room-card__room-price= roomPrice
-      .room-card__measure-period= measurePeriodText
-    .room-card__room-reviews-block
-      .room-card__room-rating
-        +rate({defaultNumber: defaultRating})
-      .room-card__reviews
-        .room-card__reviews-number= reviewsNumber
-        .room-card__measure-unit= measureUnit
+    .room-card__caption
+      .room-card__rooom-info
+        .room-card__room-number= `№ ${roomNumber}`
+        .room-card__room-type= roomType
+        .room-card__room-price= roomPrice
+        .room-card__measure-period= measurePeriodText
+      .room-card__room-reviews-block
+        .room-card__room-rating
+          +rate({defaultNumber: defaultRating})
+        .room-card__reviews
+          .room-card__reviews-number= reviewsNumber
+          .room-card__measure-unit= measureUnit

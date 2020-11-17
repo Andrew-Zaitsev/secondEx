@@ -4,6 +4,7 @@ export {
   monthNouns,
   yearNouns,
   variantNouns,
+  reviewNouns,
   facilities,
   guests,
   roomCards
@@ -14,6 +15,7 @@ const weekNouns = ['неделя', 'недели', 'недель'];
 const monthNouns = ['месяц', 'месяца', 'месяцев'];
 const yearNouns = ['год', 'года', 'лет'];
 const variantNouns = ['варианта', 'вариантов', 'вариантов'];
+const reviewNouns = ['отзыв', 'отзыва', 'отзывов'];
 
 const facilities = [
   ['спальня', 'спальни', 'спален'],

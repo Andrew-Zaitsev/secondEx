@@ -1,0 +1,77 @@
+.room-card {
+  &__slider {}
+
+  &__caption {
+    padding: 20px 17px 20px 20px;
+    background-color: $white;
+  }
+
+  &__rooom-info {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+  }
+
+  &__room-number {
+    padding-right: 5px;
+    font-family: Quicksand;
+    font-size: 1.1875rem;
+    font-weight: bold;
+
+    &::first-letter {
+      font-size: 14px;
+    }
+  }
+
+  &__room-type {
+    flex-grow: 1;
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  &__room-price {
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 19px;
+    color: rgba($black, $aSecond);
+  }
+
+  &__measure-period {
+    margin-left: 4px;
+    font-size: 0.75rem;
+    line-height: 19px;
+    color: rgba($black, $aSecond);
+  }
+
+  &__room-reviews-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 3px 0 0;
+    border-top: 1px solid rgba($black, $aSixth);
+  }
+
+  &__room-rating {}
+
+  &__reviews {
+    display: flex;
+    font-size: 0.875rem;
+    color: rgba($black, $aSecond);
+  }
+
+  &__reviews-number {
+    font-weight: bold;
+    margin-right: 4px;
+
+  }
+
+  &__measure-unit {
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
