@@ -66,7 +66,12 @@ block content
         })
       .cards__room-card
         +room-card({
-          images: [],
+          roomImages: [
+            "../../modules/room-card/images/room_1.png",
+            "../../modules/room-card/images/room_1.png",
+            "../../modules/room-card/images/room_1.png",
+            "../../modules/room-card/images/room_1.png"
+            ],
           roomNumber: "888",
           roomType: "люкс",
           roomPrice: "9 990₽",
@@ -75,5 +80,19 @@ block content
           reviewsNumber: "145",
           measureUnit: "",
         })
-      //.cards__room-card
-        +room-card({})
+      .cards__room-card
+        +room-card({
+          roomImages: [
+            "../../modules/room-card/images/room_2.png",
+            "../../modules/room-card/images/room_2.png",
+            "../../modules/room-card/images/room_2.png",
+            "../../modules/room-card/images/room_2.png"
+            ],
+          roomNumber: "840",
+          roomType: "",
+          roomPrice: "9 900₽",
+          measurePeriodText: "в сутки",
+          defaultRating: "4",
+          reviewsNumber: "65",
+          measureUnit: "",
+        })

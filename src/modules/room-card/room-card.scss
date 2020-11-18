@@ -1,5 +1,11 @@
+@import '../../assets/js/plagins/lightSlider/lightslider.css';
+
 .room-card {
   &__slider {}
+
+  // сделать скругления углов у всех карточек страницы
+
+  &__image {}
 
   &__caption {
     padding: 20px 17px 20px 20px;
