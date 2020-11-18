@@ -1,9 +1,12 @@
 @import '../../assets/js/plagins/lightSlider/lightslider.css';
 
 .room-card {
-  &__slider {}
+  border-radius: 4px;
+  overflow: hidden;
 
-  // сделать скругления углов у всех карточек страницы
+  &__slider {
+    height: 151px;
+  }
 
   &__image {}
 
