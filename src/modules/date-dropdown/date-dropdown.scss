@@ -151,7 +151,7 @@
   font-size: 0.75rem;
   border: 1px solid rgba($black, $aThird);
   border-radius: 4px;
-  padding: 20px;
+  padding: 20px 19px;
   padding-top: 18.4px;
 
   &:hover,
@@ -249,7 +249,7 @@
 }
 
 .datepicker--cell-day {
-  width: 39.5px; //2.4925 может поиграть с отступами лево-право
+  width: 39.8px; //2.4925 может поиграть с отступами лево-право==========================================================================
   height: 40px;
 
   &.-in-range-.-focus- {

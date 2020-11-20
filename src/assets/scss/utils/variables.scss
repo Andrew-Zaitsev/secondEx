@@ -15,6 +15,7 @@ $aFourth: 0.05;
 //additional transparencies
 $aFifth: 0.2;
 $aSixth: 0.1;
+$aSeventh: 0.3;
 
 //ui colors
 $dark-shade-100: $black;
@@ -36,6 +37,7 @@ $purpleGradientTransparent: linear-gradient(180deg, rgba($purple, $aSecond) 0%, 
 $greenGradient: linear-gradient(180deg, $green 0%, $greenSecondary 100%);
 $greenGradientTransparent: linear-gradient(180deg, rgba($green, $aFirst) 0%, rgba($greenSecondary, $aFirst) 100%);
 $whiteGradient: linear-gradient(180deg, $white 0%, $white 100%);
+$blackGradient: linear-gradient(90deg, rgba($blackSecondary, $aSecond) 0%, rgba($blackSecondary, 0) 99.99%, rgba($white, 0) 100%);
 
 //font
 $mainFont: Montserrat,

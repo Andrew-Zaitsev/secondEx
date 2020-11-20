@@ -3,12 +3,11 @@
 .room-card {
   border-radius: 4px;
   overflow: hidden;
+  box-shadow: 0px 10px 20px rgba($black, $aFourth);
 
   &__slider {
-    height: 151px;
+    height: 154px;
   }
-
-  &__image {}
 
   &__caption {
     padding: 20px 17px 20px 20px;
@@ -63,8 +62,6 @@
     border-top: 1px solid rgba($black, $aSixth);
   }
 
-  &__room-rating {}
-
   &__reviews {
     display: flex;
     font-size: 0.875rem;
@@ -74,13 +71,75 @@
   &__reviews-number {
     font-weight: bold;
     margin-right: 4px;
-
   }
 
   &__measure-unit {
 
     &::first-letter {
       text-transform: uppercase;
+    }
+  }
+
+  & .lSSlideOuter {
+    position: relative;
+
+    &:hover {
+
+      & .lSPrev,
+      & .lSNext {
+        display: flex;
+      }
+    }
+  }
+
+  & .lSAction>a {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    top: 0;
+    height: 100%;
+    margin-top: 0;
+    text-align: center;
+    background: $blackGradient;
+    opacity: 1;
+    cursor: pointer;
+
+    &:before {
+      content: '\e314';
+      font-family: 'Material Icons';
+      font-size: 24px;
+      color: $white;
+    }
+  }
+
+  & .lSAction>.lSPrev {
+    left: 0;
+  }
+
+  & .lSAction>.lSNext {
+    right: 0;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  & .lSPager.lSpg {
+    position: absolute;
+    right: 13px;
+    bottom: 10px;
+
+    &>li {
+      padding: 0 1.7px;
+
+      & a {
+        border: 1px solid $white;
+        background-color: transparent;
+        filter: drop-shadow(0px 5px 5px rgba($black, $aSeventh));
+      }
+
+      &:hover a,
+      &.active a {
+        background-color: $white;
+      }
     }
   }
 }

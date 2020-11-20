@@ -1,3 +1,6 @@
+// сделать отзывчивость
+
+
 .cards {
   display: flex;
   justify-content: space-around;
@@ -28,13 +31,13 @@
   }
 
   &__date-dropdown {
-    margin-bottom: 520px; //409px; // for 5 rows of days 369px;
+    margin-bottom: 409px; // for 5 rows of days 369px;
   }
 
   &__room-card {
     width: 100%;
     max-width: 270px;
-    margin-top: 40px;
+    margin-top: 39px;
   }
 }
 

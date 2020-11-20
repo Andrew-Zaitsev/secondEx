@@ -17,6 +17,7 @@
 
     &::first-letter {
       font-size: 14px;
+      letter-spacing: -2px;
     }
   }
 
@@ -61,8 +62,6 @@
     font-size: 0.875rem;
     color: rgba($black, $aFirst);
 
-    &:first-child {}
-
     &:not(:first-child) {
       margin-top: 16px;
     }
@@ -81,8 +80,8 @@
         right: 0;
         display: block;
         content: 'i';
-        width: 20px;
-        line-height: 20px;
+        width: 18px;
+        line-height: 18px;
         font-size: 0.75rem;
         font-weight: bold;
         text-align: center;

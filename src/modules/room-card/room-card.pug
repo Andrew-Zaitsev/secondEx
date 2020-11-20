@@ -4,8 +4,7 @@ mixin room-card({roomImages, roomNumber, roomType, roomPrice, measurePeriodText,
   .room-card
     .room-card__slider
       each image in roomImages
-        img.room-card__image(src = image)
-        //img.review__user-photo(src= user.photo alt="photo")
+        img.room-card__image(src = image alt="photo")
     .room-card__caption
       .room-card__rooom-info
         .room-card__room-number= `№ ${roomNumber}`

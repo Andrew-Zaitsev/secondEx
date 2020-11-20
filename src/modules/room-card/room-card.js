@@ -15,13 +15,13 @@ $(document).ready(function () {
     enableDrag: true,
     freeMove: true,
     mode: 'slide',
-    speed: 1000,
+    speed: 400,
     auto: false,
     pauseOnHover: false,
-    loop: false, //works not correcly if 'true'
+    loop: true, //works not correcly if 'true'
     slideEndAnimation: true,
     keyPress: true,
-    //prevHtml:,
+    //prevHtml: '<i>Hi</i>',
     //nextHtml:,
     pager: true,
     gallery: false,
