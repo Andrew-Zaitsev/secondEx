@@ -1,24 +1,24 @@
-// сделать отзывчивость
-
-
 .cards {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   padding: 73px 0 140px;
-  //border: 1px solid orange;
 
   &__column {
     display: flex;
     flex-direction: column;
-    max-width: 380px; //378px;
+    max-width: 380px;
     width: 100%;
 
     &:last-child {
-      max-width: 322px; //320px
-      //border: 1px solid orange;
+      max-width: 322px;
+    }
+
+    @media (max-width: 1135px) {
+      padding: 0 20px 40px;
     }
   }
 
