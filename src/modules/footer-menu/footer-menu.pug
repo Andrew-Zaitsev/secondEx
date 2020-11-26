@@ -8,4 +8,4 @@ mixin footer-menu(columns)
         nav.footer-menu__links
         each link in columnLinks
           - let {href, text} = link;
-          a.footer-menu__link= text
+          a.footer-menu__link(href = href)= text
