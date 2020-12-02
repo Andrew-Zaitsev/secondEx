@@ -1,0 +1,38 @@
+extends ../../layouts/pages-layout/pages-layout.pug
+include ../../modules/chart/chart.pug
+
+//-block variables
+
+block meta
+  meta(name="keywords" value="uikit, fonts, colors, blocks")
+  meta(name="description" value="this page contains room details, images and booking card")
+  
+block title
+  title Room details
+
+block links
+  link(href="./room-details.scss" rel="stylesheet")
+
+block scripts
+  script(src="./room-details.js" type="module")
+
+block content
+  .room-details
+    .room-details__gallery
+      .room-details__main-image-wrap
+        img.room-details__image(src = "images/main-image.png")
+      .room-details__small-image-wrap
+        img.room-details__image(src = "images/small-image-1.png")
+      .room-details__small-image-wrap
+        img.room-details__image(src = "images/small-image-2.png")
+    .room-details__chart-block
+      .room-details__chart-title Впечатления от номера
+      .room-details__chart
+        +chart({
+          items: [
+            {signature: "Великолепно", color: "", number: "520"},
+            {signature: "Хорошо", color: "", number: "260"},
+            {signature: "Удовлетворительно", color: "", number: "260"},
+            {signature: "Разочарован", color: "", number: "0"},
+          ],
+        })

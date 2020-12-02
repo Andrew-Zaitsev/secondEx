@@ -1,0 +1,101 @@
+include ../../modules/header/header.pug
+include ../../modules/footer/footer.pug
+include ../../modules/footer-mobile/footer-mobile.pug
+
+//-block variables
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width")
+    block meta
+    block title
+    link(href="../../layouts/pages-layout/pages-layout.scss" rel="stylesheet")
+    block links
+    script(src="../../layouts/pages-layout/pages-layout.js" type="module")
+    block scripts
+
+  body
+    .pages-layout
+      +header({
+        headerMenu: [
+            {name: "О нас", href: "/mock-address/change-me"},
+            {name: "Услуги", links: [
+              {linkName: "Интересная услуга", linkHref: "/mock-address/change-me"},
+              {linkName: "Еще интереснее", linkHref: "/mock-address/change-me"},
+              {linkName: "Самая интересная", linkHref: "/mock-address/change-me"}
+            ]},
+            {name: "Вакансии", href: "/mock-address/change-me"},
+            {name: "Новости", href: "/mock-address/change-me"},
+            {name: "Соглашения", links: [
+              {linkName: "Важно", linkHref: "/mock-address/change-me"},
+              {linkName: "Очень важно", linkHref: "/mock-address/change-me"},
+              {linkName: "Совсем важно", linkHref: "/mock-address/change-me"}
+            ]}
+        ],
+        buttonSignIn: {
+          text: "войти",
+          href: "/mock-address/change-me",
+          type: "button",
+          hasVolume: true,
+          isInHeader: true,
+          hasBorder: true,
+        },
+        buttonRegister: {
+          text: "зарегистрироваться",
+          href: "/mock-address/change-me",
+          type: "button",
+          hasVolume: true,
+          isInHeader: true,
+        },
+        accountLink: {userName: "Юлий Цезарь", href: "/mock-address/change-me"},
+      })
+
+      block content
+
+      +footer({
+        companyInfoText: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+        footerMenuColumns: [
+          {columnTitle: "навигация", columnLinks: [
+              {href: "/mock-address/change-me", text: "О нас"},
+              {href: "/mock-address/change-me", text: "Новости"},
+              {href: "/mock-address/change-me", text: "Служба поддержки"},
+              {href: "/mock-address/change-me", text: "Услуги"},
+            ]},
+          {columnTitle: "о нас", columnLinks: [
+              {href: "/mock-address/change-me", text: "О сервисе"},
+              {href: "/mock-address/change-me", text: "Наша команда"},
+              {href: "/mock-address/change-me", text: "Вакансии"},
+              {href: "/mock-address/change-me", text: "Инвесторы"},
+            ]},
+          {columnTitle: "служба поддержки", columnLinks: [
+              {href: "/mock-address/change-me", text: "Соглашения"},
+              {href: "/mock-address/change-me", text: "Сообщества"},
+              {href: "/mock-address/change-me", text: "Связь с нами"},
+            ]},
+        ],
+        subscriptionTitle: "подписка",
+        subscriptionText: "Получайте специальные предложения и новости сервиса",
+        subscriptionInput: {
+          action: "",
+          type: "email",
+          name: "email",
+          placeholder: "Email"
+        },
+        copyrightText: "Copyright © 2018 Toxin отель. Все права зачищены.",
+        socialIcons: [
+          {name: "twitter", href: "http://twitter.com"},
+          {name: "facebook", href: "http://facebook.com"},
+          {name: "instagram", href: "http://instagram.com"},
+        ],
+      })
+
+      +footer-mobile({
+        copyrightText: "Copyright © 2018 Toxin отель. Все права зачищены.",
+        socialIcons: [
+            {name: "twitter", href: "http://twitter.com"},
+            {name: "facebook", href: "http://facebook.com"},
+            {name: "instagram", href: "http://instagram.com"},
+        ],
+      })

@@ -1,0 +1,35 @@
+mixin chart({items})
+
+  .chart.js-chart
+    .chart__donut-wrap
+      svg.chart__donut(  viewBox = "0 0 34 34")
+        defs
+          linearGradient(id = "#FFE39C#FFBA9C" x1 = "0.5" y1 = "0" x2 = "0.5" y2 = "1" gradientUnits = "objectBoundingBox")
+            stop(offset="0%" stop-color="#FFE39C")
+            stop(offset="100%" stop-color="#FFBA9C")
+          linearGradient(id = "#6FCF97#66D2EA" x1 = "0.5" y1 = "0" x2 = "0.5" y2 = "1" gradientUnits = "objectBoundingBox" gradientTransform= "rotate(90, 0.5, 0.5)")
+            stop(offset="0%" stop-color="#6FCF97")
+            stop(offset="100%" stop-color="#66D2EA")
+          linearGradient(id = "#BC9CFF#8BA4F9" x1 = "0.5" y1 = "0" x2 = "0.5" y2 = "1" gradientUnits = "objectBoundingBox")
+            stop(offset="0%" stop-color="#BC9CFF")
+            stop(offset="100%" stop-color="#8BA4F9")
+          linearGradient(id = "#919191#3D4975" x1 = "0.5" y1 = "0" x2 = "0.5" y2 = "1" gradientUnits = "objectBoundingBox")
+            stop(offset="0%" stop-color="#919191")
+            stop(offset="100%" stop-color="#3D4975")
+          
+        circle.chart__donut-arc(cx="17" cy="17" r="15.91549430918952" fill="none" stroke="url(##FFE39C#FFBA9C)" stroke-width="0,54881" stroke-dasharray="49.45 50.55" stroke-dashoffset="-25.2744")
+        circle.chart__donut-arc(cx="17" cy="17" r="15.91549430918952" fill="none" stroke="url(##BC9CFF#8BA4F9)" stroke-width="0,54881" stroke-dasharray="24.45 75.5488" stroke-dashoffset="-75.2744")
+        circle.chart__donut-arc(cx="17" cy="17" r="15.91549430918952" fill="none" stroke="url(##6FCF97#66D2EA)" stroke-width="0,54881" stroke-dasharray="24.45 75.5844" stroke-dashoffset="-0.2744")
+      .chart__text
+        .chart__number 260
+        .chart__measure-unit голосов
+
+    ul.chaet__legend
+      li.chart__legend-text великолепно
+        span.chart__legend-bullet
+        
+
+  //- ['#FFE39C', '#FFBA9C'], yellow
+      ['#6FCF97', '#66D2EA'], green
+      ['#BC9CFF', '#8BA4F9'], violet
+      ['#919191', '#3D4975'], black
