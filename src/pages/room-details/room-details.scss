@@ -29,8 +29,14 @@
     object-fit: cover;
   }
 
+  &__chart-block {
+    width: 100%;
+    max-width: 311px;
+  }
+
   &__chart {
-    width: 124px;
+    //width: 124px;
+    //height: 124px; //07.12
   }
 }
 
