@@ -34,20 +34,23 @@ class DonutChart {
     this.chartMeasureUnit = document.createElement('div');
     this.chartMeasureUnit.classList.add('chart__measure-unit');
     this.chartMeasureUnit.textContent = getNoun(this.items[0].amount, voteNouns);
-    console.log();
 
     const chartText = document.createElement('div');
     chartText.classList.add('chart__text');
     chartText.style.color = this.items[0].gradients[0];
-
     chartText.append(this.chartNumber, this.chartMeasureUnit);
 
     const chartDonutWrap = document.createElement('div');
     chartDonutWrap.classList.add('chart__donut-wrap');
     chartDonutWrap.append(chartDonut, chartText);
 
-    this.chart.append(chartDonutWrap);
-    console.log('chartDonut', chartDonut);
+
+
+
+
+    this.chart.append(chartDonutWrap, this.renderLegend());
+
+    //console.log('chartDonut', chartDonut);
   }
 
   renderGradientsDefs() {
@@ -146,6 +149,27 @@ class DonutChart {
     return arcsElemsAttribs;
   }
 
+  renderLegend() {
+    const legendItems = this.items.map((item) => {
+      const legendBullet = document.createElement('span');
+      legendBullet.classList.add('chart__legend-bullet');
+      legendBullet.style.background = `linear-gradient(to bottom, ${item.gradients[0]} 0%, ${item.gradients[1]} 100%)`;
+
+      const legendItem = document.createElement('li');
+      legendItem.classList.add('chart__legend-text');
+      legendItem.textContent = item.description;
+      legendItem.append(legendBullet);
+
+      console.log(legendItem);
+      return legendItem;
+    });
+
+    const chartLegend = document.createElement('ul');
+    chartLegend.classList.add('chart__legend');
+    chartLegend.append(...legendItems)
+    return chartLegend;
+  }
+
   addListeners() {
     document.addEventListener("DOMContentLoaded", () => {
       this.chart.querySelectorAll('.chart__donut-arc').forEach((el, index) => {
@@ -155,31 +179,20 @@ class DonutChart {
 
         el.addEventListener('mouseover', () => {
 
-          function increaseWidth() {
-            el.setAttributeNS(null, 'style', 'stroke-width:' + increasedStrokeWidth);
-          }
-
-          function decreaseWidth() {
-            el.setAttributeNS(null, 'style', 'stroke-width:' + initialStrokeWidth);
-          }
-
-          //console.log(this.chart);
+          const increaseWidth = () => el.setAttributeNS(null, 'style', 'stroke-width:' + increasedStrokeWidth);
+          const decreaseWidth = () => el.setAttributeNS(null, 'style', 'stroke-width:' + initialStrokeWidth);
           const getCurrentArcColor = () => getComputedStyle(el).getPropertyValue('stroke').substring(6, 13);
           const changeTextColor = () => {
             this.chartNumber.style.color = getCurrentArcColor();
             this.chartMeasureUnit.style.color = getCurrentArcColor();
-            //console.log(getCurrentArcColor()); //, this.chartNumber);
-          }; ///{ this.chartNumber.style.color = };
+          };
           const changeNumber = () => this.chartNumber.textContent = this.items[index].amount;
-
 
           increaseWidth();
           changeTextColor();
           changeNumber();
-          //изменить значение в центре
           el.addEventListener('mouseout', () => {
             decreaseWidth();
-            //el.removeEventListener('mouseout', handleMouseOut);
           })
         })
       })
