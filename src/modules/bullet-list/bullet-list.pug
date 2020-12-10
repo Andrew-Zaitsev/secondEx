@@ -1,8 +1,11 @@
-mixin bullet-list({title, list})
+mixin bullet-list({title, list, isInUi})
 
   .bullet-list
     if title
-      .bullet-list__title= title
+      - let titleClasses = ["bullet-list__title"];
+        if isInUi 
+          - titleClasses.push("bullet-list__title_in-ui");
+      div(class = titleClasses)= title
       
     ul.bullet-list__list
       for string in list

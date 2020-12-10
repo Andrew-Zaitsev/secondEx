@@ -29,16 +29,34 @@
     object-fit: cover;
   }
 
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+  }
+
   &__chart-block {
     width: 100%;
-    max-width: 311px;
+    //max-width: 311px;
   }
 
   &__chart {
     //width: 124px;
     //height: 124px; //07.12
   }
+
+  &__card-booking {
+    max-width: 380px;
+  }
 }
 
 @import '../../layouts/pages-layout/pages-layout.scss';
+@import '../../modules/room-info/room-info.scss';
 @import '../../modules/chart/chart.scss';
+@import '../../modules/card-booking/card-booking.scss';
+@import '../../modules/date-dropdown/date-dropdown.scss';
+@import '../../modules//dropdown/dropdown.scss';
+@import '../../modules//review/review.scss';
+@import '../../modules/like-button/like-button.scss';
+@import '../../modules/bullet-list/bullet-list.scss';
+@import '../../modules/notes/notes.scss'

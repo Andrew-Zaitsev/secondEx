@@ -1,0 +1,14 @@
+.notes {
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.1875rem;
+    line-height: 1.4375rem;
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: rgba($black, $aFirst);
+  }
+}

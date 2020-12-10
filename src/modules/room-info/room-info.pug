@@ -1,10 +1,10 @@
-mixin room-info(options)
+mixin room-info({title, features})
   .room-info
 
-    - if (options.title)
-      .room-info__title= options.title
+    - if (title)
+      .room-info__title= title
     
-    - for (let feature of options.features)
+    - for (let feature of features)
       .room-info__feature
         .room-info__feature-img
           i.material-icons.md-48.md-gradient-color= feature.img

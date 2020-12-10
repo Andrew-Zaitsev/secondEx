@@ -1,5 +1,12 @@
 extends ../../layouts/pages-layout/pages-layout.pug
 include ../../modules/chart/chart.pug
+include ../../modules/card-booking/card-booking.pug
+include ../../modules/review/review.pug
+include ../../modules/like-button/like-button.pug
+include ../../modules/bullet-list/bullet-list.pug
+include ../../modules/notes/notes.pug
+include ../../modules/room-info/room-info.pug
+
 
 //-block variables
 
@@ -25,14 +32,74 @@ block content
         img.room-details__image(src = "images/small-image-1.png")
       .room-details__small-image-wrap
         img.room-details__image(src = "images/small-image-2.png")
-    .room-details__chart-block
-      .room-details__chart-title Впечатления от номера
-      .room-details__chart
-        +chart({
-          items: [
-            {signature: "Великолепно", color: "", number: "520"},
-            {signature: "Хорошо", color: "", number: "260"},
-            {signature: "Удовлетворительно", color: "", number: "260"},
-            {signature: "Разочарован", color: "", number: "0"},
-          ],
+    .room-details__content
+      .rrom-details__room-info
+        +room-info({
+          title: "Сведения о номере",
+          features: [
+            {img: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены"},
+            {img: "location_city", title: "Удобство", text: "Окно в каждой из спален"},
+            {img: "whatshot", title: "Уют", text: "Номер оснащен камином"}
+          ]
         })
+      .room-details__chart-block
+        .room-details__chart-title Впечатления от номера
+        .room-details__chart
+          +chart()
+      .room-details__card-booking
+        +card-booking({
+          roomNumber: "888",
+          roomType: "люкс",
+          roomPrice: "9 990₽",
+          measurePeriodText: "в сутки",
+          priceList: {
+            items:[
+              {itemText: "9 990₽ х 4 суток", itemPrice: "39 960₽"},
+              {itemText: "Сбор за услуги: скидка 2 179₽", itemPrice: "0₽", hasIcon: true},
+              {itemText: "Сбор за дополнительные услуги", itemPrice: "300₽", hasIcon: true},
+            ],
+            sumText: "Итого",
+            sumPrice: "38 081₽",
+          },
+        })
+      .room-details__review
+        +review({
+          title: "Отзывы посетителей номера",
+          users: [
+            {
+            name: "Мурад Сарафанов",
+            photo: "../../modules/review/images/review__photo_name_murad-sarafanov.png",
+            text: "Великолепный матрас на кровати в основной спальне! " +
+                  "А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. " + 
+                  "Выкрикивал комплименты повару — никто не жаловался из соседей.",
+            date: "2020-06-20",
+            likes: "11"
+            },
+            {
+            name: "Патрисия Стёклышкова",
+            photo: "../../modules/review/images/review__photo_name_patrisia-steklishkova.png",
+            text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать," +
+                  " каждый день новое блюдо и десерт как комплимент",
+            date: "2020-06-18",
+            likes: "02"
+            }
+          ]
+        })
+      .room-details__bullet-list
+        +bullet-list({
+          title: "Правила",
+          list: [
+            "Нельзя с питомцами",
+            "Без вечеринок и мероприятий",
+            "Время прибытия — после 13:00, а&nbsp;выезд до 12:00"
+          ]
+        })
+      .room-details__notes
+        +notes({
+          title: "Отмена",
+          text: "Бесплатная отмена в течение 48 ч. После этого при" +
+                "отмене не позднее чем за 5 дн. до прибытия вы получите" +
+                "полный возврат за вычетом сбора за услуги.",
+          hasTitlePadding: true
+        })
+      

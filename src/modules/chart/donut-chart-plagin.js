@@ -44,13 +44,7 @@ class DonutChart {
     chartDonutWrap.classList.add('chart__donut-wrap');
     chartDonutWrap.append(chartDonut, chartText);
 
-
-
-
-
     this.chart.append(chartDonutWrap, this.renderLegend());
-
-    //console.log('chartDonut', chartDonut);
   }
 
   renderGradientsDefs() {
@@ -191,6 +185,7 @@ class DonutChart {
           increaseWidth();
           changeTextColor();
           changeNumber();
+
           el.addEventListener('mouseout', () => {
             decreaseWidth();
           })

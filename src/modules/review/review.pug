@@ -1,11 +1,9 @@
-mixin review(options)
+mixin review({title, users})
   .review
-    -if (options.title)
-      .review__title-wrap
-        .review__title
-        .review__counter
+    -if (title)
+      .review__title= title
     
-    -for (let user of options.users)
+    -for (let user of users)
       .review__user
         .review__user-info
           img.review__user-photo(src= user.photo alt="photo")
