@@ -88,7 +88,6 @@ class DonutChart {
       arcElem.setAttributeNS(null, 'stroke-width', '1.098');
       arcElem.setAttributeNS(null, 'stroke-dasharray', `${elemAttribs.strokeDasharray}`);
       arcElem.setAttributeNS(null, 'stroke-dashoffset', `${elemAttribs.strokeDashoffset}`);
-
       return arcElem;
     });
     return arcsElems;
@@ -116,12 +115,11 @@ class DonutChart {
     const isTotalAmountZero = () => chartParams.totalAmount === 0;
 
     if (isAnyAmountNumberLessThanZero()) {
-      console.log('одно число меньше нуля, вывести ошибку в консоль и пустой график'); // вывести график - рассчитать атрибуты дуг и передать в renderArcs()
-    } else if (isAnyAmountNumberNotInteger()) {
-      console.log('одно из чисел не целое, вывести ошибку в консоль и пустой график');
-    } else if (isTotalAmountZero()) {
-      console.log('общая сумма равна нулю, вывести пустой график');
+      alert('один элемент для вывода на chart меньше нуля');
     } else {
+      (isTotalAmountZero()) ? console.log('все значения элементов диаграммы равны нулю'): '';
+      (isAnyAmountNumberNotInteger()) ? console.log('один элемент для вывода на chart не целое число'): '';
+
       const primaryOffset = (25 - 0.2477);
       let currentOffset = primaryOffset;
 
@@ -153,8 +151,6 @@ class DonutChart {
       legendItem.classList.add('chart__legend-text');
       legendItem.textContent = item.description;
       legendItem.append(legendBullet);
-
-      console.log(legendItem);
       return legendItem;
     });
 

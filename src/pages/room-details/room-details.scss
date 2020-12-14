@@ -1,9 +1,12 @@
+@import '../../layouts/pages-layout/pages-layout.scss';
+
 .room-details {
-  width: 100&;
+  width: 100%;
+  border-bottom: 1px solid rgba($black, $aThird);
 
   &__gallery {
     display: grid;
-    grid-template-columns: 0.68125fr 0.31875fr;
+    grid-template-columns: 0.68125fr 0.320fr;
     grid-template-rows: 0.5fr 0.5fr;
     grid-template-areas:
       "main-image small-image-1"
@@ -30,27 +33,90 @@
   }
 
   &__content {
+    display: grid;
+    grid-template-columns: 0.4615fr 0.5397fr 380px;
+    grid-template-areas:
+      "room-info    chart-block  card-booking"
+      "review       review       card-booking"
+      "bullet-list  notes        .           ";
+    gap: 10px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 70px 20px;
+    padding: 70px 20px 72px;
+
+    @media (max-width: 950px) {
+      grid-template-columns: 0.5fr 0.5fr;
+      grid-template-areas:
+        "room-info    chart-block "
+        "card-booking card-booking"
+        "review       review      "
+        "bullet-list  notes       ";
+      justify-items: center;
+    }
+
+    @media (max-width: 660px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__room-info {
+    grid-area: room-info;
+    padding: 0 0px 3px 0;
   }
 
   &__chart-block {
-    width: 100%;
-    //max-width: 311px;
+    grid-area: chart-block;
+  }
+
+  &__chart-title {
+    font-weight: bold;
+    font-size: 1.1875rem;
+    line-height: 1.4375rem;
+    padding-bottom: 20px;
   }
 
   &__chart {
-    //width: 124px;
-    //height: 124px; //07.12
+    max-width: 311px;
   }
 
   &__card-booking {
     max-width: 380px;
+    grid-area: card-booking;
+
+    @media (max-width: 950px) {
+      margin: 40px 0;
+
+    }
+  }
+
+  &__review {
+    grid-area: review;
+    padding-bottom: 24px;
+  }
+
+  &__bullet-list {
+    grid-area: bullet-list;
+
+    @media (max-width: 660px) {
+      align-self: flex-start;
+      margin-left: 15%;
+    }
+  }
+
+  &__notes {
+    grid-area: notes;
+    max-width: 341px;
+
+    @media (max-width: 660px) {
+      align-self: flex-start;
+      margin-left: 15%;
+    }
   }
 }
 
-@import '../../layouts/pages-layout/pages-layout.scss';
 @import '../../modules/room-info/room-info.scss';
 @import '../../modules/chart/chart.scss';
 @import '../../modules/card-booking/card-booking.scss';

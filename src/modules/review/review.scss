@@ -2,12 +2,40 @@
   max-width: 711px;
   font-size: 0.875rem;
   line-height: 1.5rem;
-  color: rgba(31, 32, 65, 0.75);
+  color: rgba($black, $aFirst);
+
+  &__title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 
   &__title {
     font-weight: bold;
     font-size: 1.1875rem;
     line-height: 1.4375rem;
+    color: $black
+  }
+
+  &__amount {
+    align-self: flex-end;
+    display: flex;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    padding-bottom: 2px;
+    color: rgba($black, $aSecond);
+  }
+
+  &__amount-measure-unit {
+    padding-left: 5px;
+  }
+
+  &__user {
+
+    &:not(:first-child) {
+      padding-top: 22px;
+    }
   }
 
   &__user-info {
@@ -20,7 +48,7 @@
     height: 3rem;
     border: 0.125rem solid $white;
     border-radius: 1.5rem;
-    box-shadow: 0 0.625rem 1.25rem rgba(31, 32, 65, 0.1);
+    box-shadow: 0 0.625rem 1.25rem rgba($black, $aSixth);
     background-origin: border-box;
   }
 

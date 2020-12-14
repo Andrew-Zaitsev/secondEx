@@ -2,7 +2,7 @@ mixin room-info({title, features})
   .room-info
 
     - if (title)
-      .room-info__title= title
+      h2.room-info__title= title
     
     - for (let feature of features)
       .room-info__feature

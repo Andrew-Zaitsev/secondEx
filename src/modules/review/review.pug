@@ -1,7 +1,11 @@
 mixin review({title, users})
   .review
     -if (title)
-      .review__title= title
+      .review__title-wrap
+        h2.review__title= title
+        .review__amount
+          span.review__amount-number= users.length
+          span.review__amount-measure-unit
     
     -for (let user of users)
       .review__user

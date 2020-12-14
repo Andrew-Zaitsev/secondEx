@@ -33,7 +33,7 @@ block content
       .room-details__small-image-wrap
         img.room-details__image(src = "images/small-image-2.png")
     .room-details__content
-      .rrom-details__room-info
+      .room-details__room-info
         +room-info({
           title: "Сведения о номере",
           features: [
@@ -43,7 +43,7 @@ block content
           ]
         })
       .room-details__chart-block
-        .room-details__chart-title Впечатления от номера
+        h2.room-details__chart-title Впечатления от номера
         .room-details__chart
           +chart()
       .room-details__card-booking
@@ -97,9 +97,8 @@ block content
       .room-details__notes
         +notes({
           title: "Отмена",
-          text: "Бесплатная отмена в течение 48 ч. После этого при" +
+          text: "Бесплатная отмена в течение 48 ч. После этого при " +
                 "отмене не позднее чем за 5 дн. до прибытия вы получите" +
                 "полный возврат за вычетом сбора за услуги.",
           hasTitlePadding: true
         })
-      

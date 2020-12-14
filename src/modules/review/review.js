@@ -2,12 +2,20 @@ import {
   dayNouns,
   weekNouns,
   monthNouns,
-  yearNouns
+  yearNouns,
+  reviewNouns
 } from '../../assets/js/variables.js';
 
 import {
   getNoun
 } from '../../assets/js/functions.js';
+
+document.querySelectorAll('.review__amount').forEach((elem) => {
+  const amountNumber = +(elem.querySelector('.review__amount-number').textContent);
+  const amountMeasureUnitElem = elem.querySelector('.review__amount-measure-unit');
+
+  amountMeasureUnitElem.textContent = getNoun(amountNumber, reviewNouns);
+});
 
 const getPassedTimeString = (reviewDate) => {
 
@@ -32,6 +40,8 @@ const getPassedTimeString = (reviewDate) => {
   }
 
 };
+
+
 
 document.querySelectorAll('.review__time-passed').forEach((elem) => {
   elem.textContent = getPassedTimeString(elem.textContent);

@@ -5,7 +5,7 @@ mixin bullet-list({title, list, isInUi})
       - let titleClasses = ["bullet-list__title"];
         if isInUi 
           - titleClasses.push("bullet-list__title_in-ui");
-      div(class = titleClasses)= title
+      h2(class = titleClasses)= title
       
     ul.bullet-list__list
       for string in list
