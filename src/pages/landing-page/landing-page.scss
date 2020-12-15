@@ -1,0 +1,45 @@
+@import '../../layouts/pages-layout/pages-layout.scss';
+
+.landing-page {
+  width: 100%;
+  background: url(images/landing-page-image.png) center bottom no-repeat;
+  background-size: cover;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 830px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px 20px;
+
+    @media (max-width: 940px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 500px) {
+      min-height: 600px;
+    }
+  }
+
+  &__card-filter {
+    max-width: 380px;
+  }
+
+  &__notes {
+    max-width: 297px;
+    margin-right: -6px;
+    align-self: flex-end;
+    text-align: right;
+
+    @media (max-width: 940px) {
+      align-self: center;
+      text-align: center;
+    }
+  }
+}
+
+@import '../../modules/card-filter/card-filter.scss';
+@import '../../modules/notes/notes.scss';

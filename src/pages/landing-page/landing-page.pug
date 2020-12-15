@@ -1,0 +1,29 @@
+extends ../../layouts/pages-layout/pages-layout.pug
+include ../../modules/card-filter/card-filter.pug
+include ../../modules/notes/notes.pug
+
+block meta
+  meta(name="keywords" value="uikit, fonts, colors, blocks")
+  meta(name="description" value="this page contains landing page cards")
+  
+block title
+  title Landing page
+
+block links
+  link(href="./landing-page.scss" rel="stylesheet")
+
+block scripts
+  script(src="./landing-page.js" type="module")
+
+block content
+  .landing-page
+    .landing-page__content
+      .landing-page__card-filter
+        +card-filter({
+          title: "Найдём номера под ваши пожелания",
+        })
+        
+      .landing-page__notes
+        +notes({
+          text: "Лучшие номера для вашей работы, отдыха и просто вдохновения",
+        })
