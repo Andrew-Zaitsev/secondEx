@@ -1,7 +1,7 @@
 include ../text-field/text-field.pug
 include ../button/button.pug
 
-mixin card-sign-in({title, registrationBlockText})
+mixin card-sign-in({title, registrationBlockText, registrationBlockHref = "./mock-address/change-me"})
   .card-sign-in
     form.card-sign-in__form
       .card-sign-in__title= title
@@ -27,7 +27,7 @@ mixin card-sign-in({title, registrationBlockText})
         .card-sign-in__registration-block-button
           +button({
             text: "создать",
-            href: "",
+            href: registrationBlockHref,
             type: "button",
             hasVolume: true,
             hasBorder: true,

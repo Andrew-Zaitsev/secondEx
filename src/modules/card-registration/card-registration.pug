@@ -3,7 +3,7 @@ include ../radio/radio.pug
 include ../toggle/toggle.pug
 include ../button/button.pug
 
-mixin card-registration({title, signInBlockText})
+mixin card-registration({title, signInBlockText, signInBlockHref = "./mock-address/change-me"})
   .card-registration
     form.card-registration__form
       .card-registration__title= title
@@ -65,7 +65,7 @@ mixin card-registration({title, signInBlockText})
           .card-registration__sign-in-button
             +button({
               text: "войти",
-              href: "",
+              href: signInBlockHref,
               type: "button",
               hasVolume: true,
               hasBorder: true,

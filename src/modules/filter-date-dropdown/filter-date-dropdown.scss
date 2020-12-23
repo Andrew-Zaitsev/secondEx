@@ -1,3 +1,5 @@
+//@import '../../assets/js/plagins/air-datapicker/datepicker.scss';
+
 .filter-date-dropdown {
   width: 100%;
   max-width: 320px;
@@ -56,6 +58,288 @@
 
   &__calendar {
     position: absolute;
-    z-index: 2;
+    z-index: 100;
+  }
+}
+
+.datepicker-inline .datepicker {
+  box-shadow: 0px 10px 20px rgba($black, $aFourth);
+}
+
+.datepicker {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  background-color: $white;
+  font-family: $mainFont;
+  font-size: 0.75rem;
+  border: 1px solid rgba($black, $aThird);
+  border-radius: 4px;
+  padding: 20px 19px;
+  padding-top: 18.4px;
+
+  &:hover,
+  &:focus {
+    border-color: rgba($black, $aSecond);
+  }
+}
+
+.datepicker--nav {
+  border: none;
+  padding: 0;
+  padding-bottom: 20.64px;
+}
+
+.datepicker--nav-action {
+  color: $purple;
+  width: 24px;
+
+  &:hover {
+    background: none;
+    color: rgba($purple, $aSecond);
+  }
+}
+
+.datepicker--nav-title {
+  //font-family: Quicksand, Opensans, sans-serif;
+  font-weight: bold;
+  font-size: 1.1875rem;
+  color: $black;
+
+  &:hover {
+    background: none;
+    color: rgba($black, $aSecond);
+  }
+}
+
+.datepicker--content {
+  padding: 0;
+}
+
+.datepicker--days-names {
+  margin-bottom: 0;
+}
+
+.datepicker--day-name {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: none;
+  height: 40px;
+  color: $purple;
+}
+
+.datepicker--cell {
+  color: rgba($black, $aSecond);
+
+  &.-focus- {
+    background: none;
+    font-weight: bold;
+  }
+
+  &.-current- {
+    background: $greenGradient;
+    font-weight: bold;
+    color: $white;
+    border-radius: 50%;
+  }
+
+  &.-current-.-focus- {
+    background: $greenGradientTransparent;
+    color: $white;
+  }
+
+  &.-selected- {
+    background: $purpleGradient;
+    border: none;
+    border-radius: 50%;
+  }
+
+  &.-selected-.-focus- {
+    background: $purpleGradient;
+  }
+
+  &.-selected-.-current- {
+    background: $purpleGradient;
+  }
+
+  &.-range-from-,
+  &.-range-to- {
+    font-weight: bold;
+  }
+
+  &.-range-from-.-range-to- {
+    border-radius: 50%;
+  }
+}
+
+.datepicker--cell-day {
+  width: 39.8px; //2.4925 может поиграть с отступами лево-право==========================================================================
+  height: 40px;
+
+  &.-in-range-.-focus- {
+    color: $white;
+    background: $purpleGradientTransparent;
+  }
+
+  &.-range-from- {
+    position: relative;
+    background: $purpleGradient;
+    border: none;
+    border-radius: 50%;
+    color: $white;
+
+    &:before {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: $purpleGradientTransparent;
+    }
+
+    &.-current-.-focus- {
+      background: $purpleGradient;
+    }
+
+    &.-other-month-.-focus- {
+      color: $white;
+    }
+
+    &.-other-month-.-selected- {
+      background: $purpleGradient;
+    }
+  }
+
+  &.-range-to- {
+    position: relative;
+    background: $purpleGradient;
+    border: none;
+    border-radius: 50%;
+    color: $white;
+
+    &:before {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: $purpleGradientTransparent;
+    }
+
+    &.-current-.-focus- {
+      background: $purpleGradient;
+    }
+
+    &.-other-month-.-focus- {
+      color: $white;
+    }
+
+    &.-other-month-.-selected- {
+      background: $purpleGradient;
+    }
+  }
+
+  &.-in-range- {
+    background: $purpleGradientTransparent;
+    color: rgba($black, $aSecond);
+  }
+
+  &.-current-.-in-range- {
+    background: $purpleGradientTransparent;
+    color: $white;
+    border-radius: 0;
+  }
+
+  &.-current-.-selected- {
+    background: $purpleGradient;
+  }
+
+  &.-other-month- {
+    color: rgba($black, $aThird);
+  }
+
+  &.-other-month-.-focus- {
+    color: rgba($black, $aSecond);
+  }
+
+  &.-other-month-.-in-range- {
+    background: $purpleGradientTransparent;
+    color: rgba($black, $aSecond);
+  }
+
+  &.-other-month-.-in-range-.-focus- {
+    color: $white;
+    background: $purpleGradientTransparent;
+  }
+}
+
+.datepicker--cells-months {
+  height: auto;
+}
+
+.datepicker--cell-month {
+  width: 92px;
+  height: 92px;
+
+  &.-range-from-.-focus-,
+  &.-range-to-.-focus- {
+    background: $purpleGradientTransparent;
+  }
+}
+
+.datepicker--years {
+  height: auto;
+}
+
+.datepicker--cells-years {
+  height: auto;
+}
+
+.datepicker--cell-year {
+  width: 69px;
+  height: 69px;
+
+  &.-range-from-.-focus-,
+  &.-range-to-.-focus- {
+    background: $purpleGradientTransparent;
+  }
+}
+
+.datepicker--buttons {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  border: none;
+  padding: 0;
+  padding-top: 20px;
+}
+
+.datepicker--button {
+  height: auto;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &[data-action="clear"] {
+    color: rgba($black, $aSecond);
+    justify-content: flex-start;
+
+    &:hover {
+      background: none;
+      color: rgba($black, $aThird);
+    }
+  }
+
+  &[data-action="today"] {
+    color: $purple;
+    justify-content: flex-end;
+
+    &:hover {
+      background: none;
+      color: rgba($purple, $aSecond);
+    }
   }
 }

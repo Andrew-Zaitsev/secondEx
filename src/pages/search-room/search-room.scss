@@ -1,0 +1,84 @@
+@import '../../layouts/pages-layout/pages-layout.scss';
+
+.search-room {
+  width: 100%;
+  border-bottom: 1px solid rgba($black, $aThird);
+
+  &__content {
+    display: grid;
+    grid-template-columns: 266px auto;
+    column-gap: calc(20px + 3.4%);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 75px;
+
+    @media (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__filter-section {
+
+    @media (max-width: 640px) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__guests-dropdown {
+    margin-top: 18px;
+  }
+
+  &__price-range-slider {
+    margin-top: 30px;
+  }
+
+  &__price-text {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    color: rgba($black, $aSecond);
+  }
+
+  &__rules-checkbox {
+    margin-top: 27px;
+  }
+
+  &__room-availability-checkbox {
+    margin-top: 29px;
+  }
+
+  &__facilities-dropdown {
+    margin-top: 23px;
+  }
+
+  &__additional-fasilities-expandable-checkbox-list {
+    margin-top: 15px;
+  }
+
+  &__room-cards-section {}
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.8125rem;
+    padding-bottom: 21px;
+    color: $black;
+
+    @media (max-width: 908px) {
+      text-align: center;
+    }
+  }
+}
+
+@import '../../assets/js/plagins/air-datapicker/datepicker.scss';
+
+@import '../../modules/filter-date-dropdown/filter-date-dropdown.scss';
+@import '../../modules/dropdown/dropdown.scss';
+@import '../../modules/range-slider/range-slider.scss';
+@import '../../modules/checkbox/checkbox.scss';
+@import '../../modules/expandable-checkbox-list/expandable-checkbox-list.scss';
+@import '../../modules/pagination/pagination.scss';
+@import '../../modules/room-card/room-card.scss';
+@import '../../modules/rate/rate.scss';

@@ -1,0 +1,25 @@
+extends ../../layouts/pages-layout/pages-layout.pug
+include ../../modules/card-registration/card-registration.pug
+
+block meta
+  meta(name="keywords" value="registration, account")
+  meta(name="description" value="this page contains registration card")
+  
+block title
+  title Registration
+
+block links
+  link(href="./registration.scss" rel="stylesheet")
+
+block scripts
+  script(src="./registration.js" type="module")
+
+block content
+  .registration
+    .registration__content
+      .registration__card-registration
+        +card-registration({
+          title: "Регистрация аккаунта",
+          signInBlockText: "Уже есть аккаунт на Toxin",
+          signInBlockHref: "../sign-in/sign-in.pug",
+        })

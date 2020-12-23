@@ -2,7 +2,7 @@
 
 .colors-n-type {
   width: 100%;
-  max-width: 1201px; //1141px;
+  max-width: 1201px;
   //min-width: 260px;
   margin: 0 auto;
   padding: 67px 0 145px;
@@ -16,7 +16,7 @@
 
   &__color-column {
     width: 100%;
-    max-width: 329px;
+    max-width: 341px;
     display: flex;
     flex-direction: column;
     padding: 0 30px;
@@ -80,7 +80,7 @@
 
   &__color-text {
     padding-left: 40px;
-    font-family: Quicksand;
+    //font-family: Quicksand;
     font-size: 1.1875rem;
     line-height: 29px;
   }
@@ -92,8 +92,8 @@
 
   &__type-column {
     width: 100%;
-    max-width: 463px;
-    padding: 0 72px 0 30px;
+    max-width: 504px;
+    padding: 0 38px 0 30px;
   }
 
   &__type-wrap {
@@ -141,20 +141,15 @@
 
   &__type-sample {
     width: 100%;
-    max-width: 336px;
+    max-width: 369px;
     font-weight: bold;
 
     @each $tag,
     $fontSize,
-    $lineHeight,
-    $fontFamily in (('h1', 1.5rem, 1.9rem, 'Quicksand'), ('h2', 1.1875rem, 1.5rem, 'Quicksand'), ('h3', 0.75rem, 0.9375rem), ('body', 0.875rem, 1.5rem)) {
+    $lineHeight in (('h1', 1.5rem, 1.9rem), ('h2', 1.1875rem, 1.5rem), ('h3', 0.75rem, 0.9375rem), ('body', 0.875rem, 1.5rem)) {
       &_tag_#{$tag} {
         font-size: $fontSize;
         line-height: $lineHeight;
-
-        @if $fontFamily {
-          font-family: $fontFamily;
-        }
 
         @if $tag=='h3' {
           text-transform: uppercase;

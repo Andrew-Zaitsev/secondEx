@@ -1,0 +1,25 @@
+extends ../../layouts/pages-layout/pages-layout.pug
+include ../../modules/card-sign-in/card-sign-in.pug
+
+block meta
+  meta(name="keywords" value="sign in, account")
+  meta(name="description" value="this page contains sign in card")
+  
+block title
+  title Sign in
+
+block links
+  link(href="./sign-in.scss" rel="stylesheet")
+
+block scripts
+  script(src="./sign-in.js" type="module")
+
+block content
+  .sign-in
+    .sign-in__content
+      .sign-in__card-sign-in
+        +card-sign-in({
+          title: "Войти",
+          registrationBlockText: "Нет аккаунта на Toxin?",
+          registrationBlockHref: "../registration/registration.pug"
+        })

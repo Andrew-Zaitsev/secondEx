@@ -1,0 +1,107 @@
+extends ../../layouts/pages-layout/pages-layout.pug
+include ../../modules/filter-date-dropdown/filter-date-dropdown.pug
+include ../../modules/dropdown/dropdown.pug
+include ../../modules/range-slider/range-slider.pug
+include ../../modules/checkbox/checkbox.pug
+include ../../modules/expandable-checkbox-list/expandable-checkbox-list.pug
+include ../../modules/pagination/pagination.pug
+
+block meta
+  meta(name="keywords" value="room search, rooms")
+  meta(name="description" value="this page is for searching and observing rooms")
+  
+block title
+  title Search room
+
+block links
+  link(href="./search-room.scss" rel="stylesheet")
+
+block scripts
+  script(src="./search-room.js" type="module")
+
+block content
+  .search-room
+    .search-room__content
+      section.search-room__filter-section
+        .search-room__filter-date-dropdown
+          +filter-date-dropdown({
+            title: "даты пребывания в отеле",
+            placeholder: "дд.мм.гггг"
+          })
+        .search-room__guests-dropdown
+          +dropdown({
+            title: "гости",
+            id: "guests",
+            content: ["взрослые", "дети", "младенцы"],
+            buttonText: "Сколько гостей",
+            hasApplySection: true,
+          })
+        .search-room__price-range-slider
+          +range-slider({
+            title: "диапазон цены",
+            name: "costRange",
+            unit: "₽",
+            min: "0",
+            max: "15000",
+            from: "5000",
+            to: "10000"
+          })
+          p.search-room__price-text Стоимость за сутки пребывания в номере
+        .search-room__rules-checkbox
+          +checkbox({
+            title: "правила дома",
+            elements: [
+              {text: "Можно курить"},
+              {text: "Можно с питомцами", isChecked: true},
+              {text: "Можно пригласить гостей (до&nbsp;10&nbsp;человек)", isChecked: true}
+            ],
+          })
+        .search-room__room-availability-checkbox
+          .form-elements__rich-checkbox
+            +checkbox({
+              title: "доступность",
+              elements: [
+                {text: "Широкий коридор", additionalText: "Ширина коридоров в номере не&nbsp;менее 91 см."},
+                {text: "Помощник для инвалидов", additionalText: "На 1 этаже вас встретит специалист и&nbsp;проводит до номера."},
+              ],
+              isRich: true,
+            })
+        .search-room__facilities-dropdown
+          +dropdown({
+            title: "удобства номера",
+            id: "facilities",
+            content: ["спальни", "кровати", "ванные комнаты"],
+            buttonText: "Ваши удобства",
+          })
+        .search-room__additional-fasilities-expandable-checkbox-list
+          +expandable-checkbox-list({
+            title: "дополнительные удобства",
+            checkbox: {
+              elements: [
+                {text: "Завтрак"},
+                {text: "Письменный стол"},
+                {text: "Стул для кормления"},
+                {text: "Кроватка"},
+                {text: "Телевизор"},
+                {text: "Шампунь"},
+              ]
+            },
+          }) 
+      section.search-room__room-cards-section
+        h1.search-room__title Номера, которые мы для вас подобрали
+        +pagination({
+          roomCards: [
+            {roomImages: ["../../modules/room-card/images/room_1.png", "../../modules/room-card/images/room_1.png", "../../modules/room-card/images/room_1.png", "../../modules/room-card/images/room_1.png"], roomNumber: "888", roomPrice: "9 990₽", measurePeriodText: "в сутки", defaultRating: "5", reviewsNumber: "145", roomType: "люкс"},
+            {roomImages: ["../../modules/room-card/images/room_2.png", "../../modules/room-card/images/room_2.png", "../../modules/room-card/images/room_2.png", "../../modules/room-card/images/room_2.png"], roomNumber: "840", roomPrice: "9 900₽", measurePeriodText: "в сутки", defaultRating: "4", reviewsNumber: "65"},
+            {roomImages: ["../../modules/room-card/images/room_3.png", "../../modules/room-card/images/room_3.png", "../../modules/room-card/images/room_3.png", "../../modules/room-card/images/room_3.png"], roomNumber: "980", roomPrice: "8 500₽", measurePeriodText: "в сутки", defaultRating: "3", reviewsNumber: "35", roomType: "люкс"},
+            {roomImages: ["../../modules/room-card/images/room_4.png", "../../modules/room-card/images/room_4.png", "../../modules/room-card/images/room_4.png", "../../modules/room-card/images/room_4.png"], roomNumber: "856", roomPrice: "7 300₽", measurePeriodText: "в сутки", defaultRating: "5", reviewsNumber: "19"},
+            {roomImages: ["../../modules/room-card/images/room_5.png", "../../modules/room-card/images/room_5.png", "../../modules/room-card/images/room_5.png", "../../modules/room-card/images/room_5.png"], roomNumber: "740", roomPrice: "6 000₽", measurePeriodText: "в сутки", defaultRating: "4", reviewsNumber: "44"},
+            {roomImages: ["../../modules/room-card/images/room_6.png", "../../modules/room-card/images/room_6.png", "../../modules/room-card/images/room_6.png", "../../modules/room-card/images/room_6.png"], roomNumber: "982", roomPrice: "5 800₽", measurePeriodText: "в сутки", defaultRating: "3", reviewsNumber: "56"},
+            {roomImages: ["../../modules/room-card/images/room_7.png", "../../modules/room-card/images/room_7.png", "../../modules/room-card/images/room_7.png", "../../modules/room-card/images/room_7.png"], roomNumber: "678", roomPrice: "5 500₽", measurePeriodText: "в сутки", defaultRating: "5", reviewsNumber: "45"},
+            {roomImages: ["../../modules/room-card/images/room_8.png", "../../modules/room-card/images/room_8.png", "../../modules/room-card/images/room_8.png", "../../modules/room-card/images/room_8.png"], roomNumber: "450", roomPrice: "5 300₽", measurePeriodText: "в сутки", defaultRating: "4", reviewsNumber: "39"},
+            {roomImages: ["../../modules/room-card/images/room_9.png", "../../modules/room-card/images/room_9.png", "../../modules/room-card/images/room_9.png", "../../modules/room-card/images/room_9.png"], roomNumber: "350", roomPrice: "5 000₽", measurePeriodText: "в сутки", defaultRating: "3", reviewsNumber: "77"},
+            {roomImages: ["../../modules/room-card/images/room_10.png", "../../modules/room-card/images/room_10.png", "../../modules/room-card/images/room_10.png", "../../modules/room-card/images/room_10.png"], roomNumber: "666", roomPrice: "5 000₽", measurePeriodText: "в сутки", defaultRating: "5", reviewsNumber: "25"},
+            {roomImages: ["../../modules/room-card/images/room_11.png", "../../modules/room-card/images/room_11.png", "../../modules/room-card/images/room_11.png", "../../modules/room-card/images/room_11.png"], roomNumber: "444", roomPrice: "5 000₽", measurePeriodText: "в сутки", defaultRating: "3", reviewsNumber: "15"},
+            {roomImages: ["../../modules/room-card/images/room_12.png", "../../modules/room-card/images/room_12.png", "../../modules/room-card/images/room_12.png", "../../modules/room-card/images/room_12.png"], roomNumber: "352", roomPrice: "5 000₽", measurePeriodText: "в сутки", defaultRating: "3", reviewsNumber: "55"},
+          ],
+        })

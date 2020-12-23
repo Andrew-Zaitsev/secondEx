@@ -1,0 +1,20 @@
+@import '../../layouts/pages-layout/pages-layout.scss';
+
+.registration {
+  width: 100%;
+  background: url(images/registration-image.png) center bottom no-repeat;
+  background-size: cover;
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 19px 20px;
+  }
+
+  &__card-registration {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+@import '../../modules/card-registration/card-registration.scss';

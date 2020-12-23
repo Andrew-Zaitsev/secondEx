@@ -1,14 +1,38 @@
 .pagination {
 
   &__room-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 270px 270px 270px;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
+    column-gap: 12px;
+    row-gap: 21px;
+    margin-bottom: 40px;
 
     &_hidden {
       display: none;
     }
+
+    @media (max-width: 1200px) {
+      grid-template-columns: auto auto;
+      //column-gap: ;
+    }
+
+    @media (max-width: 908px) {
+      grid-template-columns: auto;
+      //column-gap: ;
+    }
+
+  }
+
+  &__room-card {
+    max-width: 270px;
   }
 
   &__buttons {
     max-width: 241px;
+    margin: 0 auto;
   }
 
   &__list {

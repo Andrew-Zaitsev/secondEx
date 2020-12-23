@@ -1,6 +1,9 @@
 import '../../assets/js/plagins/pagination/pagination.js.js';
 import {
-  roomCards,
+  initSlider
+} from '../../modules/room-card/room-card.js';
+import {
+  formElementsPageRoomCards,
   variantNouns
 } from '../../assets/js/variables.js';
 import {
@@ -9,7 +12,13 @@ import {
 
 jQuery(document).ready(function () {
 
-  let options = {
+  const $roomCards = $('.pagination__room-cards');
+  let roomCards = Array.from($('.pagination__room-card'));
+  let sliders = [];
+
+  if (roomCards.length === 0) roomCards = formElementsPageRoomCards;
+
+  const paginationOptions = {
     dataSource: roomCards,
     pageSize: 12,
     pageRange: 1,
@@ -27,35 +36,38 @@ jQuery(document).ready(function () {
     nextText: '<i class = "material-icons">arrow_forward</i>',
 
     callback: function (data, pagination) {
-      // template method of yourself
-      let html = template(data);
-
-      $('.pagination__room-cards').html(html);
-
-      const firstCardOfPage = (pagination.pageNumber - 1) * pagination.pageSize + 1;
-      const lastCardOfPage = (pagination.pageNumber - 1) * pagination.pageSize + data.length;
-      $('.pagination__button-nav').text(
-        ((firstCardOfPage !== lastCardOfPage) ? (firstCardOfPage + ' - ' + lastCardOfPage) : lastCardOfPage) + ' из ' +
-        ((options.dataSource.length > 100) ? '100+ вариантов' : ((options.dataSource.length) + ' ' + (getNoun(options.dataSource.length, variantNouns)))) +
-        ' аренды'
-      );
+      destroySliders();
+      changeCardELems(data);
+      initSliders();
+      changePaginationText(data, pagination);
     }
   };
 
-  $('.pagination__buttons').pagination(options);
+  $('.pagination__buttons').pagination(paginationOptions);
 
-  function template(data) {
-    var html = '<div>';
-    $.each(data, function (index, item) {
-      html += '<div>' + item + '</div>';
-    });
-    html += '</div>';
-    return html;
+  function destroySliders() {
+    sliders.forEach($sliderElem => $sliderElem.destroy());
+    sliders = [];
   }
-  /*
-    $('.pagination__buttons').addHook('afterIsLastPage', function () {
-      options.dataSource[3] = 'eeee';
-      //$('.pagination').show();
+
+  function changeCardELems(elems) {
+    $roomCards.find('.pagination__room-card').remove();
+    $roomCards.append(elems);
+  }
+
+  function initSliders() {
+    $roomCards.find('.room-card__slider').each((index, sliderElem) => {
+      sliders.push(initSlider(sliderElem));
     });
-  */
+  }
+
+  function changePaginationText(data, pagination) {
+    const firstCardOfPage = (pagination.pageNumber - 1) * pagination.pageSize + 1;
+    const lastCardOfPage = (pagination.pageNumber - 1) * pagination.pageSize + data.length;
+    $('.pagination__button-nav').text(
+      ((firstCardOfPage !== lastCardOfPage) ? (firstCardOfPage + ' - ' + lastCardOfPage) : lastCardOfPage) + ' из ' +
+      ((paginationOptions.dataSource.length > 100) ? '100+ вариантов' : ((paginationOptions.dataSource.length) + ' ' + (getNoun(paginationOptions.dataSource.length, variantNouns)))) +
+      ' аренды'
+    );
+  }
 });

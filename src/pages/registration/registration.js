@@ -1,0 +1,1 @@
+import '../../modules/card-registration/card-registration.js';

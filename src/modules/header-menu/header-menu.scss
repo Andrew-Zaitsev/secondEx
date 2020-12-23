@@ -20,7 +20,6 @@
   }
 
   &__list {
-    width: 100%;
     display: flex;
     align-items: center;
     font-family: $mainFont;
@@ -28,22 +27,26 @@
     color: $dark-shade-50;
 
     @media (max-width: 940px) {
-      max-width: 400px;
+      width: 40%;
       flex-direction: column;
       position: absolute;
       left: 20px;
       top: 20px;
-      z-index: 1;
+      z-index: 100;
 
       &_hidden {
         display: none;
       }
     }
+
+    @media (max-width: 600px) {
+      width: 85%;
+    }
   }
 
   &__item {
 
-    &:first-child {
+    &_active {
       font-weight: bold;
     }
 
@@ -63,6 +66,7 @@
 
     &_dropdown {
       position: relative;
+      z-index: 2;
     }
   }
 

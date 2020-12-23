@@ -8,7 +8,7 @@ export {
   voteNouns,
   facilities,
   guests,
-  roomCards
+  formElementsPageRoomCards
 };
 
 const dayNouns = ['день', 'дня', 'дней'];
@@ -30,7 +30,7 @@ const guests = [
   ['младенец', 'младенца', 'младенцев']
 ];
 
-const roomCards = [];
+const formElementsPageRoomCards = [];
 for (let i = 1; i < 170; i++) {
-  roomCards.push(i)
+  formElementsPageRoomCards.push(i)
 }

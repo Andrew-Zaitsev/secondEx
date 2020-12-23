@@ -1,9 +1,14 @@
-mixin pagination({areCardsHidden})
+include ../room-card/room-card.pug
+
+mixin pagination({roomCards = [], areCardsHidden = false})
   .pagination
     - 
       let roomCardsClassName = "pagination__room-cards";
       roomCardsClassName += (areCardsHidden) ? " pagination__room-cards_hidden" : "";
 
     div(class = roomCardsClassName)
-      //- сделать блок room-card
+      each roomCard in roomCards
+        .pagination__room-card
+          +room-card(roomCard)
+
     .pagination__buttons

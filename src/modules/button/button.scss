@@ -5,9 +5,6 @@
   cursor: pointer;
 
   &_has-volume {
-    //width: auto;
-    line-height: 15px;
-    padding: 12px 17.2px 12.8px;
     border-radius: 22px;
     border: 2px solid transparent;
     background-origin: border-box;
@@ -17,10 +14,14 @@
       background-image: $purpleGradientTransparent;
       //opacity: 0.5;
     }
+
+    & .button__title {
+      width: 100%;
+      padding: 12px 17.2px 12.8px;
+    }
   }
 
   &_has-border {
-    //max-width: 99px;
     border-width: 2px;
     border-style: solid;
     border-color: transparent;
@@ -30,22 +31,23 @@
 
     &:hover {
       background-image: $whiteGradient,
-        $purpleGradientTransparent; //change-color(#8BA4F9, $alpha: 0.50) 100%);
+        $purpleGradientTransparent;
     }
   }
 
   &_in-header {
-    //width: auto;
     max-width: none;
     border-radius: 17px;
-    padding: 7px 18px 8px;
+
+    & .button__title {
+      width: 100%;
+      padding: 7px 18px 8px;
+    }
   }
 
   &_has-arrow {
     position: relative;
     width: 100%;
-    padding-left: 44px;
-    padding-right: 44px;
   }
 
   &__title {
