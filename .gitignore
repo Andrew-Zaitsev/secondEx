@@ -1,7 +1,8 @@
-#cache files
-/.cache/*
 #local dev files
 /dist/*
+/build/*
+/cache/*
+/cache-build/*
 #node modules files (created for parcel)
 /node_modules/*
 #git files
