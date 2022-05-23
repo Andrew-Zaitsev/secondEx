@@ -1,10 +1,31 @@
-# secondEx
-making a search hotel numbers site
+# FSD TOXIN hotel booking site
 
-To install project run command:
+## See demo:
 
-$ clone https://github.com/Andrew-Zaitsev/secondEx.git
+  <a href='https://andrew-zaitsev.github.io/secondEx/'>Demo</a>
 
-To run development mode and start server for form-elementa page run command:
 
-$ npm run fe
+## Clone project
+```
+  $ git clone https://github.com/Andrew-Zaitsev/secondEx.git
+```
+
+## Install project
+```
+  $ npm i
+```
+
+## Development mode
+```
+  $ npm run dev
+```
+
+## Build project
+```
+  $ npm run build
+```
+
+## Publish project
+```
+  $ npm run deploy
+```
