@@ -29,3 +29,13 @@
 ```
   $ npm run deploy
 ```
+
+
+# Third-party libraries
+```
+  - [air-datapicker](https://www.npmjs.com/package/air-datepicker)
+  - [ion-rangeSlider](https://github.com/IonDen/ion.rangeSlider)
+  - [lightSlider](https://www.npmjs.com/package/lightslider)
+  - [maskedinput](https://github.com/digitalBush/jquery.maskedinput)
+  - [pagination](https://github.com/superRaytin/paginationjs)
+```

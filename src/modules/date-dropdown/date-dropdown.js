@@ -45,15 +45,13 @@ jQuery(document).ready(function () {
           currentToInputValue(getFormattedDateString(toDateString));
       }
     },
-    //onShow: function (inst) {},
   });
 
   calendars.data('datepicker');
 
   calendars.each(function () {
-    if (!(this.dataset.isVisible)) $(this).hide();
+    if (this.dataset.isVisible !== 'true') $(this).hide();// (!(this.dataset.isVisible)) $(this).hide(); ??????
   });
-  //calendars.hide();
 
   // закрытие календаря при клике вне дропдауна
   $(document).on('mouseup', function (e) {

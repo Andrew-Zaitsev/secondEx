@@ -1,19 +1,13 @@
 {
-  "name": "secondEx",
+  "name": "TOXIN hotel",
   "version": "1.0.0",
-  "description": "making a search hotel numbers site",
+  "description": "TOXIN hotel booking site",
   "main": "headers-and-footors.pug",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run clean-dist && parcel src/pages/index/index.pug -p 3000 --open --out-dir dist --cache-dir cache",
-    "build": "npm run clean-build && parcel build src/pages/index/index.pug --out-dir build --cache-dir cache-build --public-url ./",
-    "deploy": "gh-pages -d build",
-    "w-dev": "cross-env NODE_ENV=development webpack serve --mode development --open",
-    "w-build": "cross-env NODE_ENV=production webpack --mode production",
-    "w-deploy": "gh-pages -d w-build",
-    "clean-dist": "rm -rf dist/*",
-    "clean-build": "rm -rf build/*",
-    "clean-caches": "rm -rf cache/* && rm -rf cache-build/*"
+    "dev": "cross-env NODE_ENV=development webpack serve --mode development --open",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "deploy": "gh-pages -d w-build",
+    "clean": "rm -rf w-build/*"
   },
   "repository": {
     "type": "git",
@@ -27,10 +21,19 @@
   },
   "homepage": "https://github.com/Andrew-Zaitsev/secondEx#readme",
   "devDependencies": {
+    "@webdiscus/pug-loader": "^2.3.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
     "gh-pages": "^3.1.0",
-    "parcel-bundler": "^1.12.4",
-    "pug": "^3.0.0",
-    "sass": "^1.26.10"
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^6.0.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^12.2.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",

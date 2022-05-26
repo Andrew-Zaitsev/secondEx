@@ -10,7 +10,7 @@ mixin review({title, users})
     -for (let user of users)
       .review__user
         .review__user-info
-          img.review__user-photo(src= user.photo alt="photo")
+          img(src=user.photo alt="photo" class="review__user-photo")
           .review__user-name= user.name
           .review__time-passed= user.date
         .review__user-text-wrap

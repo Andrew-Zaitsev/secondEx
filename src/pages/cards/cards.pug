@@ -16,12 +16,11 @@ block meta
 block title
   title Cards
 
-block links
-  //-link(href="../../assets/fonts/fontawesome/css/all.css" rel="stylesheet")
-  link(href = "./cards.scss" rel="stylesheet")
+//- block links
+//- link(href = "./cards.scss" rel="stylesheet")
 
-block scripts
-  script(src="./cards.js" type="module")
+//- block scripts
+//-   script(src="./cards.js" type="module")
 
 block content
   .cards
@@ -67,11 +66,11 @@ block content
       .cards__room-card
         +room-card({
           roomImages: [
-            "../../modules/room-card/images/room_1.png",
-            "../../modules/room-card/images/room_1.png",
-            "../../modules/room-card/images/room_1.png",
-            "../../modules/room-card/images/room_1.png"
-            ],
+            require("../../modules/room-card/images/room_1.png"),
+            require("../../modules/room-card/images/room_1.png"),
+            require("../../modules/room-card/images/room_1.png"),
+            require("../../modules/room-card/images/room_1.png")
+          ],
           roomNumber: "888",
           roomType: "люкс",
           roomPrice: "9 990₽",
@@ -83,11 +82,11 @@ block content
       .cards__room-card
         +room-card({
           roomImages: [
-            "../../modules/room-card/images/room_2.png",
-            "../../modules/room-card/images/room_2.png",
-            "../../modules/room-card/images/room_2.png",
-            "../../modules/room-card/images/room_2.png"
-            ],
+            require("../../modules/room-card/images/room_2.png"),
+            require("../../modules/room-card/images/room_2.png"),
+            require("../../modules/room-card/images/room_2.png"),
+            require("../../modules/room-card/images/room_2.png")
+          ],
           roomNumber: "840",
           roomType: "",
           roomPrice: "9 900₽",

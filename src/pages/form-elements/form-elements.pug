@@ -25,12 +25,12 @@ block meta
 block title
   title Form Elements
 
-block links
-  //-link(href="../../assets/fonts/fontawesome/css/all.css" rel="stylesheet")
-  link(href = "./form-elements.scss" rel="stylesheet")
-
-block scripts
-  script(src="./form-elements.js" type="module")
+//- block links
+//-   link(href="../../assets/fonts/fontawesome/css/all.css" rel="stylesheet")
+//-   link(href = "./form-elements.scss" rel="stylesheet")
+//- 
+//- block scripts
+//-   script(src="./form-elements.js" type="module")
 
 block content
   .form-elements
@@ -329,7 +329,7 @@ block content
             users: [
               {
               name: "Мурад Сарафанов",
-              photo: "../../modules/review/images/review__photo_name_murad-sarafanov.png",
+              photo: require("../../modules/review/images/review__photo_name_murad-sarafanov.png"),
               text: "Великолепный матрас на кровати в основной спальне! " +
                     "А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. " + 
                     "Выкрикивал комплименты повару — никто не жаловался из соседей.",
@@ -338,4 +338,5 @@ block content
               }
             ]
           })
+          //- ../../modules/review/images/review__photo_name_murad-sarafanov.png
       

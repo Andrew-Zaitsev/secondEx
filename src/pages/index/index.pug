@@ -11,8 +11,8 @@ block meta
 block title
   title entry page
 
-block links
-  link(href="./index.scss" rel="stylesheet")
+//- block links
+//-   link(href="./index.scss" rel="stylesheet")
 
 block content
   .index
@@ -23,10 +23,10 @@ block content
         -
           let buttons;
           buttons = [
-            {type: "button", text: "colors & type", hasVolume: "true", isInHeader: "", href: "../colors-n-type/colors-n-type.pug", hasArrow: "true"},
-            {type: "button", text: "form elements", hasVolume: "true", isInHeader: "", href: "../form-elements/form-elements.pug", hasArrow: "true"},
-            {type: "button", text: "cards", hasVolume: "true", isInHeader: "", href: "../cards/cards.pug", hasArrow: "true"},
-            {type: "button", text: "headers & footers", hasVolume: "true", isInHeader: "", href: "../headers-n-footers/headers-n-footers.pug", hasArrow: "true"}
+            {type: "button", text: "colors & type", hasVolume: "true", isInHeader: "", href: "./colors-n-type.html", hasArrow: "true"},
+            {type: "button", text: "form elements", hasVolume: "true", isInHeader: "", href: "./form-elements.html", hasArrow: "true"},
+            {type: "button", text: "cards", hasVolume: "true", isInHeader: "", href: "./cards.html", hasArrow: "true"},
+            {type: "button", text: "headers & footers", hasVolume: "true", isInHeader: "", href: "./headers-n-footers.html", hasArrow: "true"}
           ]
         - for (let button of buttons)
           .index__button
@@ -36,11 +36,11 @@ block content
       .index__buttons
         -
           buttons = [
-            {type: "button", text: "landing page", hasVolume: "true", isInHeader: "", href: "../landing-page/landing-page.pug", hasArrow: "true"},
-            {type: "button", text: "search room", hasVolume: "true", isInHeader: "", href: "../search-room/search-room.pug", hasArrow: "true"},
-            {type: "button", text: "room details", hasVolume: "true", isInHeader: "", href: "../room-details/room-details.pug", hasArrow: "true"},
-            {type: "button", text: "registration", hasVolume: "true", isInHeader: "", href: "../registration/registration.pug", hasArrow: "true"},
-            {type: "button", text: "sign in", hasVolume: "true", isInHeader: "", href: "../sign-in/sign-in.pug", hasArrow: "true"}
+            {type: "button", text: "landing page", hasVolume: "true", isInHeader: "", href: "./landing-page.html", hasArrow: "true"},
+            {type: "button", text: "search room", hasVolume: "true", isInHeader: "", href: "./search-room.html", hasArrow: "true"},
+            {type: "button", text: "room details", hasVolume: "true", isInHeader: "", href: "./room-details.html", hasArrow: "true"},
+            {type: "button", text: "registration", hasVolume: "true", isInHeader: "", href: "./registration.html", hasArrow: "true"},
+            {type: "button", text: "sign in", hasVolume: "true", isInHeader: "", href: "./sign-in.html", hasArrow: "true"}
           ]
         - for (let button of buttons)
           .index__button

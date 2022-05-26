@@ -18,4 +18,5 @@ mixin date-dropdown({fromFieldTitle, toFieldTitle, placeholder, areFieldsHidden,
           .date-dropdown__to-field-arrow
             i.material-icons expand_more
     
-    .date-dropdown__calendar(data-is-visible = isCalendarVisible)
+    .date-dropdown__calendar(data-is-visible = `${isCalendarVisible}`)
+    //- (data-is-visible = isCalendarVisible)

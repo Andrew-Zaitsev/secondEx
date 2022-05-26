@@ -8,11 +8,11 @@ block meta
 block title
   title Registration
 
-block links
-  link(href="./registration.scss" rel="stylesheet")
-
-block scripts
-  script(src="./registration.js" type="module")
+//- block links
+//-   link(href="./registration.scss" rel="stylesheet")
+//- 
+//- block scripts
+//-   script(src="./registration.js" type="module")
 
 block content
   .registration
@@ -21,5 +21,5 @@ block content
         +card-registration({
           title: "Регистрация аккаунта",
           signInBlockText: "Уже есть аккаунт на Toxin",
-          signInBlockHref: "../sign-in/sign-in.pug",
+          signInBlockHref: "./sign-in.html",
         })
