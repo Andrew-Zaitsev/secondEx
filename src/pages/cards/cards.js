@@ -6,4 +6,5 @@ import {
   initSlider
 } from '../../modules/room-card/room-card.js';
 
-document.querySelectorAll('.room-card__slider').forEach(sliderElem => initSlider(sliderElem));
+document.querySelectorAll('.cards__room-card')
+  .forEach(roomCardElem => initSlider(roomCardElem.querySelector('.room-card__slider')));
