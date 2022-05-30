@@ -19190,7 +19190,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-document.querySelectorAll('.room-card__slider').forEach(sliderElem => (0,_modules_room_card_room_card_js__WEBPACK_IMPORTED_MODULE_3__/* .initSlider */ .u)(sliderElem));
+document.querySelectorAll('.cards__room-card')
+  .forEach(roomCardElem => (0,_modules_room_card_room_card_js__WEBPACK_IMPORTED_MODULE_3__/* .initSlider */ .u)(roomCardElem.querySelector('.room-card__slider')));
 
 /***/ }),
 
@@ -19248,7 +19249,7 @@ layoutsStyles.keys().forEach(layoutsStyles);
 const pagesStyles = __webpack_require__(15);
 pagesStyles.keys().forEach(pagesStyles);
 
-const modules = __webpack_require__(825);
+const modules = __webpack_require__(879); // <= chooses only in pages folder // /\.js$/);
 modules.keys().forEach(modules);
 
 
@@ -19558,7 +19559,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 825:
+/***/ 879:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
@@ -19591,7 +19592,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 825;
+webpackContext.id = 879;
 
 /***/ }),
 
